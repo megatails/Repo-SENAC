@@ -7,6 +7,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 }
+
+function listarPastas($dir, $ignorar = []) {
+    $pastas = array_map('basename', array_filter(glob("$dir/*"), 'is_dir'));
+    return array_diff($pastas, $ignorar);
+}
+
+$pastas = listarPastas("./", ["Styles", "Fonts"]);
+
+print_r($pastas);
 ?>
 
 
@@ -15,12 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Venha Ser Torcedor!</title>
-        <link rel="stylesheet" href="/Styles/style.css">
+        <title>Portal!</title>
+        <!-- <link rel="stylesheet" href="/Styles/style.css"> -->
     </head>
 
     <header>
-        <h1>Venha Ser Torcedor!<span><img width="100%" src="tennaDance.gif" alt="Tenna" class="tenna"></span></h1>
+        <!-- <h1>Escolha o Documento!<span><img width="100%" src="tennaDance.gif" alt="Tenna" class="tenna"></span></h1> -->
         <div class="credits">Developed by Rodrigo L. Cassilhas</div>
     </header>
 
