@@ -3,6 +3,131 @@
     src: url('/Fonts/DTM-Mono.otf') format('opentype');
 }
 
+:root{
+  /* Cores em formato "r g b" (usado com rgb(var(--...)/alpha)) */
+  --red: 255 95 135;
+  --orange: 255 159 64;
+  --yellow: 255 214 88;
+  --green: 57 201 0;
+  --blue: 64 150 255;
+  --pink: 255 100 210;
+  --purple: 145 80 255;
+  --foreground: 255 255 255;
+  --background: 0 0 0;
+  --speed: 3s;
+
+  /* variável usada no resto do CSS (ex.: .botao, .botao-iris) */
+  --primary: 255 255 255;
+}
+
+*, :after, :before {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59, 130, 246, .5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
+    --tw-contain-size: ;
+    --tw-contain-layout: ;
+    --tw-contain-paint: ;
+    --tw-contain-style: ;
+}
+
+::backdrop {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59, 130, 246, .5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
+    --tw-contain-size: ;
+    --tw-contain-layout: ;
+    --tw-contain-paint: ;
+    --tw-contain-style: ;
+}
+
 body{
     display: flex;
     font-family: 'MyFont', Arial, sans-serif;
@@ -88,6 +213,68 @@ select{
     border: inset;
     border: 1px solid;
     box-shadow: 0 0 2px rgba(51, 255, 0, 0.8);
+}
+
+.botao-iris {
+    background: linear-gradient(rgb(var(--background) / .1), rgb(var(--background) / .9)), linear-gradient(90deg, rgb(var(--red) / .8), rgb(var(--orange) / .8), rgb(var(--yellow) / .8), rgb(var(--green) / .8), rgb(var(--blue) / .8), rgb(var(--pink) / .8), rgb(var(--red) / .8));
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: .75rem;
+    padding: .625rem 2rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(var(--foreground) / var(--tw-text-opacity, 1));
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .5s;
+    background-clip: padding-box, border-box, border-box;
+    background-origin: border-box;
+    border: calc(.08 * 1rem) solid transparent;
+}
+
+.botao-iris:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(var(--white) / var(--tw-ring-opacity, 1));
+}
+
+.botao-iris {
+    background-size: 200%;
+    animation: rainbow var(--speed, 3s) infinite linear;
+}
+
+.botao-iris:before {
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    z-index: 0;
+    height: .5rem;
+    width: 80%;
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    content: var(--tw-content);
+    background: linear-gradient(90deg, rgb(var(--red)), rgb(var(--orange)), rgb(var(--yellow)), rgb(var(--green)), rgb(var(--blue)), rgb(var(--pink)), rgb(var(--purple)), rgb(var(--red)));
+    background-size: 200%;
+    filter: blur(.8rem);
+    animation: rainbow var(--speed, 2s) infinite linear;
+}
+
+
+
+.botao-iris:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+@keyframes rainbow {
+    0% { background-position: 0; }
+    to { background-position: 200%; }
 }
 
 img:hover{

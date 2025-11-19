@@ -14,8 +14,6 @@ function listarPastas($dir, $ignorar = []) {
 }
 
 $pastas = listarPastas("./", ["Styles", "Fonts"]);
-
-print_r($pastas);
 ?>
 
 
@@ -25,11 +23,11 @@ print_r($pastas);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portal!</title>
-        <!-- <link rel="stylesheet" href="/Styles/style.css"> -->
+        <link rel="stylesheet" href="/Styles/style.css">
     </head>
 
     <header>
-        <!-- <h1>Escolha o Documento!<span><img width="100%" src="tennaDance.gif" alt="Tenna" class="tenna"></span></h1> -->
+        <h1>Escolha o Documento!<span><img width="100%" src="tennaDance.gif" alt="Tenna" class="tenna"></span></h1>
         <div class="credits">Developed by Rodrigo L. Cassilhas</div>
     </header>
 
@@ -38,16 +36,15 @@ print_r($pastas);
 
             <label for="doc">Selecione o Documento:</label>
             <div class="">
-                <select name="doc" id="doc">Clube do Coração
-                    <option value="">Selecione...</option>
-                    <option value="/Aula07-11">Aula07-11</option>
-                    <option value="/Aula10-11">Aula10-11</option>
-                    <option value="/Aula12-11_Eduardo">Aula12-11_Eduardo</option>
-                    <option value="/Torcedor">Torcedor</option>
+                <select name="doc" id="doc">
+                <option value="">Selecione...</option>
+                    <?php foreach ($pastas as $pasta): ?>
+                        <option value="/<?= $pasta ?>"><?= $pasta ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
 
-            <input class="botao" type="submit" value="Ir para documento">
+            <input class="botao-iris group" type="submit" value="Ir para documento">
         </form>        
     </body>
     
