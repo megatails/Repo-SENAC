@@ -23,11 +23,11 @@ $pastas = listarPastas("./", ["Styles", "Fonts"]);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portal!</title>
-        <link rel="stylesheet" href="/Styles/style.css">
+        <link rel="stylesheet" href="/Styles/style2.css">
     </head>
 
     <header>
-        <h1>Escolha o Documento!<span><img width="100%" src="tennaDance.gif" alt="Tenna" class="tenna"></span></h1>
+        <h1>Escolha o Documento!</h1>
         <div class="credits">Developed by Rodrigo L. Cassilhas</div>
     </header>
 
