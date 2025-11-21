@@ -1,184 +1,111 @@
 @font-face{
     font-family: 'MyFont';
-    src: url('/Fonts/DTM-Mono.otf') format('opentype');
-}
-
-:root{
-  /* Cores em formato "r g b" (usado com rgb(var(--...)/alpha)) */
-  --red: 255 95 135;
-  --orange: 255 159 64;
-  --yellow: 255 214 88;
-  --green: 57 201 0;
-  --blue: 64 150 255;
-  --pink: 255 100 210;
-  --purple: 145 80 255;
-  --foreground: 255 255 255;
-  --background: 0 0 0;
-  --speed: 3s;
-
-  /* variável usada no resto do CSS (ex.: .botao, .botao) */
-  --primary: 255 255 255;
+    src: url('/Fonts/DT-8Bit-Ch3.otf.woff2') format('opentype');
 }
 
 *, :after, :before {
-    --tw-translate-x: 0;
-    --tw-translate-y: 0;
-    --tw-rotate: 0;
-    --tw-skew-x: 0;
-    --tw-skew-y: 0;
-    --tw-scale-x: 1;
-    --tw-scale-y: 1;
-    --tw-ring-offset-width: 0px;
-    --tw-ring-offset-color: #fff;
-    --tw-ring-color: rgba(59, 130, 246, .5);
-    --tw-ring-offset-shadow: 0 0 #0000;
-    --tw-ring-shadow: 0 0 #0000;
-    --tw-shadow: 0 0 #0000;
     font-family: 'MyFont', Arial, sans-serif;
 }
 
-::backdrop {
-    --tw-translate-x: 0;
-    --tw-translate-y: 0;
-    --tw-rotate: 0;
-    --tw-skew-x: 0;
-    --tw-skew-y: 0;
-    --tw-scale-x: 1;
-    --tw-scale-y: 1;
-    --tw-ring-offset-width: 0px;
-    --tw-ring-offset-color: #fff;
-    --tw-ring-color: rgba(59, 130, 246, .5);
-    --tw-ring-offset-shadow: 0 0 #0000;
-    --tw-ring-shadow: 0 0 #0000;
-    --tw-shadow: 0 0 #0000;
-}
-
-
 
 body{
-    display: flex;
-    zoom: 2;
-    
-    background-image: url('/star.gif');
-    background-size: fill;
+    zoom: 1.5;
+    background-repeat: repeat;
+    background-position: center;
+    background-color: rgb(9, 15, 63);
 
-    width: 200;
-    max-width: 550px;
-    margin: 50px auto;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px deepskyblue;
-    color: rgb(57, 201, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+    margin-top: 100px;
+    background-image: url('/star.gif');
+    background-repeat: repeat;
+    animation: fundo 30s linear infinite;
 
 }
 
 header{
-
-    padding: 10px;
     text-align: center;
-
-    background-color: rgb(40, 59, 95);
-    color: white;
+    color: rgb(251, 254, 255);
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    font-family: 'MyFont', Arial, sans-serif;
-    border-radius: 12px;
-    overflow: hidden;
     font-size: 16px;
-    margin-bottom: 12px;
     display: table;
-}
-
-form{
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-    width: 400px;
-    gap: 5px;
-    margin-left: 5px;
-    color: white;
-    margin-bottom: 20px;
-    font-size: 17px;
-}
-
-select{
-    width: 100%;
-    display: flex;
-    padding: 4px;
-    background-color: rgb(0, 0, 0);
-    color: rgb(57, 201, 0);
-    border-color: rgb(17, 187, 40);
-    font-family: 'MyFont', Arial, sans-serif;
+    
+    text-shadow: 4px 4px 0 rgb(8, 15, 81);
 }
 
 .credits{
     text-align: center;
     font-size: 6px;
     color: #888;
-    margin-top: 56px;
+    margin-top: 350px;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
-.botao {
-    background: linear-gradient(rgb(var(--background) / .1), rgb(var(--background) / .9)), linear-gradient(90deg, rgb(var(--red) / .8), rgb(var(--orange) / .8), rgb(var(--yellow) / .8), rgb(var(--green) / .8), rgb(var(--blue) / .8), rgb(var(--pink) / .8), rgb(var(--red) / .8));
-    position: relative;
-    display: inline-flex;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(251, 254, 255);
+}
+
+select{
+    appearance: none;
+    text-align: center;
+    padding: 4px;
     cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    border-radius: .75rem;
-    padding: .625rem 2rem;
-    font-weight: 500;
-    --tw-text-opacity: 1;
-    color: rgb(var(--foreground) / var(--tw-text-opacity, 1));
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-    transition-duration: .5s;
-    background-clip: padding-box, border-box, border-box;
-    background-origin: border-box;
-    border: calc(.08 * 1rem) solid transparent;
+    background-color: transparent;
+    color: rgb(251, 254, 255);
+    border: 2px solid rgba(255,255,255,0.85);
 }
 
-.botao:focus-visible {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgb(var(--white) / var(--tw-ring-opacity, 1));
+select option {
+    background-color: rgba(9, 15, 63, 9);
+    color: #fff;
+}
+
+select:focus {
+    outline: none;
+}
+select:focus-visible {
+    outline: 3px solid rgba(64,150,255,0.32);
+    outline-offset: 4px;
 }
 
 .botao {
-    background-size: 200%;
-    animation: rainbow var(--speed, 3s) infinite linear;
+    margin-top: 16px;
+    text-align: center;
+    background: transparent;
+    cursor: pointer;
+    color: rgb(251, 254, 255);
+    border-color: transparent;
 }
-
-.botao:before {
-    position: absolute;
-    bottom: -20%;
-    left: 50%;
-    z-index: 0;
-    height: .5rem;
-    width: 80%;
-    --tw-translate-x: -50%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-    content: var(--tw-content);
-    background: linear-gradient(90deg, rgb(var(--red)), rgb(var(--orange)), rgb(var(--yellow)), rgb(var(--green)), rgb(var(--blue)), rgb(var(--pink)), rgb(var(--purple)), rgb(var(--red)));
-    background-size: 200%;
-    filter: blur(.8rem);
-    animation: rainbow var(--speed, 2s) infinite linear;
-}
-
-
 
 .botao:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    background: linear-gradient(180deg,#ffff26,#ffffc2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-@keyframes rainbow {
-    0% { background-position: 0; }
-    to { background-position: 200%; }
+.botao:focus {
+    outline: none;
+}
+.botao:focus-visible {
+    outline: 3px solid rgba(64,150,255,0.32);
+    outline-offset: 4px;
+    box-shadow: 0 6px 20px rgba(64,150,255,0.08);
+}
+
+@keyframes fundo {
+    0% {background-position: 0 0;}
+    100% {background-position: -300px 300px;}
 }

@@ -28,24 +28,20 @@ $pastas = listarPastas("./", ["Styles", "Fonts"]);
 
     <header>
         <h1>Escolha o Documento!</h1>
-        <div class="credits">Developed by Rodrigo L. Cassilhas</div>
     </header>
 
     <body>
-        <form action='<?php echo $file?>' method="post" class="formulario">
-
-            <label for="doc">Selecione o Documento:</label>
-            <div class="">
+        <form action='<?php echo $file?>' method="post">
                 <select name="doc" id="doc">
                 <option value="">Selecione...</option>
                     <?php foreach ($pastas as $pasta): ?>
                         <option value="/<?= $pasta ?>"><?= $pasta ?></option>
                     <?php endforeach; ?>
                 </select>
-            </div>
 
-            <input class="botao-iris group" type="submit" value="Ir para documento">
-        </form>        
+            <input class="botao" type="submit" value="Ir para documento">
+        </form>
+        <div class="credits">Developed by Rodrigo L. Cassilhas</div>
     </body>
     
 </html>
