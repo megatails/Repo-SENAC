@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style2.css">
-    <title>Exercicio 1</title>
+    <title>Exercicio 7</title>
 </head>
     <header>
-        <h1>Exercicio 1</h1>
+        <h1>Exercicio 7</h1>
     </header>
     <body>
         <form action="" method="POST">

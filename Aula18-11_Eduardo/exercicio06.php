@@ -11,44 +11,34 @@
     </header>
     <body>
         <form action="" method="POST">
-            <label for="num1">Insira o valor de <span style="color: dodgerblue;">A</span></label>
-            <input type="number" name="num1" id="num1" required>
-
-            <label for="num2">Insira o valor de <span style="color: crimson;">B</span></label>
-            <input type="number" name="num2" id="num2" required>
-
-            <label for="num3">Insira o valor de <span style="color: violet;">C</span></label>
-            <input type="number" name="num3" id="num3" required><br>
+            <label for="num1">Insira o valor do seu <span style="color: dodgerblue;">Salário</span></label>
+            <input type="number" step="0.01" name="num1" id="num1" required>
 
 
-            <input class="arco-iris" type="submit" value="Qual o maior número?">
+
+            <input class="arco-iris" type="submit" value="Calcular?">
         </form>
     </body>
 </html>
 
 <?php
-    $a = $_POST["num1"];
-    $b = $_POST["num2"];
-    $c = $_POST["num3"];
+    $var1 = $_POST["num1"];
+    $desc = $var1*0.275;
+    $result = $var1 - $desc;
 
-    //A 7
-    //B 4
-    //C 2
-
-if ($a != $b && $a != $c && $b != $c) {
-    if ($a > $b && $b > $c) {
-        echo "<h1 class='resposta'> A é o maior</h1>";
-        } 
-        elseif ($a < $b && $c < $b) {
-            echo "<h1 class='resposta'> B é o maior</h1>";
+    if ($var1 != null && $var1 != 0) 
+    {
+        if ($var1 <= 280.00) {
+            echo "<h1 class='resposta'>O seu salario era: <span style='color: coral'>" .  $var1. "</span><br> portanto, será aumentado em<span style='color: lightgreen'>20%</span><br>". "Um aumento de <span style='color: lightskyblue'>". $var1 * 0.20 . "</span><br>Seu salario agora é: <span class='arco-iris'> " . $var1 * 1.20 . "</span></h1>";
+        } else if ($var1 >= 280.01 && $var1 <= 699.99) {
+            echo "<h1 class='resposta'>O seu salario era: <span style='color: coral'>" .  $var1. "</span><br> portanto, será aumentado em <span style='color: lightgreen'>15%</span><br>". "Um aumento de <span style='color: lightskyblue'>". $var1 * 0.15 . "</span><br>Seu salario agora é: <span class='arco-iris'> " . $var1 * 1.15 . "</span></h1>";
+        } else if($var1 >= 700.00 && $var1 <= 1499.99) {
+            echo "<h1 class='resposta'>O seu salario era: <span style='color: coral'>" .  $var1. "</span><br> portanto, será aumentado em <span style='color: lightgreen'>10%</span><br>". "Um aumento de <span style='color: lightskyblue'>". $var1 * 0.10 . "</span><br>Seu salario agora é: <span class='arco-iris'> " . $var1 * 1.10 . "</span></h1>";
         }
-        else  {
-            echo "<h1 class='resposta'> C é o maior</h1>";
+        else {
+            echo "<h1 class='resposta'>O seu salario era: <span style='color: coral'>" .  $var1. "</span><br> portanto, será aumentado em <span style='color: lightgreen'>5%</span><br>". "Um aumento de <span style='color: lightskyblue'>". $var1 * 0.05 . "</span><br>Seu salario agora é: <span class='arco-iris'> " . $var1 * 1.05 . "</span></h1>";
         }
-}
-else {
-    echo "<h1 class='resposta'>Há número repetidos! <br> tente números diferentes<h1>";
-}
+    }
 ?>
 
 <html>

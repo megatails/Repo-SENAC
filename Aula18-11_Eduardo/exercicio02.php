@@ -11,8 +11,23 @@
     </header>
     <body>
         <form action="" method="POST">
-            <label for="num1">Insira o <span style="color: dodgerblue;"> número: </span></label>
+            <h1>Insira quantos lados tem o seu<span style="color: lightgreen;">Objeto: </span>:</h1>
+
+            <label for="num1">Insira o <span style="color: dodgerblue;"> primeiro</span> número: </label>
             <input type="number" name="num1" id="num1" required>
+
+            <label for="num2">Insira o <span style="color: dodgerblue;"> segundo</span> número: </label>
+            <input type="number" name="num2" id="num2" required>
+
+            <label for="num3">Insira o <span style="color: dodgerblue;"> terceiro</span> número: </label>
+            <input type="number" name="num3" id="num3" required>
+
+            <label for="num4">Insira o <span style="color: dodgerblue;"> quarto</span> número: </label>
+            <input type="number" name="num4" id="num4" required>
+
+            <label for="num5">Insira o <span style="color: dodgerblue;"> quintoo</span> número: </label>
+            <input type="number" name="num5" id="num5" required>
+
 
             <input class="arco-iris" type="submit" value="Par ou Impar?">
         </form>
@@ -21,17 +36,21 @@
 
 <?php
     $var1 = $_POST["num1"];
+    $var2 = $_POST["num2"];
+    $var3 = $_POST["num3"];
+    $var4 = $_POST["num4"];
+    $var5 = $_POST["num5"];
+    $var6 = $_POST["num6"];
 
-
-    if ($var1 != null) {
-
-    
-        if ($var1 % 2== 0) {
-            echo "<h1 class='resposta'>". "O número " . "<span style='color: dodgerblue'>$var1</span>" . " é " . "<span style='color: crimson'>> Par <</span></h1>";
-        } else {
-            echo "<h1 class='resposta'>". "O número " . "<span style='color: dodgerblue'>$var1</span>" . " é " . "<span style='color: crimson'>> Impar <</span></h1>";
-        }
+    if (is_numeric($var1)) {
+        } else if (is_numeric($var2)) {
+        } else if (is_numeric($var3)) {
+        
     }
+    else {
+        echo "<h1 class='resposta'>O número é <span style:'color: hotpink'> Inválido</span></h1>"; 
+    }
+
 ?>
 
 <html>
