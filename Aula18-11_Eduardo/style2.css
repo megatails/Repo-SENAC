@@ -55,6 +55,14 @@ input{
     font-family: 'MyFont', Arial, sans-serif;
 }
 
+.radio{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+
 .credits{
     text-align: center;
     font-size: 10px;

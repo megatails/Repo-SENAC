@@ -39,14 +39,6 @@
         <form action="exercicio08.php" method="post">
         <input class="botao" type="submit" value="Exercicio 08">
         </form>
-
-        <form action="exercicio09.php" method="post">
-        <input class="botao" type="submit" value="Exercicio 09">
-        </form>
-
-        <form action="exercicio10.php" method="post">
-        <input class="botao" type="submit" value="Exercicio 10">
-        </form>
     </div>
         
         <div class="credits">Developed by Rodrigo L. Cassilhas</div>
