@@ -110,21 +110,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $tri_Equi = ((pow($var1,2) * sqrt(3)) / 4);
         
-        if ($var1 == $var2 || $var1 == $var3 || $var2 == $var3) {
+        if ($qnt == 3) {
+            if ($var1 == $var2 || $var1 == $var3 || $var2 == $var3) {
 
-            if ($var1 != $var2 || $var1 != $var3) {
-            $a = $var1;
+                if ($var1 != $var2 || $var1 != $var3) {
+                $a = $var1;
+                }
+
+                if ($a == $var2) {
+                    $b = $var3;
+                } else {
+                    $b = $var2;
+                }
+
+                $c = (pow($a, exponent: 2) + pow($b, 2));
+                $altura = sqrt($c);
+                $tri_Iso = (($a * $altura) / 2);
             }
-
-            if ($a == $var2) {
-                $b = $var3;
-            } else {
-                $b = $var2;
-            }
-
-            $c = (pow($a, exponent: 2) + pow($b, 2));
-            $altura = sqrt($c);
-            $tri_Iso = (($a * $altura) / 2);
         }
         
         // $tri_Esca = () ;
@@ -139,12 +141,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
         else if ($qnt == 4) {
-            echo "<h1 class='resposta'>Os valores da área é: </h1>" . $var * $var;
+            if ($num1 == $num2 && $num2 == $num3 && $num3 == $num4) {
+            echo "<h1 class='resposta'>É um Quadrado! O valor da área é: </h1>" . $var1 * $var1;
+            }
+            
+            else if ($num1 == $num3 && $num2 == $num4) {
+            $area = $num1 * $num2;
+            echo "<h1 class='resposta'>É um Retângulo! O valor da área é: </h1>" . $area;
+            }
+            else {
+                echo "<h1 class='resposta'>Não é possível calcular a área</h1>";
+            }
         }
         else if ($qnt == 5) {
-            echo "<h1 class='resposta'>Os valores da área é: </h1>" . $var;
+            if ($num1 == $num2 && $num2 == $num3 && $num3 == $num4 && $num4 == $num5) {
+            $s = $num1;
+            $area = (5 * $s * $s) / (4 * tan(pi() / 5));
+            echo "<h1 class='resposta'>Os valores da área é: </h1>" . $area;
+            }
+            else {
+                echo "<h1 class='resposta'>Não é possível calcular a área</h1>";
+            }
         }
-
         else {
             echo "<h1 class='resposta'>Aguardando Valores...!</h1>";
         }

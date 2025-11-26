@@ -60,16 +60,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $condenado = $perg1 + $perg2 + $perg3 + $perg4 + $perg5;
     if ($condenado <= 1) {
-        echo "<h1 class='resposta'>Você é <span style='color: green'>Inocente</span></h1>";
+        echo "<h1 class='resposta'>Você é <span style='color: green'>Inocente!</span></h1>";
     }
         else if ($condenado == 2) {
-            echo "<h1 class='resposta'>Você é <span style='color: crimson'>SUS</span></h1>";
+            echo "<h1 class='resposta'>Você é <span style='color: crimson'>Suspeito!</span></h1>";
     }
         else if ($condenado >= 3 && $condenado <= 4) {
-            echo "<h1 class='resposta'>Você é <span style='color: hotpink'>Cúmplice</span></h1>";
+            echo "<h1 class='resposta'>Você é <span style='color: hotpink'>Cúmplice!</span></h1>";
     }
         else if ($condenado >= 5) {
-            echo "<h1 class='resposta'>Você é o <span class='arco-iris'>AMOGUS!!!!</span></h1>";
+            echo "<h1 class='resposta'>Você é o <span class='arco-iris'>ASSASSINO!!!!</span></h1>";
     }
 }
 ?>
