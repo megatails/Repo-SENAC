@@ -13,7 +13,7 @@ function listarPastas($dir, $ignorar = []) {
     return array_diff($pastas, $ignorar);
 }
 
-$pastas = listarPastas("./", ["Styles", "Fonts"]);
+$pastas = listarPastas("./", ["Styles", "Fonts", "_DB"]);
 ?>
 
 
