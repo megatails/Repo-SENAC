@@ -6,12 +6,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: {$file}/index.php");
         exit;
     }
+    
+    if (isset($_POST['doc']) ) {
+        $doc = $_POST['doc'];
+    } else {
+        $doc = false;
+    }
+
 }
 
 function listarPastas($dir, $ignorar = []) {
     $pastas = array_map('basename', array_filter(glob("$dir/*"), 'is_dir'));
     return array_diff($pastas, $ignorar);
 }
+
 
 $pastas = listarPastas("./", ["Styles", "Fonts", "_DB"]);
 ?>
@@ -32,14 +40,19 @@ $pastas = listarPastas("./", ["Styles", "Fonts", "_DB"]);
 
     <body>
         <form action='<?php echo $file?>' method="post">
-                <select name="doc" id="doc">
+                <select title="doc" name="doc" id="doc">
                 <option value="">Selecione...</option>
                     <?php foreach ($pastas as $pasta): ?>
                         <option value="/<?= $pasta ?>"><?= $pasta ?></option>
                     <?php endforeach; ?>
                 </select>
 
-            <input class="botao" type="submit" value="Ir para documento">
+            <?php if ($doc == true) {?>
+                <input class="botao" type="submit" value="Ir para documento">
+            <?php } else { ?>
+                <input class="botao" type="submit" value="Ir para documento" disabled>
+            <?php } ?>
+
         </form>
         <div class="credits">Developed by Rodrigo L. Cassilhas</div>
     </body>
