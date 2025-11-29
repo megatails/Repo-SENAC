@@ -7,12 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
     
-    if (isset($_POST['doc']) ) {
-        $doc = $_POST['doc'];
-    } else {
-        $doc = false;
-    }
 
+    echo $file . "AAAAA";
 }
 
 function listarPastas($dir, $ignorar = []) {
@@ -47,7 +43,7 @@ $pastas = listarPastas("./", ["Styles", "Fonts", "_DB"]);
                     <?php endforeach; ?>
                 </select>
 
-            <?php if ($doc == true) {?>
+            <?php if ($$file == true) {?>
                 <input class="botao" type="submit" value="Ir para documento">
             <?php } else { ?>
                 <input class="botao" type="submit" value="Ir para documento" disabled>

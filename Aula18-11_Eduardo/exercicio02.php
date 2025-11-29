@@ -1,4 +1,5 @@
 <?php
+session_start();
 $qnt = $_POST["qnt"] ?? null;
 if (isset($_POST['reset'])) {
     $qnt = null;
