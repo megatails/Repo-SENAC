@@ -46,7 +46,7 @@ $pastas = listarPastas("./", ["Styles", "Fonts", "_DB"]);
             <?php if ($$file == true) {?>
                 <input class="botao" type="submit" value="Ir para documento">
             <?php } else { ?>
-                <input class="botao" type="submit" value="Ir para documento" disabled>
+                <input class="botao" type="submit" value="Ir para documento" >
             <?php } ?>
 
         </form>

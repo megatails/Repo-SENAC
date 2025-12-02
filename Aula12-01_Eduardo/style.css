@@ -1,0 +1,122 @@
+@font-face{
+    font-family: 'MyFont';
+    src: url('/Fonts/DT-8Bit-Ch3.otf.woff2') format('opentype');
+}
+
+*, :after, :before {
+    font-family: 'MyFont', Arial, sans-serif;
+}
+
+
+body{
+    zoom: 1.5;
+    background-repeat: repeat;
+    background-position: center;
+    background-color: rgb(9, 15, 63);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+    margin-top: 100px;
+    background-image: url('/star.gif');
+    background-repeat: repeat;
+    animation: fundo 30s linear infinite;
+
+}
+
+.multi{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(251, 254, 255);
+}
+
+header{
+    text-align: center;
+    color: rgb(251, 254, 255);
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    display: table;
+    
+    text-shadow: 4px 4px 0 rgb(8, 15, 81);
+}
+
+.credits{
+    text-align: center;
+    font-size: 6px;
+    color: #888;
+    margin-top: 350px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(251, 254, 255);
+}
+
+select{
+    appearance: none;
+    text-align: center;
+    padding: 4px;
+    cursor: pointer;
+    background-color: transparent;
+    color: rgb(251, 254, 255);
+    border: 2px solid rgba(255,255,255,0.85);
+}
+
+select option {
+    background-color: rgba(9, 15, 63, 9);
+    color: #fff;
+}
+
+select:focus {
+    outline: none;
+}
+select:focus-visible {
+    outline: 3px solid rgba(64,150,255,0.32);
+    outline-offset: 4px;
+}
+
+.botao {
+    margin-top: 16px;
+    text-align: center;
+    background: transparent;
+    cursor: pointer;
+    color: rgb(251, 254, 255);
+    border-color: transparent;
+}
+
+.botao:hover {
+    background: linear-gradient(180deg,#ffff26,#ffffc2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.botao:focus {
+    outline: none;
+}
+.botao:focus-visible {
+    outline: 3px solid rgba(64,150,255,0.32);
+    outline-offset: 4px;
+    box-shadow: 0 6px 20px rgba(64,150,255,0.08);
+}
+
+@keyframes fundo {
+    0% {background-position: 0 0;}
+    100% {background-position: -300px 300px;}
+}
