@@ -19,11 +19,12 @@
         <form action="exercicio03.php" method="post">
         <input class="botao" type="submit" value="Exercicio 03">
         </form>
-
+    </div>
+    <div class='multi'>
         <form action="exercicio04.php" method="post">
         <input class="botao" type="submit" value="Exercicio 04">
         </form>
-
+    
         <form action="exercicio05.php" method="post">
         <input class="botao" type="submit" value="Exercicio 05">
         </form>
@@ -31,6 +32,8 @@
         <form action="exercicio06.php" method="post">
         <input class="botao" type="submit" value="Exercicio 06">
         </form>
+    </div>
+    <div class='multi'>
 
         <form action="exercicio07.php" method="post">
         <input class="botao" type="submit" value="Exercicio 07">
@@ -38,12 +41,13 @@
 
         <form action="exercicio08.php" method="post">
         <input class="botao" type="submit" value="Exercicio 08">
-        </form><br>
+        </form>
 
         <form action="exercicio09.php" method="post">
         <input class="botao" type="submit" value="Exercicio 09">
         </form>
-
+    </div>
+    <div class='multi'>
         <form action="exercicio10.php" method="post">
         <input class="botao" type="submit" value="Exercicio 10">
         </form>
@@ -55,6 +59,8 @@
         <form action="exercicio12.php" method="post">
         <input class="botao" type="submit" value="Exercicio 12">
         </form>
+    </div>
+    <div class='multi'>
         
         <form action="exercicio13.php" method="post">
         <input class="botao" type="submit" value="Exercicio 13">
@@ -68,7 +74,7 @@
         <input class="botao" type="submit" value="Exercicio 15">
         </form>
     </div>
-        
+
         <div class="credits">Developed by Rodrigo L. Cassilhas</div>
     
 </body>
