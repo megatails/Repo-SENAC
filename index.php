@@ -17,7 +17,7 @@ function listarPastas($dir, $ignorar = []) {
 }
 
 
-$pastas = listarPastas("./", ["Styles", "Fonts", "_DB"]);
+$pastas = listarPastas("./", ["Styles", "Fonts", "_DB", "Images"]);
 ?>
 
 
