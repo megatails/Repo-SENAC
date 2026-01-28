@@ -1,4 +1,37 @@
+body{
+    display: flex;
+    font-family: 'MyFont', Arial, sans-serif;
+    background-color: #d4ebff;
+    color: #000000;
+    width: 200;
+    max-width: 550px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 89, 255, 0.6);
+    font-size: 18px;
+}
+
 form{
-    padding: 50px;
-    
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    width: 400px;
+    gap: 5px;
+    margin-left: 5px;
+    color: rgb(13, 22, 46);
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.botao-lista {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    background: #444;
+    padding:12px;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size:15px;
 }

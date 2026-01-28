@@ -1,41 +1,34 @@
-<?php 
-
-
-?>
-    
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Representante</title>
+    <title>Document</title>
 </head>
 <body>
-    Olá,boas vindas à votação do Representante de turma!<br>
+    Boas vindas a votação!<br>
 
-    Digite seu email do SENAC abaixo para iniciar a votação:
-    <input type="email"><br><br>
-    <form action="" method="post">
-        <label for="">Selecione sua turma: </label>
-        <input id="turma" name="turma"><br><br>
+    <label for="votacao"></label>
+    <h2><a class="botao-lista" href="votacao.php">Entrar na Votação!</a></h2>
 
-        <label for="nome">Digite seu nome: </label>
-        <input id="nome" name="nome"><br><br>
-
-        <label for="cpf">Digite seu CPF: </label>
-        <input id="cpf" name="cpf"><br><br>
-        
-        
-
-        <input type="submit">
-    </form>
+    <h3 style="color: crimson;">Area do Professor</h3>
+    <label for="cadastroA"></label>
+    <a class="botao-lista" id="cadastroA" href="cadastroAlunos.php">Cadastrar Alunos</a><br>
     
-    
+    <label for="cadastroT"></label>
+    <a class="botao-lista" id="cadastroT" href="cadastroTurmas.php">Cadastrar Turmas</a>
 </body>
 </html>
 
-<?php   
-    $nome = $_POST['nome'];
-    echo $nome;
+<?php 
+    $chkEmail = $_POST['chkEmail'];
+
+    if (str_contains($chkEmail, '@docente.br'))  {
+        echo 'Bem vindo professor, aqui você pode cadastrar suas turmas para a votação:';
+
+        
+    } else {
+        echo 'Você não tem permissão para fazer isso.';
+    }
+
 ?>
