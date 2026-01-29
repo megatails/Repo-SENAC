@@ -3,20 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Votação</title>
 </head>
+
 <body>
-    Boas vindas a votação!<br>
+    <div class="container">
 
-    <label for="votacao"></label>
-    <h2><a class="botao-lista" href="votacao.php">Entrar na Votação!</a></h2>
+        <h1>🗳️ Bem-vindo à votação!</h1>
 
-    <h3 style="color: crimson;">Area do Professor</h3>
-    <label for="cadastroA"></label>
-    <a class="botao-lista" id="cadastroA" href="cadastroAlunos.php">Cadastrar Alunos</a><br>
-    
-    <label for="cadastroT"></label>
-    <a class="botao-lista" id="cadastroT" href="cadastroTurmas.php">Cadastrar Turmas</a>
+        <a class="botao-lista principal" href="votacao.php">
+            Entrar na Votação
+        </a>
+
+        <div class="professor">
+            <h3>Área do Professor</h3>
+
+            <a class="botao-lista" href="cadastroAlunos.php">
+                Cadastrar Alunos
+            </a>
+
+            <a class="botao-lista" href="cadastroTurmas.php">
+                Cadastrar Turmas
+            </a>
+        </div>
+
+    </div>
 </body>
 </html>
 
