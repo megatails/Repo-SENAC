@@ -47,8 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dados = file_get_contents("alunos.txt");
 
         if(str_contains($dados, $raAluno)) {
-            echo 'falha'; 
-            sleep(4);
+            $erro = "aluno já cadastrado";
             header("Location: cadastroAlunos.php");
             exit();
         }
@@ -57,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     file_put_contents("alunos.txt",($nomeAluno . " | " . $raAluno . " | " . $turmaAluno).PHP_EOL, FILE_APPEND);
     header("Location: completo.php");
+    $erro = null;
     exit();
 }
 
