@@ -16,6 +16,14 @@
             Entrar na Votação
         </a>
 
+        <a class="botao-lista principal" href="email.php"><<<< Voltar</a>
+
+<?php
+$chkEmail = $_POST['entryEmail'];
+    if (str_contains($chkEmail, '@docente.br'))  {
+        
+?>
+
         <div class="professor">
             <h3>Área do Professor</h3>
 
@@ -27,20 +35,7 @@
                 Cadastrar Turmas
             </a>
         </div>
-
+        <?php }?>
     </div>
 </body>
 </html>
-
-<?php 
-    $chkEmail = $_POST['chkEmail'];
-
-    if (str_contains($chkEmail, '@docente.br'))  {
-        echo 'Bem vindo professor, aqui você pode cadastrar suas turmas para a votação:';
-
-        
-    } else {
-        echo 'Você não tem permissão para fazer isso.';
-    }
-
-?>

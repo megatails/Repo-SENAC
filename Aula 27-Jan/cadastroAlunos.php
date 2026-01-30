@@ -1,47 +1,63 @@
-<?php 
+<?php
+    $turmas = file("turmas.txt");
 
-
-?>
     
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Representante</title>
+    <title>Cadastrar Alunos</title>
 </head>
 <body>
-    
-    <form action="votacao.php" method="post">
-        <a class="botao-lista" href="index.php"><<<< Voltar</a>
-        
-        Digite seu email do SENAC abaixo para iniciar a votação:
-        <input type="email"><br><br>
-    
-        <label for="">Selecione sua turma: </label>
-        <input id="turma" name="turma"><br><br> <!--id == front / name == back -->
+    <form action="" method="post">
+        <a class="botao-lista principal" href="index.php"><<<< Voltar</a>
+        <label for="nomeAluno">Digite o seu nome: </label>
+        <input id="nomeAluno" name="nomeAluno" type="text" required>
 
-        <label for="nome">Digite seu nome: </label>
-        <input id="nome" name="nome"><br><br>
+        <label for="raAluno">Digite o seu <span style="color='crimson'">RA</div>: </label>
+        <input id="raAluno" name="raAluno" type="text" required>
 
-        <label for="cpf">Digite seu CPF: </label>
-        <input id="cpf" name="cpf"><br><br>
-
-        <select name="" id="">
-            <option value=""></option> <!-- Descobrir como ler os alunos -->
+        <label for="turmaAluno">Escolha a sua turma: </label>
+        <select name="turmaAluno" id="turmaAluno">
+            <option value="">Selecione...</option>
+            <?php foreach ($turmas as $turma): ?>
+                <option value="<?= $turma ?>"><?= $turma ?></option>
+            <?php endforeach; ?>
         </select>
-        
-        
 
         <input type="submit">
-    </form>   
+    </form>
     
 </body>
 </html>
 
-<?php   
-    $nome = $_POST['nome'];
-    echo $nome;
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nomeAluno = $_POST['nomeAluno'];
+    $raAluno = $_POST['raAluno'];
+    $turmaAluno = $_POST['turmaAluno'];
+
+    if(file_exists("alunos.txt"))
+    {
+        $dados = file_get_contents("alunos.txt");
+
+        if(str_contains($dados, $raAluno)) {
+            echo 'falha'; 
+            sleep(4);
+            header("Location: cadastroAlunos.php");
+            exit();
+        }
+
+    }
+
+    file_put_contents("alunos.txt",($nomeAluno . " | " . $raAluno . " | " . $turmaAluno).PHP_EOL, FILE_APPEND);
+    header("Location: completo.php");
+    exit();
+}
 
 ?>

@@ -8,6 +8,7 @@
 </head>
 <body>
     <form action="" method="post">
+        <a class="botao-lista principal" href="index.php"><<<< Voltar</a>
         <label for="nomeTurma">Digite o nome da Turma</label>
         <input id="nomeTurma" name="nomeTurma" type="text" required>
 
@@ -17,26 +18,21 @@
 </body>
 </html>
 
+
 <?php
-$turma = $_POST['nomeTurma'];
-if(file_exists("turmas.txt"))
-{
-    $linhas = file("turmas.txt", FILE_IGNORE_NEW_LINES);
-    $test = file_get_contents("turmas.txt");
-    if(str_contains($test, $turma)){
-        $turma = $turma
-    };
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nomeTurma = $_POST['nomeTurma'];
+    if(file_exists("turmas.txt"))
+    {
+        $dados = file_get_contents("turmas.txt");
 
-    echo $linhas . ' LINHAS';
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
-    echo "<br>";
+        $qnt = str_word_count($dados, 0, $nomeTurma);
+        echo $qnt;
 
-    echo $test . ' TESTE';
+    }
+    file_put_contents("turmas.txt",($nomeTurma . $qnt+1).PHP_EOL, FILE_APPEND);
+    header("Location: completo.php");
+    exit();
 }
-file_put_contents("turmas.txt",$turma.PHP_EOL, FILE_APPEND);
-
-
 
 ?>
