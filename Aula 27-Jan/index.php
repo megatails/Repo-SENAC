@@ -16,14 +16,13 @@
             Entrar na Votação
         </a>
 
-        <a class="botao-lista principal" href="email.php"><<<< Voltar</a>
-
+        <a class="botao-lista principal" href="email.php">
+            <<<< Trocar Email
+        </a>
 <?php
 $chkEmail = $_POST['entryEmail'];
     if (str_contains($chkEmail, '@docente.br'))  {
-        
 ?>
-
         <div class="professor">
             <h3>Área do Professor</h3>
 
