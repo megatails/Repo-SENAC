@@ -1,7 +1,5 @@
 <?php
-    $turmas = file("turmas.txt");
-
-    
+    $turmas = file("turmas.txt");    
 ?>
 
 <!DOCTYPE html>
@@ -14,11 +12,11 @@
 </head>
 <body>
     <form action="" method="post">
-        <a class="botao-lista principal" href="index.php"><<<< Voltar</a>
+        <a class="botao-lista principal" href="menu.php"><<<< Voltar</a>
         <label for="nomeAluno">Digite o seu nome: </label>
         <input id="nomeAluno" name="nomeAluno" type="text" required>
 
-        <label for="raAluno">Digite o seu <span style="color='crimson'">RA</div>: </label>
+        <label for="raAluno">Digite o seu RA</span>: </label>
         <input id="raAluno" name="raAluno" type="text" required>
 
         <label for="turmaAluno">Escolha a sua turma: </label>
@@ -51,7 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: cadastroAlunos.php");
             exit();
         }
-
     }
 
     file_put_contents("alunos.txt",($nomeAluno . " | " . $raAluno . " | " . $turmaAluno).PHP_EOL, FILE_APPEND);
