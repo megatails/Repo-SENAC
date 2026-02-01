@@ -25,14 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(file_exists("turmas.txt"))
     {
         $dados = file_get_contents("turmas.txt");
-
         $qnt = str_word_count($dados, 0, $nomeTurma);
-        echo $qnt;
-
     }
     file_put_contents("turmas.txt",($nomeTurma . $qnt+1).PHP_EOL, FILE_APPEND);
-    header("Location: completo.php");
-    exit();
 }
 
 ?>
