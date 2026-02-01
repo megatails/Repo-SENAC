@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $chkEmail = $_SESSION['entryEmail'] ?? '';
 ?>
 
 <!DOCTYPE html>
@@ -20,3 +19,13 @@
     </form>
 </body>
 </html>
+
+<?php 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $entryEmail = $_POST['entryEmail'];
+    $_SESSION['entryEmail'] = $_POST['entryEmail'];
+    header('Location: menu.php'); 
+    exit;
+}
+
+?>

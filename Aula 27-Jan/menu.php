@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $chkEmail = $_SESSION['entryEmail'] ?? '';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
