@@ -7,16 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="index.php">
+    <form action="menu.php">
         <h1>Cadastro realizado com sucesso!</h1>
         <button class="arco-iris" >Voltar</button>
     </form>
 </body>
 </html>
-
-<?php 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    header("Location: index.php");
-    exit();
-}
-?>
