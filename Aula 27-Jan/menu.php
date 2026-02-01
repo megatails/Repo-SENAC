@@ -9,32 +9,18 @@
 
 <body>
     <div class="container">
-
         <h1>Bem-vindo à votação!</h1>
-
-        <a class="botao-lista principal" href="votacao.php">
-            Entrar na Votação
-        </a>
-
-        <a class="botao-lista principal" href="index.php">
-            <<<< Trocar Email
-        </a>
-<?php
-$chkEmail = $_POST['entryEmail'];
-    if (str_contains($chkEmail, '@docente.com.br'))  {
-?>
-        <div class="professor">
-            <h3>Área do Professor</h3>
-
-            <a class="botao-lista" href="cadastroAlunos.php">
-                Cadastrar Alunos
-            </a>
-
-            <a class="botao-lista" href="cadastroTurmas.php">
-                Cadastrar Turmas
-            </a>
-        </div>
-        <?php }?>
+        <a class="botao-lista principal" href="votacao.php">Entrar na Votação</a>
+        <a class="botao-lista principal" href="index.php"><<<< Trocar Email</a><?php
+        
+        $chkEmail = $_POST['entryEmail'];
+        if (str_contains($chkEmail, '@docente.com.br'))  {?>
+            <div class="professor">
+                <h3>Área do Professor</h3>
+                <a class="botao-lista" href="cadastroAlunos.php">Cadastrar Alunos</a>
+                <a class="botao-lista" href="cadastroTurmas.php">Cadastrar Turmas</a>
+            </div><?php
+        }?>
     </div>
 </body>
 </html>
