@@ -1,6 +1,6 @@
 <?php
-    $turmas = file("./Aula27-Jan/turmas.txt");
-    $alunosArray = file("./Aula27-Jan/alunos.txt");
+    $turmas = file("turmas.txt");
+    $alunosArray = file("alunos.txt");
 ?>
 
 <!DOCTYPE html>

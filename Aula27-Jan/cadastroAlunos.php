@@ -1,5 +1,5 @@
 <?php
-    $turmas = file("./Aula27-Jan/turmas.txt");    
+    $turmas = file("turmas.txt");    
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $msg = "";
     $icJaCadastrado = false;
 
-    $alunosArray = file("./Aula27-Jan/alunos.txt");
+    $alunosArray = file("alunos.txt");
     foreach ($alunosArray as $alunoLinha) {
         $alunoDados = explode(" | ", $alunoLinha);
         if(trim($alunoDados[1]) == $raAluno) {
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $msg = "Aluno já cadastrado.";
     else
     {
-        file_put_contents("./Aula27-Jan/alunos.txt",($nomeAluno . " | " . $raAluno . " | " . $turmaAluno).PHP_EOL, FILE_APPEND);
+        file_put_contents("alunos.txt",($nomeAluno . " | " . $raAluno . " | " . $turmaAluno).PHP_EOL, FILE_APPEND); //"./Aula27-Jan/alunos.txt"
         $msg = "Cadastro realizado com sucesso!";
     }
 

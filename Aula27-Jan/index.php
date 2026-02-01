@@ -11,7 +11,7 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="menu.php" method="post">
+    <form method="post">
         <h1>Votação de Representante!</h1>
         <label for="entryEmail">Digite seu email para entrar na votação</label><br><br>
         <input type="email" name="entryEmail" id="entryEmail" required>
@@ -22,10 +22,9 @@
 
 <?php 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $entryEmail = $_POST['entryEmail'];
     $_SESSION['entryEmail'] = $_POST['entryEmail'];
     header('Location: menu.php'); 
-    exit;
+    exit();
 }
 
 ?>

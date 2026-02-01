@@ -1,9 +1,10 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $raAluno = $_POST["aluno"];
-    file_put_contents( "./Aula27-Jan/votos.txt", $raAluno.PHP_EOL  , FILE_APPEND );
-    $votos = file_get_contents("./Aula27-Jan/votos.txt");
-    $alunosArray = file("./Aula27-Jan/alunos.txt");
+    file_put_contents( "votos.txt", $raAluno.PHP_EOL  , FILE_APPEND );
+    
+    $votos = file_get_contents("votos.txt");
+    $alunosArray = file("alunos.txt");
 }
 ?>
 
