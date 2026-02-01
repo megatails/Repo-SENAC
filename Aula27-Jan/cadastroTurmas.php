@@ -22,12 +22,12 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nomeTurma = $_POST['nomeTurma'];
-    if(file_exists("turmas.txt"))
+    if(file_exists("./Aula27-Jan/turmas.txt"))
     {
-        $dados = file_get_contents("turmas.txt");
+        $dados = file_get_contents("./Aula27-Jan/turmas.txt");
         $qnt = str_word_count($dados, 0, $nomeTurma);
     }
-    file_put_contents("turmas.txt",($nomeTurma . $qnt+1).PHP_EOL, FILE_APPEND);
+    file_put_contents("./Aula27-Jan/turmas.txt",($nomeTurma . $qnt+1).PHP_EOL, FILE_APPEND);
 }
 
 ?>
