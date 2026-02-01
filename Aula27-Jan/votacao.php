@@ -1,6 +1,6 @@
 <?php
-    $turmas = file("turmas.txt");
-    $alunosArray = file("alunos.txt");
+    $turmas = file("./Aula27-Jan/turmas.txt");
+    $alunosArray = file("./Aula27-Jan/alunos.txt");
 ?>
 
 <!DOCTYPE html>
@@ -25,27 +25,28 @@
                 </select>
 
                 <button type="submit" value="turmaAluno">Confirmar Seleção</button> <br><br>
+                <a class="botao-lista principal" href="menu.php"><<<< Voltar para o Menu</a>
             </form><?php
         } ?>
             
         <!-- Formulário para selecionar o ALUNO --><?php 
         if(!empty($_POST['turmaAluno'])) { ?>
-            <form action="">
+            <form action="resultados.php" method="post">
                 <label for="aluno">Escolha seu voto para Representante</label>
-                <select name="aluno" id="aluno">
+                <select name="aluno" id="aluno" required>
                     <option value="">Selecione...</option><?php 
                     
                     foreach ($alunosArray as $alunoLinha): 
                         $alunoDados = explode(' | ', $alunoLinha);
                         $turmaSelect = $_POST['turmaAluno'];
-                        
-                        if($alunoDados[2] == $turmaSelect): ?>
-                            <option value="<?= $alunoDados[0] ?>"> <?= $alunoDados[0] ?> </option><?php
-                        endif; ?><?php 
-                        
+
+                        if(trim($alunoDados[2]) == trim($turmaSelect)): ?>
+                            <option value="<?= $alunoDados[1] ?>"> <?= $alunoDados[0] ?> </option><?php
+                        endif; ?><?php                         
                     endforeach; ?>
                 </select>
                 <button type="submit" value="aluno">Confirmar Voto</button>
+                <a class="botao-lista principal" href="votacao.php"><<<< Trocar Turma</a>
             </form><?php 
         } ?>
 

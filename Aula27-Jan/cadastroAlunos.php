@@ -1,5 +1,5 @@
 <?php
-    $turmas = file("turmas.txt");    
+    $turmas = file("./Aula27-Jan/turmas.txt");    
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +20,11 @@
         <input id="raAluno" name="raAluno" type="text" required>
 
         <label for="turmaAluno">Escolha a sua turma: </label>
-        <select name="turmaAluno" id="turmaAluno">
-            <option value="">Selecione...</option>
-            <?php foreach ($turmas as $turma): ?>
-                <option value="<?= $turma ?>"><?= $turma ?></option>
-            <?php endforeach; ?>
+        <select name="turmaAluno" id="turmaAluno" required>
+            <option value="">Selecione...</option><?php
+            foreach ($turmas as $turma): ?>
+                <option value="<?= $turma ?>"><?= $turma ?></option><?php
+            endforeach;?>
         </select>
 
         <input type="submit">
@@ -39,24 +39,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nomeAluno = $_POST['nomeAluno'];
     $raAluno = $_POST['raAluno'];
     $turmaAluno = $_POST['turmaAluno'];
+    $msg = "";
+    $icJaCadastrado = false;
 
-    if(file_exists("alunos.txt"))
-    {
-        $dados = file_get_contents("alunos.txt");
-
-        if(str_contains($dados, $raAluno)) {
-            $erro = "aluno já cadastrado";
-            header("Location: cadastroAlunos.php");
-            exit();
+    $alunosArray = file("./Aula27-Jan/alunos.txt");
+    foreach ($alunosArray as $alunoLinha) {
+        $alunoDados = explode(" | ", $alunoLinha);
+        if(trim($alunoDados[1]) == $raAluno) {
+            $icJaCadastrado = true;
         }
     }
+    
+    if($icJaCadastrado == true)
+        $msg = "Aluno já cadastrado.";
+    else
+    {
+        file_put_contents("./Aula27-Jan/alunos.txt",($nomeAluno . " | " . $raAluno . " | " . $turmaAluno).PHP_EOL, FILE_APPEND);
+        $msg = "Cadastro realizado com sucesso!";
+    }
 
-    file_put_contents("alunos.txt",($nomeAluno . " | " . $raAluno . " | " . $turmaAluno).PHP_EOL, FILE_APPEND);
-    header("Location: completo.php");
-    $erro = null;
-    exit();
+    echo $msg;
 }
-
 ?>
-
-<?php ?>
