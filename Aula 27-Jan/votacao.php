@@ -8,11 +8,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Votação!!</title>
 </head>
 <body>
     <div class="container">
-        <form action="resultados.php" method="post">
+        <?php if(!isset($_POST['turmaAluno']) && empty($_POST['turmaAluno'])) { ?>
+        <form id="formVotacao" action="votacao.php" method="post">
+            <label for="formVotacao">Escolha a turma</label>
             <select name="turmaAluno" id="turmaAluno">
             <option value="">Selecione...</option>
             <?php foreach ($turmas as $turma): ?>
@@ -20,17 +23,23 @@
             <?php endforeach; ?>
             </select>
 
+            <button type="submit" value="turmaAluno">Confirmar Seleção</button> <br><br><?php } ?>
+            
+            <?php if(isset($_POST['turmaAluno']) && !empty($_POST['turmaAluno'])) { ?>
+            <label for="aluno">Escolha seu voto para Representante</label>
             <select name="aluno" id="aluno">
             <option value="">Selecione...</option>
             <?php
                 foreach ($alunos as $aluno): 
-                    $teste = explode(' | ', $aluno);
+                    $alunoPntr = explode(' | ', $aluno);
 
-                    if($teste[2] == $turma){
-                    ?>
-                    <option value="<?= $teste[2] ?>"><?= $teste[2] ?></option>
+                    if($alunoPntr[2] == $turmaSelect){ ?>
+                    
+                    <option value="<?= $alunoPntr[0] ?>"> <?= $alunoPntr[0] ?> </option>
             <?php } endforeach; ?>
             </select>
+            <button type="submit" value="aluno">Confirmar Voto</button> <?php } ?>
+
         </form>
     </div>
 </body>
@@ -39,6 +48,10 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $nomeAluno = str_contains($alunos, $turma)
+
+    $turmaSelect = $_POST['turmaAluno'];
+    echo "Turma selecionada: " . $turmaSelect;
+    echo $alunoPntr[0];
 }
 ?>
 
