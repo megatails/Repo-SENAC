@@ -25,6 +25,7 @@
                 </select>
 
                 <button type="submit" value="turmaAluno">Confirmar Seleção</button> <br><br>
+                <a class="botao-lista principal" href="menu.php"><<<< Voltar para o Menu</a>
             </form><?php
         } ?>
             
@@ -45,17 +46,10 @@
                     endforeach; ?>
                 </select>
                 <button type="submit" value="aluno">Confirmar Voto</button>
+                <a class="botao-lista principal" href="votacao.php"><<<< Trocar Turma</a>
             </form><?php 
         } ?>
 
     </div>
 </body>
 </html>
-<?php
-    $turmaSelect = $_POST['turmaAluno'];
- foreach ($alunosArray as $alunoLinha): 
-                        $alunoDados = explode(' | ', $alunoLinha);
-                        echo $turmaSelect . " - " . $alunoDados[2];
- endforeach;
-echo $turmaSelect . " - " . $alunoDados[2];
-?>
