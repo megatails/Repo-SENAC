@@ -31,17 +31,17 @@
             
         <!-- Formulário para selecionar o ALUNO --><?php 
         if(!empty($_POST['turmaAluno'])) { ?>
-            <form action="">
+            <form action="resultados.php" method="post">
                 <label for="aluno">Escolha seu voto para Representante</label>
-                <select name="aluno" id="aluno">
+                <select name="aluno" id="aluno" required>
                     <option value="">Selecione...</option><?php 
                     
                     foreach ($alunosArray as $alunoLinha): 
                         $alunoDados = explode(' | ', $alunoLinha);
                         $turmaSelect = $_POST['turmaAluno'];
 
-                        if(trim($alunoDados[2]) == $turmaSelect): ?>
-                            <option value="<?= $alunoDados[0] ?>"> <?= $alunoDados[0] ?> </option><?php
+                        if(trim($alunoDados[2]) == trim($turmaSelect)): ?>
+                            <option value="<?= $alunoDados[1] ?>"> <?= $alunoDados[0] ?> </option><?php
                         endif; ?><?php                         
                     endforeach; ?>
                 </select>
