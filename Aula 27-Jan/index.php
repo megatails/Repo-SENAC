@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $chkEmail = $_SESSION['entryEmail'] ?? '';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -20,7 +25,6 @@
             <<<< Trocar Email
         </a>
 <?php
-$chkEmail = $_POST['entryEmail'];
     if (str_contains($chkEmail, '@docente.br'))  {
 ?>
         <div class="professor">
