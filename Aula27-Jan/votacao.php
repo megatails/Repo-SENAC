@@ -38,11 +38,10 @@
                     foreach ($alunosArray as $alunoLinha): 
                         $alunoDados = explode(' | ', $alunoLinha);
                         $turmaSelect = $_POST['turmaAluno'];
-                        
-                        if($alunoDados[2] == $turmaSelect): ?>
+
+                        if(trim($alunoDados[2]) == $turmaSelect): ?>
                             <option value="<?= $alunoDados[0] ?>"> <?= $alunoDados[0] ?> </option><?php
-                        endif; ?><?php 
-                        
+                        endif; ?><?php                         
                     endforeach; ?>
                 </select>
                 <button type="submit" value="aluno">Confirmar Voto</button>
@@ -52,3 +51,11 @@
     </div>
 </body>
 </html>
+<?php
+    $turmaSelect = $_POST['turmaAluno'];
+ foreach ($alunosArray as $alunoLinha): 
+                        $alunoDados = explode(' | ', $alunoLinha);
+                        echo $turmaSelect . " - " . $alunoDados[2];
+ endforeach;
+echo $turmaSelect . " - " . $alunoDados[2];
+?>

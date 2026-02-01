@@ -43,10 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $icJaCadastrado = false;
 
     $alunosArray = file("./Aula27-Jan/alunos.txt");
-    echo $alunosArray[0];
     foreach ($alunosArray as $alunoLinha) {
         $alunoDados = explode(" | ", $alunoLinha);
-        if($alunoDados[1] == $raAluno) {
+        if(trim($alunoDados[1]) == $raAluno) {
             $icJaCadastrado = true;
         }
     }

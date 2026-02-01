@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(file_exists("./Aula27-Jan/turmas.txt"))
     {
         $dados = file_get_contents("./Aula27-Jan/turmas.txt");
-        echo $dados;
         $qnt = substr_count($dados, $nomeTurma);
     }
     file_put_contents("./Aula27-Jan/turmas.txt",($nomeTurma . ($qnt == 0 ? "" : $qnt+1)).PHP_EOL, FILE_APPEND);
