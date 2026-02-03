@@ -32,7 +32,7 @@
                 </tr> <?php
             endforeach;?>
         </table>
-        <a class="botao-lista principal" href="menu.php"><<<< Voltar</a>
+        <a class="botao-lista principal" href="menu.php">Voltar</a>
     </div>
 </body>
 </html>
