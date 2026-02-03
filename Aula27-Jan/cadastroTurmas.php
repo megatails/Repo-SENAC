@@ -8,11 +8,11 @@
 </head>
 <body>
     <form action="" method="post">
-        <a class="botao-lista principal" href="menu.php"><<<< Voltar</a>
         <label for="nomeTurma">Digite o nome da Turma</label>
         <input id="nomeTurma" name="nomeTurma" type="text" required>
 
         <input type="submit">
+        <a class="botao-lista principal" href="menu.php">Voltar</a>
     </form>
     
 </body>
