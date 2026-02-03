@@ -1,7 +1,3 @@
-<?php
-    $turmas = file("turmas.txt");    
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,7 +8,6 @@
 </head>
 <body>
     <form action="" method="post">
-        <a class="botao-lista principal" href="menu.php"><<<< Voltar</a>
         <label for="nomeAluno">Digite o seu nome: </label>
         <input id="nomeAluno" name="nomeAluno" type="text" required>
 
@@ -28,10 +23,12 @@
         </select>
 
         <input type="submit">
+        <a class="botao-lista principal" href="menu.php">Voltar</a>
     </form>
     
 </body>
 </html>
+
 
 
 <?php
