@@ -29,8 +29,8 @@ session_start();
                     endforeach; ?>
                 </select>
 
-                <button type="submit" value="turmaAluno">Confirmar Seleção</button> <br><br>
-                <a class="botao-lista principal" href="menu.php"><<<< Voltar para o Menu</a>
+                <button type="submit" value="turmaAluno">Confirmar Seleção</button>
+                <a class="botao-lista principal" href="menu.php">Voltar para o Menu</a>
             </form><?php
         } ?>
             
@@ -51,7 +51,7 @@ session_start();
                     endforeach; ?>
                 </select>
                 <button type="submit" value="aluno">Confirmar Voto</button>
-                <a class="botao-lista principal" href="votacao.php"><<<< Trocar Turma</a>
+                <a class="botao-lista principal" href="votacao.php">Trocar Turma</a>
             </form><?php 
         } ?>
 
@@ -77,7 +77,7 @@ session_start();
                 header('Location: resultados.php'); 
             }
             else {
-                echo "VOCÊ JÁ VOTOU, BABACA!";
+                echo "Não é permitido votar novamente.";
                 
             }
         }
