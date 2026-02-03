@@ -13,9 +13,9 @@
 <body>
     <form method="post">
         <h1>Votação de Representante!</h1>
-        <label for="entryEmail">Digite seu email para entrar na votação</label><br><br>
+        <label for="entryEmail">Digite seu email para entrar na votação</label>
         <input type="email" name="entryEmail" id="entryEmail" required>
-        <button >Entrar</button>
+        <button>Entrar</button>
     </form>
 </body>
 </html>
