@@ -21,6 +21,8 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo '<h3>Turma cadastrada!</h3>';
+
     $nomeTurma = $_POST['nomeTurma'];
     $qnt = 0;
     if(file_exists("turmas.txt"))
@@ -29,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $qnt = substr_count($dados, $nomeTurma);
     }
     file_put_contents("turmas.txt",($nomeTurma . ($qnt == 0 ? "" : $qnt+1)).PHP_EOL, FILE_APPEND);
+    exit();
 }
 
 ?>

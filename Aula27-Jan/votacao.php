@@ -1,6 +1,11 @@
 <?php
+session_start();
     $turmas = file("turmas.txt");
     $alunosArray = file("alunos.txt");
+    $login = $_SESSION['entryEmail'];
+
+    $emailArray = file("_jaVotou.txt");
+    
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +18,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- Formulário para selecionar a TURMA --><?php
+        <!-- Formulário para selecionar a TURMA --><?php 
         if(empty($_POST['turmaAluno'])) { ?>
             <form id="formVotacao" action="votacao.php" method="post">
                 <label for="formVotacao">Escolha a turma</label>
@@ -31,7 +36,7 @@
             
         <!-- Formulário para selecionar o ALUNO --><?php 
         if(!empty($_POST['turmaAluno'])) { ?>
-            <form action="resultados.php" method="post">
+            <form method="post">
                 <label for="aluno">Escolha seu voto para Representante</label>
                 <select name="aluno" id="aluno" required>
                     <option value="">Selecione...</option><?php 
@@ -53,3 +58,28 @@
     </div>
 </body>
 </html>
+
+<?php 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(!empty($_POST['aluno'])) {
+            $icJaVotou = false;
+            foreach ($emailArray as $email) {
+                if(trim($email) == trim($login))
+                {
+                    $icJaVotou = true;   
+                }
+            }
+
+            if (!$icJaVotou) {
+                $raAluno = $_POST["aluno"];
+                file_put_contents( "votos.txt", $raAluno.PHP_EOL  , FILE_APPEND );
+                file_put_contents("_jaVotou.txt",$login.PHP_EOL, FILE_APPEND);
+                header('Location: resultados.php'); 
+            }
+            else {
+                echo "VOCÊ JÁ VOTOU, BABACA!";
+                
+            }
+        }
+    }
+?>

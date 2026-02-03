@@ -1,11 +1,9 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $raAluno = $_POST["aluno"];
-    file_put_contents( "votos.txt", $raAluno.PHP_EOL  , FILE_APPEND );
+
     
     $votos = file_get_contents("votos.txt");
     $alunosArray = file("alunos.txt");
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </tr> <?php
             endforeach;?>
         </table>
-        <a class="botao-lista principal" href="votacao.php"><<<< Votar novamente</a>
+        <a class="botao-lista principal" href="menu.php"><<<< Voltar</a>
     </div>
 </body>
 </html>
