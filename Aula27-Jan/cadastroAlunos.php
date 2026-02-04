@@ -1,3 +1,7 @@
+<?php
+    $turmas = file("turmas.txt");    
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -21,8 +25,9 @@
                 <option value="<?= $turma ?>"><?= $turma ?></option><?php
             endforeach;?>
         </select>
+        
+        <button>Cadastrar</button>
 
-        <input type="submit">
         <a class="botao-lista principal" href="menu.php">Voltar</a>
     </form>
     
@@ -51,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $msg = "Aluno já cadastrado.";
     else
     {
-        file_put_contents("alunos.txt",($nomeAluno . " | " . $raAluno . " | " . $turmaAluno).PHP_EOL, FILE_APPEND); //"./Aula27-Jan/alunos.txt"
+        file_put_contents("alunos.txt",($nomeAluno . " | " . $raAluno . " | " . $turmaAluno), FILE_APPEND); //"./Aula27-Jan/alunos.txt"
         $msg = "Cadastro realizado com sucesso!";
     }
 

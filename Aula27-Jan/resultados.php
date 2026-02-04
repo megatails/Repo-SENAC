@@ -1,9 +1,6 @@
 <?php
-
-    
     $votos = file_get_contents("votos.txt");
     $alunosArray = file("alunos.txt");
-
 ?>
 
 <!DOCTYPE html>

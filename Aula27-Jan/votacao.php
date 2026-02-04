@@ -72,7 +72,7 @@ session_start();
 
             if (!$icJaVotou) {
                 $raAluno = $_POST["aluno"];
-                file_put_contents( "votos.txt", $raAluno.PHP_EOL  , FILE_APPEND );
+                file_put_contents( "votos.txt", $raAluno.PHP_EOL, FILE_APPEND );
                 file_put_contents("_jaVotou.txt",$login.PHP_EOL, FILE_APPEND);
                 header('Location: resultados.php'); 
             }
