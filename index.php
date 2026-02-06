@@ -6,9 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: {$file}/index.php");
         exit;
     }
-    
-
-    echo $file . "AAAAA";
 }
 
 function listarPastas($dir, $ignorar = []) {
