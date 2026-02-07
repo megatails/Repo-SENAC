@@ -23,11 +23,11 @@
         </form>
     </div>
     <div class='multi'>
-        <form action="exercicio03.php" method="post">
+        <form action="exercicio04.php" method="post">
         <input class="botao" type="submit" value="Exercicio 04">
         </form>
 
-        <form action="exercicio04.php" method="post">
+        <form action="exercicio05.php" method="post">
         <input class="botao" type="submit" value="Exercicio 05">
         </form>
     </div>
