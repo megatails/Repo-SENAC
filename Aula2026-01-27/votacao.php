@@ -41,7 +41,7 @@ session_start();
                 <select name="aluno" id="aluno" required>
                     <option value="">Selecione...</option><?php 
                     
-                    foreach ($alunosArray as $alunoLinha): 
+                    foreach ($alunosArray as $alunoLinha):
                         $alunoDados = explode(' | ', $alunoLinha);
                         $turmaSelect = $_POST['turmaAluno'];
 
