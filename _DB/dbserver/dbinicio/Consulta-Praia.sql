@@ -65,8 +65,6 @@ ALTER TABLE cliente add
 	bairro VARCHAR(40) NOT null
 )
 
-/* 1 */
-
 INSERT INTO cliente
 (
 nmCliente, 
@@ -80,8 +78,6 @@ bairro,
 numero, 
 complemento
 )
-
-/* 2 */
 
 VALUES 
 (/*nmCliente*/ 'Donald', /*cpf*/ '42212978839',  /*email*/ 'Quack123@uol.com', /*cep*/ '11015906', /*cidade*/'Santos', /*estado*/ 'SP', /*nomeLogradouro*/ 'Rua Julio Conceição', /*bairro*/ 'Vila Mathias', /*numero*/ '102', /*complemento*/ 'casa'),
@@ -104,47 +100,31 @@ VALUES
 
 (/*nmCliente*/ 'Minie', /*cpf*/ '92694644406',  /*email*/ 'ElegantMouseXOXO@gmail.com', /*cep*/ '50740083', /*cidade*/'Recife', /*estado*/ 'PE', /*nomeLogradouro*/ '3ª Travessa Barão de Bonito', /*bairro*/ 'Cidade Universitária', /*numero*/ '420', /*complemento*/ 'apto 77A')
 
-SELECT * FROM cliente
 
-/* 3 */
-INSERT INTO cliente (nmCliente, cpf, email, cep, cidade, estado, nomeLogradouro, bairro, numero, complemento)
-VALUES
+/* 2 */
 
-(/*nmCliente*/ 'Pateta', /*cpf*/ '44078507875',  /*email*/ 'PlutosFriend@gmail.com', /*cep*/ '-', /*cidade*/'-', /*estado*/ 'SP', /*nomeLogradouro*/ '-', /*bairro*/ '-', /*numero*/ '-', /*complemento*/ '-'),
+(/*nmCliente*/ 'Pateta', /*cpf*/ '44078507875',  /*email*/ 'PlutosFriend@gmail.com', /*cep*/ '11015906', /*cidade*/'Santos', /*estado*/ 'SP', /*nomeLogradouro*/ 'Rua Julio Conceição', /*bairro*/ 'Vila Mathias', /*numero*/ '102', /*complemento*/ 'casa'),
 
-(/*nmCliente*/ 'Branca de Neve', /*cpf*/ '84829230991',  /*email*/ 'FFFFFF@hotmail.com', /*cep*/ '88600971', /*cidade*/'São Joaquim', /*estado*/ 'SC', /*nomeLogradouro*/ 'Rua Marcos Batista', /*bairro*/ 'Centro', /*numero*/ '520', /*complemento*/ 'apto 24'),
+(/*nmCliente*/ 'Branca de Neve', /*cpf*/ '84829230991',  /*email*/ 'FFFFFF@hotmail.com', /*cep*/ '11346140', /*cidade*/'São Vicente', /*estado*/ 'SC', /*nomeLogradouro*/ 'Rua Milton Pinto', /*bairro*/ 'Parque das Bandeiras', /*numero*/ '411', /*complemento*/ 'apto 255'),
 
-(/*nmCliente*/ 'Aladin', /*cpf*/ '62117314422',  /*email*/ 'PrinceAli@gmail.com', /*cep*/ '66610130', /*cidade*/'Belém', /*estado*/ 'PA', /*nomeLogradouro*/ 'Passagem Vinte e Cinco de Dezembro', /*bairro*/ 'Curió-Utinga', /*numero*/ '5', /*complemento*/ 'apto 12'),
+(/*nmCliente*/ 'Aladin', /*cpf*/ '62117314422',  /*email*/ 'PrinceAli@gmail.com', /*cep*/ '88064672', /*cidade*/'Florianópolis', /*estado*/ 'PA', /*nomeLogradouro*/ 'Rua Souza', /*bairro*/ 'Ribeirão da Ilha', /*numero*/ '16', /*complemento*/ 'casa'),
 
-(/*nmCliente*/ 'Cinderela', /*cpf*/ '16219041135',  /*email*/ 'CrystalClear@uol.com', /*cep*/ '74395040', /*cidade*/'Goiania', /*estado*/ 'GO', /*nomeLogradouro*/ 'Rua R', /*bairro*/ 'Setor Solar Santa Rita', /*numero*/ '10', /*complemento*/ 'casa'),
+(/*nmCliente*/ 'Cinderela', /*cpf*/ '16219041135',  /*email*/ 'CrystalClear@uol.com', /*cep*/ '11015265', /*cidade*/'Santos', /*estado*/ 'GO', /*nomeLogradouro*/ 'Travessa José do Patrocínio', /*bairro*/ 'Macuco', /*numero*/ '666', /*complemento*/ 'apto 55A'),
 
-(/*nmCliente*/ 'Mulan', /*cpf*/ '28380652703',  /*email*/ 'AmantedosAnimaisOG@gmail.com', /*cep*/ '28898080', /*cidade*/'Rio das Ostras', /*estado*/ 'RJ', /*nomeLogradouro*/ 'Rua Ponte das Tábuas', /*bairro*/ 'Mar do Norte', /*numero*/ '79', /*complemento*/ 'apto 33'),
+(/*nmCliente*/ 'Mulan', /*cpf*/ '28380652703',  /*email*/ 'PericlesMagoExecutivo2020@gmail.com', /*cep*/ '11702215', /*cidade*/'Praia Grande', /*estado*/ 'RJ', /*nomeLogradouro*/ 'Avenida Doutor Roberto de Almeida Vinhas', /*bairro*/ 'Guilhermina', /*numero*/ '321', /*complemento*/ 'apto 616B'),
 
-(/*nmCliente*/ 'Moana', /*cpf*/ '25469253775',  /*email*/ 'FilhaDoOceano@gmail.com', /*cep*/ '23970970', /*cidade*/'Parati', /*estado*/ 'RJ', /*nomeLogradouro*/ 'Rua José Milton de Oliveira', /*bairro*/ 'Centro', /*numero*/ 'S/N', /*complemento*/ 'casa'),
+(/*nmCliente*/ 'Moana', /*cpf*/ '25469253775',  /*email*/ 'JosePalmeira334@gmail.com', /*cep*/ '11310350', /*cidade*/'São Vicente', /*estado*/ 'RJ', /*nomeLogradouro*/ 'Rua Campos de Bury', /*bairro*/ 'Centro', /*numero*/ '23', /*complemento*/ 'casa'),
 
-(/*nmCliente*/ 'Asnésio', /*cpf*/ '98073163675',  /*email*/ 'AnestesiaBrasileira@uol.com', /*cep*/ '30421635', /*cidade*/'Belo Horizonte', /*estado*/ 'MG', /*nomeLogradouro*/ 'Beco da Terezinha', /*bairro*/ 'Ventosa', /*numero*/ '420', /*complemento*/ 'apto 12'),
+(/*nmCliente*/ 'Asnésio', /*cpf*/ '98073163675',  /*email*/ 'DestinyLight@uol.com', /*cep*/ '11085000', /*cidade*/'Santos', /*estado*/ 'MG', /*nomeLogradouro*/ 'Avenida Martins Fontes', /*bairro*/ 'Saboó', /*numero*/ '41', /*complemento*/ 'casa'),
 
-(/*nmCliente*/ 'Maga Patólogica', /*cpf*/ '71369705808',  /*email*/ 'contemplem-A-Maga@gmail.com', /*cep*/ '11531240', /*cidade*/'Cubatão', /*estado*/ 'SP', /*nomeLogradouro*/ 'Rua São Clóvis', /*bairro*/ 'Vila dos Pescadores', /*numero*/ '1074', /*complemento*/ 'apto 2'),
+(/*nmCliente*/ 'Maga Patólogica', /*cpf*/ '71369705808',  /*email*/ null, /*cep*/ '23030437', /*cidade*/'Rio de Janeiro', /*estado*/ 'SP', /*nomeLogradouro*/ 'Rua Joacir Cruz', /*bairro*/ 'Guaratiba', /*numero*/ '75', /*complemento*/ 'casa'),
 
-(/*nmCliente*/ 'Capitão Boeing', /*cpf*/ '43563235210',  /*email*/ 'biggest747@uol.com', /*cep*/ '69073129', /*cidade*/'Manaus', /*estado*/ 'AM', /*nomeLogradouro*/ 'Beco Patu', /*bairro*/ 'Crespo', /*numero*/ '20', /*complemento*/ 'casa'),
+(/*nmCliente*/ 'Capitão Boeing', /*cpf*/ '43563235210',  /*email*/ 'FaceofDisney@hotmail.com', /*cep*/ '50740083', /*cidade*/'Recife', /*estado*/ 'AM', /*nomeLogradouro*/ '3ª Travessa Barão de Bonito', /*bairro*/ 'Cidade Universitária', /*numero*/ '420', /*complemento*/ 'apto 77A'),
 
-(/*nmCliente*/ 'Pão Duro Mac Money', /*cpf*/ '07251764822',  /*email*/ 'manda10conto@ig.com', /*cep*/ '06264170', /*cidade*/'Osasco', /*estado*/ 'SP', /*nomeLogradouro*/ 'Rua da Boa Vitória', /*bairro*/ 'Portal D Oeste', /*numero*/ '322', /*complemento*/ 'apto 135A')
+(/*nmCliente*/ 'Pão Duro Mac Money', /*cpf*/ '07251764822',  /*email*/ 'ElegantMouseXOXO@gmail.com', /*cep*/ '50740083', /*cidade*/'Recife', /*estado*/ 'SP', /*nomeLogradouro*/ '3ª Travessa Barão de Bonito', /*bairro*/ 'Cidade Universitária', /*numero*/ '420', /*complemento*/ 'apto 77A')
 
-/* 4 */
-INSERT INTO cliente (nmCliente, cpf, email, cep, cidade, estado, nomeLogradouro, bairro, numero, complemento)
-VALUES
 
-(/*nmCliente*/ 'Cebolinha', /*cpf*/ '43527947086',  /*email*/ 'mestreDosPlanoshaha@hotmail.com.br', /*cep*/ '13024600', /*cidade*/'Campinas', /*estado*/ 'SP', /*nomeLogradouro*/ 'Rua Cinco', /*bairro*/ 'Cambuí', /*numero*/ '32', /*complemento*/ 'casa'),
 
-(/*nmCliente*/ 'Cascão', /*cpf*/ '41675117039',  /*email*/ 'chovinistaMeuFilho@hotmail.com.br', /*cep*/ '13024600', /*cidade*/'Campinas', /*estado*/ 'SP', /*nomeLogradouro*/ 'Rua Cinco', /*bairro*/ 'Cambuí', /*numero*/ '47', /*complemento*/ 'casa'),
 
-(/*nmCliente*/ 'Chico Bento', /*cpf*/ '90524241015',  /*email*/ 'mestreDosPlanoshaha@hotmail.com.br', /*cep*/ null, /*cidade*/'Campinas', /*estado*/ 'SP', /*nomeLogradouro*/ 'Joaquim Egídio', /*bairro*/ 'Joaquim Egídio', /*numero*/ 'S/N', /*complemento*/ 'Fazenda')
 
-/* 5 */
-INSERT INTO equipamento (nmEquipamento, qtd, valorHora)
-VALUES
-(/*nmEquipamento*/ 'Cadeira 02 Posições', /*qtd*/ 50, /*valorHora*/ 2.00),
-(/*nmEquipamento*/ 'Cadeira 04 Posições', /*qtd*/ 100, /*valorHora*/ 3.50),
-(/*nmEquipamento*/ 'Guarda Sol P', /*qtd*/ 40, /*valorHora*/ 2.00),
-(/*nmEquipamento*/ 'Guarda Sol G', /*qtd*/ 60, /*valorHora*/ 3.00),
-(/*nmEquipamento*/ 'Mesinha', /*qtd*/ 30, /*valorHora*/ 1.50)
+
