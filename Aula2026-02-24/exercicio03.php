@@ -24,6 +24,6 @@
             echo '['.$i.'] ' . $tabela[$i] . '<br>';
         }
 
-        echo '<br>maior número: ' . max($tabela);
+        echo '<br>maior número:  ' . max($tabela);
     }
 ?>
