@@ -2,15 +2,15 @@ CREATE TABLE funcionario (
 	idFuncionario INT PRIMARY KEY AUTO_INCREMENT,
 	nmFuncionario VARCHAR(50) NOT NULL,
 	cpf CHAR(11) NOT NULL UNIQUE,
-	celular CHAR (11) NOT null,
-	ddd char (3)
+	celular CHAR (11) NOT null
+	
 )
 
 CREATE TABLE equipamento (
 	idEquipamento INT PRIMARY KEY AUTO_INCREMENT,
 	nmEquipamento  VARCHAR(50) NOT NULL,
 	qtd INT NOT NULL,
-	valorHora DECIMAL (5,2) NOT NULL
+	varloHora DECIMAL (5,2) NOT NULL
 	
 )
 
@@ -22,8 +22,8 @@ CREATE TABLE cliente (
 
 CREATE TABLE aluguel (
 	idAluguel INT PRIMARY KEY AUTO_INCREMENT,
-	idCliente INT NOT NULL,
-	idFuncionario INT NOT NULL,
+	idCliente INT,
+	idFuncionario INT,
 	dataHoraRetirada DATETIME NOT NULL,
 	datahoraDevolucao DATETIME,
 	valorAPagar decimal (10,2),
@@ -208,22 +208,26 @@ UPDATE equipamento SET qtd = 37 WHERE idEquipamento = 3
 /* 9 */
 INSERT INTO aluguel (idCliente, idFuncionario, dataHoraRetirada, dataHoraDevolucao, valorAPagar, valorPago, pago, formaPagamento, qtVezes)
 VALUES 
-(11, 3, '2025-07-11 15:00:00', NULL, 10.00, null, 0, 'Dinheiro', 1),
+(11, 3, '2025-7-11 15:00:00', NULL, 2.00, 2.00, 1, 'Dinheiro', 1),
 
-(1, 3, '2025-02-21 18:35:00', '2025-03-01 09:00:00', 10.00, 10.00, 1, 'Dinheiro', 1),
+(1, 3, '2025-2-21 18:35:00', '2025-3-01 09:00:00', 2.00, 2.00, 1, 'Dinheiro', 1),
 
-(10, 3, '2022-02-28 00:35:00', '2026-01-01 07:00:00', 10.00, 10.00, 1, 'Cortesia', 1),
+(14, 3, '2025-12-25 00:35:00', '2026-01-01 07:00:00', 2.00, 2.00, 1, 'Debito Visa', 1),
 
-(3, 3, '2023-12-02 00:35:00', '2024-01-01 07:00:00', 10.00, 10.00, 1, 'PIX', 1),
+(14, 3, '2025-12-25 00:35:00', '2026-01-01 07:00:00', 2.00, 2.00, 1, 'Debito Visa', 1),
 
-(8, 3, '2022-07-17 00:35:00', '2026-08-05 07:00:00', 10.00, 10.00, 1, 'Dinheiro', 1),
+(14, 3, '2025-12-25 00:35:00', '2026-01-01 07:00:00', 2.00, 2.00, 1, 'Debito Visa', 1),
 
-(7, 3, '2024-08-09 00:35:00', '2026-09-01 07:00:00', 10.00, 10.00, 1, 'Debito Mastercard', 1)
+(14, 3, '2025-12-25 00:35:00', '2026-01-01 07:00:00', 2.00, 2.00, 1, 'Debito Visa', 1)
+
+UPDATE aluguel SET valorAPagar = 7.00, valorPago = 7.00 WHERE idAluguel IN (9,10,11)
 
 INSERT INTO aluguelequipamento (idEquipamento, idAluguel, valorItem, valorUnitario, qtd)
 VALUES
 (1, 9, 4.00, 2.00, 2),
 (1, 9, 3.00, 3.00, 1),
+
+UPDATE aluguelequipamento SET valorItem = 4.00 WHERE idAluguelEquipamento = 9
 
 (1, 10, 4.00, 2.00, 2),
 (1, 10, 3.00, 3.00, 1),
@@ -250,29 +254,9 @@ SELECT nmCliente, email from cliente ORDER BY nmCliente asc
 SELECT nmFuncionario, celular FROM funcionario ORDER BY nmFuncionario asc
 
 /* 12 */
-SELECT * FROM aluguel ORDER BY dataHoraRetirada ASC
+SELECT dataHoraRetirada FROM aluguel ORDER BY dataHoraRetirada ASC
 
 /* 13 */
-SELECT nmCliente, cidade, estado FROM cliente WHERE cidade IN ('Santos', 'São Vicente', 'Praia Grande', 'Cubatão') ORDER BY cidade ASC; /* coloquei os dois por que não entendi se é o nmCliente ou cidade para colocar em ordem alfabetica */
-SELECT nmCliente, cidade, estado FROM cliente WHERE cidade IN ('Santos', 'São Vicente', 'Praia Grande', 'Cubatão') ORDER BY nmCliente ASC;
+SELECT 
 
-/* 14 */
-SELECT nmEquipamento, qtd FROM equipamento ORDER BY qtd DESC;
 
-/* 15 */
-SELECT nmCliente FROM cliente WHERE complemento LIKE '%casa%' ORDER BY nmCliente ASC;
-
-/* 16 */
-SELECT nmCliente, estado FROM cliente WHERE estado <> 'SP';
-
-/* 17 */
-SELECT nmCliente FROM cliente WHERE nmCliente LIKE 'A%';
-
-/* 18 */
-SELECT * FROM cliente WHERE nmCliente LIKE 'M%' AND estado = 'PE';
-
-/* 19 */
-SELECT nmEquipamento, qtd FROM equipamento WHERE nmEquipamento LIKE '%Cadeira%' ORDER BY qtd DESC;
-
-/* 20 */
-SELECT * FROM aluguel WHERE dataHoraRetirada BETWEEN '2024-12-25 00:00:00' AND '2024-12-31 23:59:59' ORDER BY dataHoraRetirada ASC;

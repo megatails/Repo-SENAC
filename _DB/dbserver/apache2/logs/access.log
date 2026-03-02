@@ -1,0 +1,8 @@
+::1 - - [02/Mar/2026:19:33:01 -0300] "GET / HTTP/1.1" 200 995
+::1 - - [02/Mar/2026:19:33:01 -0300] "GET /style.css HTTP/1.1" 304 -
+::1 - - [02/Mar/2026:19:33:01 -0300] "GET /images/header.png HTTP/1.1" 304 -
+::1 - - [02/Mar/2026:19:33:01 -0300] "GET /images/background.jpg HTTP/1.1" 304 -
+::1 - - [02/Mar/2026:19:33:01 -0300] "GET /images/content.jpg HTTP/1.1" 304 -
+::1 - - [02/Mar/2026:19:33:01 -0300] "GET /images/contentbot.jpg HTTP/1.1" 304 -
+::1 - - [02/Mar/2026:19:33:01 -0300] "GET /images/topcontent.jpg HTTP/1.1" 304 -
+::1 - - [02/Mar/2026:19:33:01 -0300] "GET /favicon.ico HTTP/1.1" 404 209
