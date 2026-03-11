@@ -125,14 +125,44 @@ VALUES
 
 SELECT * FROM consulta
 
-SELECT  consulta.dataHora,
-		  a.nmAnimal,
-		  c.nmCliente,
-		  veterinario.nmVeterinario
-FROM cliente c
-INNER JOIN animal a
-ON c.idCliente = a.idCliente
+
+SELECT * FROM consultatiposervico WHERE idConsulta IN (10,15)     
+
+SELECT datahora, nmAnimal, nomeCliente, nmServico from cliente
+JOIN animal ON cliente.idCliente = animal.idCliente
+JOIN consulta ON consulta.idAnimal = animal.idAnimal
+JOIN consultatiposervico ON consulta.idConsulta = consultatiposervico.idConsulta
+JOIN tiposervico ON consultatiposervico.idTipoServico = tiposervico.idTipoServico
+
+/* listar nomeVeterinario, data em que consultou, animal que atendeu de todos os veterinarios */
+
+SELECT veterinario.nmVeterinario, consulta.datahora, animal.nmAnimal FROM veterinario
 INNER JOIN consulta
-ON a.idAnimal = consulta idAnimal
-INNER joing veterinario
-ON consulta.idveterinario = veterinario.idVeterinario
+ON veterinario.idVeterinario = consulta.idVeterinario
+JOIN animal
+ON animal.idAnimal = consulta.idAnimal
+
+/* trazer a quantidade de consultas executadas ao longo de todo o periodo */
+SELECT COUNT(idConsulta) AS 'Qtd de consultas' FROM consulta /* AS = alias */
+
+/* Trazer o servico mais caro */
+SELECT MAX(valor) FROM tiposervico
+
+/* trazer o serviço mais barato da clinica */
+SELECT mix(valor) FROM tiposervico
+
+/* trazer a media dos valores dos servicos*/
+SELECT AVG(valor) AS 'A média dos valores é:' FROM tiposervico
+
+/* trazer o faturamento bruto da clinica */
+SELECT SUM(valorservico) AS 'faturamento' FROM consultatiposervico
+
+/* Trazer a quantidade de consultas que ocorrem com cada animalzinho
+ex.: Bidu ------ 3 consultas
+	  Tobby ----- 2 consultas*/
+	  
+SELECT nmAnimal, COUNT(idConsulta) FROM consulta
+right JOIN animal
+ON consulta.idAnimal = animal.idAnimal
+GROUP BY nmAnimal
+ORDER BY COUNT(idConsulta) DESC
