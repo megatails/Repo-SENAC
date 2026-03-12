@@ -1,9 +1,10 @@
 <?php 
     session_start();
-    $nome = array_fill(0,10,"");
-    $idade = array_fill(0,10,"");
-    $curso = array_fill(0,10,"");
-    $notaF = array_fill(0,10,"");
+    $nome = [];
+    $idade = [];
+    $curso = [];
+    $notaF = [];
+
 ?>
 
 
@@ -16,24 +17,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-            
-            
-                <label for="nota<?= $i ?>">Nota<?= $i+1?>(0 a 10)</label>
-                <input
-                type="number"
-                id="nota<?= $i ?>"
-                name="nota<?= $i ?>"
-                value="<?=htmlspecialchars($notas[$i])?>"
-                required>
-            
-    <form action="" method="post">
+    <form action="ex01-menu.php" method="post">
         <div class="grid"></div>
-            <?php for($i = 0; $i < 10; $i++):?>
+            <?php do { ?>
                 <div>
                     <h4>Dados do Aluno Nº <?php echo $i+1 ?></h4>
                     <label for="nome">Digite o nome do aluno</label>
-                    <input type="text" name="nome<?= $i ?>" id="nome<?= $i ?>" required>
+                    <input type="text" name="nome<?= $i ?>" id="nome<?= $i ?>" required value="<?=htmlspecialchars($notas[$i])?>">
 
                     <label for="idade">Digite idade do aluno</label>
                     <input type="number" name="idade<?= $i ?>" id="idade<?= $i ?>" required>
@@ -46,7 +36,7 @@
 
                     <button>Cadastrar</button>
                 </div>
-            <?php endfor;?>
+            <?php $i++; } while($nome[$i] != empty($nome) && $i < 10);?>
         </div>
     </form>
 </body>
@@ -54,10 +44,10 @@
 
 <?php 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        array_push($nome, $_POST['nome']);
-        array_push($idade, $_POST['idade']);
-        array_push($curso, $_POST['curso']);
-        array_push($notaF, $_POST['notaF']);
+        array_push($nome, $_POST['nome'.$i]);
+        array_push($idade, $_POST['idade'.$i]);
+        array_push($curso, $_POST['curso'.$i]);
+        array_push($notaF, $_POST['notaF'.$i]);
 
         $_SESSION['nome']=$nome;
         $_SESSION['idade']=$idade;
@@ -65,11 +55,5 @@
         $_SESSION['notaF']=$notaF;
 
         echo 'Aluno Nº' . $i . ' cadastrado com <strong>sucesso!</strong>';
-
-        echo '<br>teste';
-
-        echo count($aluno);
-        echo $idade[1];
-        echo $curso[1];
     }
 ?>

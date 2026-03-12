@@ -166,3 +166,21 @@ right JOIN animal
 ON consulta.idAnimal = animal.idAnimal
 GROUP BY nmAnimal
 ORDER BY COUNT(idConsulta) DESC
+
+/* listar a quantidade de animais por especie */
+SELECT especie, COUNT(idAnimal) AS 'Qtd'
+FROM animal
+ GROUP BY especie
+ 
+ /*listar todas as cidades onde tenho clientes*/
+SELECT DISTINCT cidade FROM cliente
+
+SELECT DISTINCT raca FROM animal
+WHERE especie = 'cachorro'
+
+/* paginação - limitar quantidade de linhas */
+SELECT * FROM veterinario
+/*ORDER BY idVeterinario DESC */
+LIMIT 2
+
+/*  */
