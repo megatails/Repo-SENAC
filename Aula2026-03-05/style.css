@@ -81,3 +81,14 @@ button:hover{filter: brightness(0.95)}
  
 .resultados p{margin:4px 0}
 .footer{margin-top:10px; color:var(--muted); font-size:.9rem}
+
+a.menu{
+  display:inline-block;
+  margin-bottom: 4px;
+  padding:10px 16px;
+  border:0;
+  border-radius: 8px;
+  color:#fff;
+  background: var(--brand);
+  text-decoration:none;
+}
