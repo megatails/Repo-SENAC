@@ -1,8 +1,5 @@
 <?php
     session_start();
-    $opcao = 0;
-    $_SESSION['opcao'] = $opcao;
-
 ?>
 
 <!DOCTYPE html>

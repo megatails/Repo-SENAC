@@ -1,7 +1,48 @@
 <?php 
     session_start();
-    $_SESSION['opcao']=2;
+    $nome = $_SESSION['nome'];
+    $idade = $_SESSION['idade'];
+    $curso = $_SESSION['curso'];
+    $notaF = $_SESSION['notaF'];
+?>
 
-    header("Location: ex01-menu.php");
-    die();
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Listagem de Alunos</title>
+</head>
+<body>
+    <a class='msg' href='op-cadastrar.php'>Cadastrar Alunos</a>
+    <a class='msg' href='op-listar.php'>Listar Alunos</a>
+    <a class='msg' href='op-buscar.php'>Buscar aluno pelo nome</a>
+    <a class='msg' href='op-calcular.php'>Calcular média da turma</a>
+
+    <h2>Lista de Alunos Cadastrados</h2>
+    <table class="card">
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Curso</th>
+            <th>Nota Final</th>
+        </tr>
+        <?php for ($i = 0; $i < count($nome); $i++) { ?>
+        <tr>
+            <td><?= htmlspecialchars($nome[$i]) ?></td>
+            <td><?= htmlspecialchars($idade[$i]) ?></td>
+            <td><?= htmlspecialchars($curso[$i]) ?></td>
+            <td><?= htmlspecialchars($notaF[$i]) ?></td>
+        </tr>
+        <?php } ?>
+    </table>
+</body>
+</html>
+
+<?php 
+    echo "nome:" . implode(", ", $nome);
+    echo "<br>idade:" . implode(", ", $idade);
+    echo "<br>curso:" . implode(", ", $curso);
+    echo "<br>notaF:" . implode(", ", $notaF);
 ?>
