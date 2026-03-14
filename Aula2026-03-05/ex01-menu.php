@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $opcao = $_SESSION['opcao'] ?? 0;
 
     if (isset($_SESSION['nome']) && is_array($_SESSION['nome'])) {
     $nome = $_SESSION['nome'];
@@ -26,32 +25,13 @@
 <body>
     <h2>Bem-vindo ao Sistema de Cadastro de Alunos</h2>
     <p>Escolha uma opção no menu para começar.</p>
-    <a class='msg' href='op-cadastrar.php'>Cadastrar Alunos</a>
-    <a class='msg' href='op-listar.php'>Listar Alunos</a>
-    <a class='msg' href='op-buscar.php'>Buscar aluno pelo nome</a>
-    <a class='msg' href='op-calcular.php'>Calcular média da turma</a>
-
+    <div class="lateral">
+        <a class='msg' href='ex01-cadastrar.php'>Cadastrar Alunos</a>
+        <a class='msg' href='ex01-listar.php'>Listar Alunos</a>
+        <a class='msg' href='ex01-buscar.php'>Buscar aluno pelo nome</a>
+        <a class='msg' href='ex01-calcular.php'>Calcular média da turma</a>
+    </div>
     
 </body>
     <br><br><br><a class='menu' href='index.php'>Sair</a>
-    <button type="button" onclick="limparArray()">limpar array</button> 
 </html>
-
-<?php 
-    function limparArray() {
-        $_SESSION['nome'] = [];
-        $_SESSION['idade'] = [];
-        $_SESSION['curso'] = [];
-        $_SESSION['notaF'] = [];
-    }
-?>
-
-<?php 
-    echo '<br>nome = ' . implode(', ', $nome);
-    echo '<br>idade = ' . implode(', ', $idade);
-    echo '<br>curso = ' . implode(', ', $curso);
-    echo '<br>notaF =' . implode(', ', $notaF);
-    
-    $opcao = 0;
-    $_SESSION['opcao'] = $opcao;
-?>

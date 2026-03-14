@@ -17,20 +17,20 @@
 </header>
 
 <body>
-    <div class='multi'>
-        <h2>Sistema de Cadastro de Alunos</h2>
-        <form action="ex01-menu.php" method="post">
-        <input class="botao" type="submit" value="Entrar">
-        </form>
+    <div class="media-card">
+        <div class='form-container'>
+            <h2>Sistema de Cadastro de Alunos</h2>
+            <form action="ex01-menu.php" method="post">
+            <input class="botao" type="submit" value="Entrar">
+            </form>
+        </div>
+        <div class='form-container'>
+            <h2>Sistema de Controle de Produtos</h2>
 
-        </form>
-    </div>
-    <div class='multi'>
-        <h2>Sistema de Controle de Produtos</h2>
-
-        <form action="exercicio02.php" method="post">
-        <input class="botao" type="submit" value="Entrar">
-        </form>
+            <form action="ex02/index.php" method="post">
+            <input class="botao" type="submit" value="Entrar">
+            </form>
+        </div>
     </div>
 </body>
 </html>

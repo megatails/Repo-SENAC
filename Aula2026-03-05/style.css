@@ -1,94 +1,160 @@
-:root{
-  --bg:#fafafa;
-  --text:#222;
-  --muted:#6b7280;
-  --error:#b00020;
-  --ok:#1b5e20;
-  --brand:#0d6efd;
-  --radius:10px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
- 
-*{box-sizing:border-box}
- 
-html,body{height:100%}
+
 body{
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  margin:0; padding:24px;
-  background: var(--bg);
-  color: var(--text);
+    display:flex;
+    min-height:100vh;
+    background:#313338;
+    color:#ffffff;
 }
- 
-.container{
-  max-width: 840px;
-  margin: 0 auto;
+
+a.msg{
+    display:block;
+    width:220px;
+    padding:15px;
+    text-decoration:none;
+    color:#b5bac1;
+    background:#2b2d31;
+    border-left:4px solid transparent;
+    transition:0.2s;
 }
- 
-.card{
-  background:#fff;
-  border-radius: var(--radius);
-  box-shadow: 0 6px 24px rgba(0,0,0,.08);
-  padding: 24px;
-  margin-bottom: 18px;
+
+
+a.msg:hover{
+    background:#3a3d42;
+    color:#ffffff;
+    border-left:4px solid #5865F2;
 }
- 
-h1{margin: 0 0 12px}
-h2{margin: 16px 0 10px; font-size: 1.1rem; color: var(--muted)}
- 
-.grid{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(180px, 1fr));
-  gap: 12px;
-  max-width: 520px;
+
+body > a.msg{
+    position:relative;
 }
- 
-label{display:block; margin: 8px 0 6px; font-weight:600}
-input[type=number]{
-  width: 100%;
-  padding:10px 12px;
-  border:1px solid #d1d5db;
-  border-radius:8px;
-  outline:none;
+
+form{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
-input[type=number]:focus{
-  border-color: var(--brand);
-  box-shadow: 0 0 0 3px rgba(13,110,253,.15);
+
+.form-container{
+    background:#2b2d31;
+    padding:30px;
+    border-radius:10px;
+    width:350px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
- 
+
+.media-card{
+    text-align:center;
+}
+
+.resultado{
+    font-size:48px;
+    font-weight:bold;
+    margin-top:20px;
+    color:#5865F2;
+}
+
+.resultado-vazio{
+    margin-top:20px;
+    font-size:18px;
+    color:#b5bac1;
+}
+
+h4{
+    margin-bottom:15px;
+    color:#ffffff;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    font-size:14px;
+    color:#b5bac1;
+}
+
+input{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border:none;
+    border-radius:5px;
+    background:#1e1f22;
+    color:white;
+}
+
+input:focus{
+    outline:2px solid #5865F2;
+}
+
 button{
-  display:inline-block;
-  margin-top: 14px;
-  padding:10px 16px;
-  border:0;
-  border-radius: 8px;
-  color:#fff;
-  background: var(--brand);
-  cursor:pointer;
+    width:100%;
+    margin-top:15px;
+    padding:10px;
+    border:none;
+    border-radius:6px;
+    background:#5865F2;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.2s;
 }
-button:hover{filter: brightness(0.95)}
- 
-.msg{
-  border-left: 4px solid;
-  padding: 10px 12px;
-  border-radius: 8px;
-  margin: 12px 0;
-  background: #f8fafc;
+
+button:hover{
+    background:#4752c4;
 }
-.msg.ok{border-color: var(--ok); color: var(--ok)}
-.msg.erro{border-color: var(--error); color: var(--error)}
- 
-.lista-erros{margin:6px 0 0 0; padding-left:20px}
-.lista-erros li{margin:4px 0}
- 
-.resultados p{margin:4px 0}
-.footer{margin-top:10px; color:var(--muted); font-size:.9rem}
 
 a.menu{
-  display:inline-block;
-  margin-bottom: 4px;
-  padding:10px 16px;
-  border:0;
-  border-radius: 8px;
-  color:#fff;
-  background: var(--brand);
-  text-decoration:none;
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    color:#b5bac1;
+    text-decoration:none;
+}
+
+a.menu:hover{
+    color:white;
+}
+
+.lateral{
+    width:220px;
+    background:#2b2d31;
+    padding-top:20px;
+    height:100vh;
+    position:fixed;
+    left:0;
+    top:0;
+}
+
+.conteudo{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin-left:240px;
+    padding:40px;
+    gap:30px;
+    margin-bottom: 40px;
+}
+
+table{
+    margin-left:40px;
+    border-collapse:collapse;
+    background:#2b2d31;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+th, td{
+    padding:12px 18px;
+    border-bottom:1px solid #3a3d42;
+}
+
+th{
+    background:#202225;
 }
