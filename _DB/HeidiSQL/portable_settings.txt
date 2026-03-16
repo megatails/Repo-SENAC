@@ -1,0 +1,55 @@
+LastSessions<|||>1<|||>dbInicio
+LastActiveSession<|||>1<|||>dbInicio
+SessionManager_WindowLeft<|||>3<|||>901
+SessionManager_WindowTop<|||>3<|||>209
+ColWidths_connform.ListSessions<|||>1<|||>163,50,50,50,50,50,10
+ColsVisible_connform.ListSessions<|||>1<|||>0,1,4,6
+ColPositions_connform.ListSessions<|||>1<|||>0,1,2,3,4,5,6
+ColSort_connform.ListSessions<|||>1<|||>0,0
+Servers\dbInicio\SessionCreated<|||>1<|||>2026-03-15 21:47:09
+Servers\dbInicio\Host<|||>1<|||>127.0.0.1
+Servers\dbInicio\WindowsAuth<|||>3<|||>0
+Servers\dbInicio\CleartextPluginEnabled<|||>3<|||>0
+Servers\dbInicio\User<|||>1<|||>root
+Servers\dbInicio\Password<|||>1<|||>767463781
+Servers\dbInicio\LoginPrompt<|||>3<|||>0
+Servers\dbInicio\Port<|||>1<|||>3307
+Servers\dbInicio\NetType<|||>3<|||>0
+Servers\dbInicio\Compressed<|||>3<|||>0
+Servers\dbInicio\LocalTimeZone<|||>3<|||>0
+Servers\dbInicio\QueryTimeout<|||>3<|||>30
+Servers\dbInicio\KeepAlive<|||>3<|||>20
+Servers\dbInicio\FullTableStatus<|||>3<|||>1
+Servers\dbInicio\Databases<|||>1<|||>
+Servers\dbInicio\Library<|||>1<|||>libmariadb.dll
+Servers\dbInicio\Comment<|||>1<|||>
+Servers\dbInicio\StartupScriptFilename<|||>1<|||>
+Servers\dbInicio\TreeBackground<|||>3<|||>536870911
+Servers\dbInicio\SSHtunnelActive<|||>3<|||>0
+Servers\dbInicio\SshExecutable<|||>1<|||>
+Servers\dbInicio\SSHtunnelHost<|||>1<|||>
+Servers\dbInicio\SSHtunnelHostPort<|||>3<|||>22
+Servers\dbInicio\SSHtunnelUser<|||>1<|||>
+Servers\dbInicio\SSHtunnelPassword<|||>1<|||>7
+Servers\dbInicio\SSHtunnelTimeout<|||>3<|||>4
+Servers\dbInicio\SSHtunnelPrivateKey<|||>1<|||>
+Servers\dbInicio\SSHtunnelPort<|||>3<|||>3307
+Servers\dbInicio\SSL_Active<|||>3<|||>0
+Servers\dbInicio\SSL_Key<|||>1<|||>
+Servers\dbInicio\SSL_Cert<|||>1<|||>
+Servers\dbInicio\SSL_CA<|||>1<|||>
+Servers\dbInicio\SSL_Cipher<|||>1<|||>
+Servers\dbInicio\SSL_Verification<|||>3<|||>2
+Servers\dbInicio\IgnoreDatabasePattern<|||>1<|||>
+Servers\dbInicio\LogFileDdl<|||>3<|||>0
+Servers\dbInicio\LogFileDml<|||>3<|||>0
+Servers\dbInicio\LogFilePath<|||>1<|||>C:\Users\megat\AppData\Roaming\HeidiSQL\Logs\%session\%db\%y%m%d.sql
+Servers\dbInicio\RefusedCount<|||>3<|||>5
+Servers\dbInicio\ServerVersionFull<|||>1<|||>5.5.20 - MySQL Community Server (GPL)
+Servers\dbInicio\ConnectCount<|||>3<|||>1
+Servers\dbInicio\ServerVersion<|||>3<|||>50520
+Servers\dbInicio\LastConnect<|||>1<|||>2026-03-15 21:49:07
+Servers\dbInicio\lastUsedDB<|||>1<|||>jucacursosrodrigo
+Servers\dbInicio\QueryHistory\1<|||>1<|||>2026-03-15 21:55:37|JucaCursosRodrigo|0|CREATE DATABASE JucaCursosRodrigo;<{{{><}}}>USE JucaCursosRodrigo;
+Servers\dbInicio\QueryHistory\2<|||>1<|||>2026-03-15 21:56:25|JucaCursosRodrigo|15|CREATE TABLE alunos (<{{{><}}}>    idAluno INT AUTO_INCREMENT PRIMARY KEY,<{{{><}}}>    nome VARCHAR(100) NOT NULL,<{{{><}}}>    email VARCHAR(100) NOT NULL UNIQUE,<{{{><}}}>    dataNascimento DATE NOT NULL<{{{><}}}>)
+Servers\dbInicio\QueryHistory\3<|||>1<|||>2026-03-15 21:56:28|JucaCursosRodrigo|15|CREATE TABLE cursos (<{{{><}}}>    idCurso INT AUTO_INCREMENT PRIMARY KEY,<{{{><}}}>    nomeCurso VARCHAR(150) NOT NULL,<{{{><}}}>    cargaHoraria INT NOT NULL CHECK (carga_horaria > 0),<{{{><}}}>    valor DECIMAL(8,2) NOT NULL CHECK (valor > 0)<{{{><}}}>)
