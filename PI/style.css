@@ -17,19 +17,42 @@ body {
     background: hsl(0deg 0% 95%);
     margin: 0;
     padding: 0;
-    background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDlkdG5xd2N4ZGk2NWJoZGlyODBiZnQza2dpOXM1d3o4Y2QwNmk3dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FlodpfQUBSp20/giphy.gif');
-    background-repeat: repeat;
-    animation: fundo 30s linear infinite;
-
-    background-repeat: repeat;
+    background-image: url('/Images/extend.png');
+    background-size: cover;
+    background-attachment: fixed;
     background-position: center;
     background-color: rgb(9, 15, 63);
 }
 
-@keyframes fundo {
-    0% {background-position: 0 0;}
-    100% {background-position: -300px 300px;}
+.centro {
+    padding: 40px;
+    padding-left: 360px;
+    padding-right: 360px;
+    padding-bottom: 2000px;
+    align-items: center;
+    text-align: center;
+    margin: 200px;
+    border: #c00030;
+    border-radius: 12px;
+    box-shadow: #330510c2;
+    background-color: #163d6167;
 }
+
+    @supports 
+        (backdrop-filter: blur(16px)) or
+        (-webkit-backdrop-filter: blur(16px))
+    {
+
+    .bordinha {
+        height: var(--thickness);
+        background: hsla(0, 0%, 21%, 0.1);
+        -webkit-backdrop-filter: blur(12px) brightness(0.96);
+        backdrop-filter: blur(12px) brightness(0.96);
+        pointer-events: none;
+    }
+  }
+
+
 
 .botao {
     appearance: none;
