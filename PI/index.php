@@ -6,15 +6,13 @@
     <link rel="stylesheet" href="style.css">
     <title>Fisio com a Ana</title>
 </head>
+  <?php 
+    include 'header.php';
+  ?>
 
-<header>
-  <div class="backdrop"></div>
-  <div class="backdrop-edge"></div>
-</header>
-  <div class="centro bordinha" >
+<body>
+    <div class="card" >
       <span style="color: dodgerblue">TESTE TESTE</span>
   </div>
-<body>
-    
 </body>
 </html>
