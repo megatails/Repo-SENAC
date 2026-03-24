@@ -183,4 +183,38 @@ SELECT * FROM veterinario
 /*ORDER BY idVeterinario DESC */
 LIMIT 2
 
-/*  */
+CREATE VIEW vw_relatorioGeralConsultas as
+SELECT consulta.dataHora,
+
+  	    a.nmAnimal,
+
+  	    c.nomeCliente,
+
+  	    veterinario.nmVeterinario,
+
+  	    tiposervico.nmServico
+FROM cliente c
+INNER JOIN animal a
+ON  a.idcliente = c.idCliente
+INNER JOIN consulta 
+ON a.idAnimal = consulta.idAnimal
+INNER JOIN veterinario
+ON consulta.idVeterinario = veterinario.idVeterinario
+INNER JOIN consultatiposervico 
+ON consultatiposervico.idConsulta = consulta.idConsulta
+INNER JOIN tiposervico
+ON tiposervico.idtiposervico = consultatiposervico.idtipoServico
+ORDER BY veterinario.nmVeterinario,consulta.dataHora ASC
+
+SELECT * FROM vw_relatoriogeralconsultas
+
+/* criação e uso de Stored Procedure */
+CREATE PROCEDURE ps_relatorioConsultasPorProcedimento
+(
+ IN procedimento VARCHAR(50)
+)
+SELECT nmAnimal, nmServico, nmVeterinario
+FROM vw_relatorioGeralConsultas
+WHERE nmServico=procedimento
+
+CALL ps_relatorioConsultasPorProcedimento("Vacina")

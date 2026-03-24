@@ -1,6 +1,9 @@
-@font-face{
-    font-family: 'MyFont';
-    src: url('/Fonts/DT-8Bit-Ch3.otf.woff2') format('opentype');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-weight: 700;
 }
 
 html {
@@ -15,7 +18,6 @@ body {
     zoom: 1.5;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     align-items: center;
 
     background: hsl(0deg 0% 95%);
@@ -32,14 +34,15 @@ body {
     padding: 40px;
     padding-left: 360px;
     padding-right: 360px;
-    padding-bottom: 2000px;
+    padding-bottom: 1000px;
     align-items: center;
     text-align: center;
-    margin: 200px;
+    margin: 70px;
     border: #c00030;
     border-radius: 12px;
     box-shadow: #330510c2;
     background-color: #163d6167;
+    font-size: 20px;
 }
 
     @supports 
@@ -49,7 +52,7 @@ body {
 
     .bordinha {
         height: var(--thickness);
-        background: hsla(0, 0%, 21%, 0.1);
+        background: hsla(196, 18%, 12%, 0.452);
         -webkit-backdrop-filter: blur(12px) brightness(0.96);
         backdrop-filter: blur(12px) brightness(0.96);
         pointer-events: none;

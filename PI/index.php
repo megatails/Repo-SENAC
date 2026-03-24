@@ -11,8 +11,8 @@
   ?>
 
 <body>
-    <div class="card" >
-      <span style="color: dodgerblue">TESTE TESTE</span>
-  </div>
+    <div class="centro bordinha" >
+      <span style="color: dodgerblue">Fisio com a Ana</span>
+    </div>
 </body>
 </html>
