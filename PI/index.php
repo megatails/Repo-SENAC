@@ -16,3 +16,12 @@
     </div>
 </body>
 </html>
+
+<?php 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $_SESSION['entryEmail'] = $_POST['entryEmail'];
+    header('Location: login.php'); 
+    exit();
+}
+
+?>

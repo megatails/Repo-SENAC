@@ -218,3 +218,48 @@ FROM vw_relatorioGeralConsultas
 WHERE nmServico=procedimento
 
 CALL ps_relatorioConsultasPorProcedimento("Vacina")
+
+CREATE PROCEDURE pi_tipoServico
+(
+	IN _nmServico VARCHAR (50),
+	IN _valor DECIMAL(10,2)
+)
+INSERT INTO tiposervico(nmServico, valor)
+VALUES(_nmServico, _valor)
+
+/* Criar uma view que traca a data da consulta, nome do pet
+nome do cliente, e seu telefone */
+
+CREATE VIEW vw_consultasPorData as
+SELECT consulta.dataHora, a.nmAnimal, c.nomeCliente, c.celular
+FROM cliente c
+INNER JOIN animal a
+ON  a.idcliente = c.idCliente
+INNER JOIN consulta 
+ON a.idAnimal = consulta.idAnimal
+
+
+/* Criar uma procedure que traga o nome de todos os pets
+o nome do cliente, e telefone, de acordo com o tipo de animal.
+Ex: Cachorro, Gato, etc... */
+
+alter VIEW vw_listarNomesContato as
+SELECT a.nmAnimal, a.especie, c.nomeCliente, c.celular
+FROM cliente c
+INNER JOIN animal a
+ON a.idCliente = c.idCliente
+
+CREATE PROCEDURE ps_relatorioPorTipodeAnimal
+(
+	IN var VARCHAR (50)
+)
+
+SELECT nmAnimal, especie, nomeCliente, celular
+FROM vw_listarNomesContato
+WHERE especie=var
+ORDER BY especie
+
+CALL ps_relatorioPorTipodeAnimal('gato')
+
+
+

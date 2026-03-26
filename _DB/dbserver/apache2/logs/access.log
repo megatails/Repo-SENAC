@@ -1,8 +1,0 @@
-::1 - - [23/Mar/2026:21:04:35 -0300] "GET / HTTP/1.1" 200 995
-::1 - - [23/Mar/2026:21:04:35 -0300] "GET /style.css HTTP/1.1" 200 2300
-::1 - - [23/Mar/2026:21:04:35 -0300] "GET /images/header.png HTTP/1.1" 200 7766
-::1 - - [23/Mar/2026:21:04:35 -0300] "GET /images/background.jpg HTTP/1.1" 200 12386
-::1 - - [23/Mar/2026:21:04:35 -0300] "GET /images/topcontent.jpg HTTP/1.1" 200 11578
-::1 - - [23/Mar/2026:21:04:35 -0300] "GET /images/contentbot.jpg HTTP/1.1" 200 11570
-::1 - - [23/Mar/2026:21:04:35 -0300] "GET /images/content.jpg HTTP/1.1" 200 11916
-::1 - - [23/Mar/2026:21:04:35 -0300] "GET /favicon.ico HTTP/1.1" 404 209
