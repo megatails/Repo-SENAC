@@ -1,3 +1,30 @@
+@import url('header.css');
+
+/* macchiatto */
+:root{
+--lightred: #f5bde6;
+--red: #ed8796;
+--lightpurple: #babbf1;
+--purple: #c6a0f6;
+--green: #a6d189;
+--lightblue: #7dc4e4;
+--blue: #8aadf4;
+--text: #cad3f5;
+--subtext0: #6e738d;
+--subtext1: #8087a2;
+--overlay0: #737994;
+--overlay1: #838ba7;
+--overlay2: #939ab7;
+--surface0: #363a4f;
+--surface1: #494d64;
+--surface2: #5b6078;
+--base: #24273a;
+--mantle: #1e2030;
+--crust: #181926;
+}
+
+
+
 *{
     margin:0;
     padding:0;
@@ -23,7 +50,7 @@ body {
     background: hsl(0deg 0% 95%);
     margin: 0;
     padding: 0;
-    background-image: url('/Images/extend.png');
+    background-image: url('/Images/pastel4.png');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -43,6 +70,7 @@ body {
     box-shadow: #330510c2;
     background-color: #163d6167;
     font-size: 20px;
+    position: absolute;
 }
 
     @supports 

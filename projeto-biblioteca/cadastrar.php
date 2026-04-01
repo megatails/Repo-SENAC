@@ -19,18 +19,18 @@
         </div>
 
         <div class="">
-            <form action="" method="post">
+            <form action="salvar_livro.php" method="post">
                 <label for="">Título do Livro: </label> 
-                <input type="text" name="titulo" id="titulo" required>
+                <input type="text" name="titulo" required>
 
                 <label for="">Autor: </label>
-                <input type="text" name="autor" id="autor" required>
+                <input type="text" name="autor" required>
 
                 <label for="">Ano de Publicação: </label>
-                <input type="number" value="ano" id="ano" required>
+                <input type="number" name="ano" required>
 
                 <label for="categoria">Categoria: </label>
-                <select name="categoria" id="categoria" required>
+                <select name="categoria" required>
                     <option value="">Selecione...</option>
                     <option value="Romance">Romance</option>
                     <option value="BL">Boy love</option>
@@ -41,8 +41,11 @@
                     <option value="infantil">Infantil</option>
                 </select>
                 <br><br>
+                <label > Capa do livro (imagem)</label>
+                <input type="file" name="capa" accept="image/*" required>
+
                 <label for="">Capa do Livro (imagem)</label>
-                <input type="file" name="arquivo" id="application/pdf" required>
+                <input type="file" name="arquivo" accept="application/pdf" required>
 
                 <button class=""> Cadastrar </button>
             </form>
