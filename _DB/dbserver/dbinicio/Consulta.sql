@@ -192,3 +192,5 @@ VALUES
 INSERT INTO aluguelequipamento (idEquipamento, idAluguel, valorItem, valorUnitario, qtd)
 VALUES
 (1, 9, 4.00, 2.00, 2)
+
+SELECT * FROM aluguelequipamento

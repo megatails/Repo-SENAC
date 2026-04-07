@@ -124,7 +124,71 @@ VALUES
 (/*nmCliente*/ 'Pão Duro Mac Money', /*cpf*/ '07251764822',  /*email*/ 'ElegantMouseXOXO@gmail.com', /*cep*/ '50740083', /*cidade*/'Recife', /*estado*/ 'SP', /*nomeLogradouro*/ '3ª Travessa Barão de Bonito', /*bairro*/ 'Cidade Universitária', /*numero*/ '420', /*complemento*/ 'apto 77A')
 
 
+CREATE PROCEDURE ps_alugarCadeiras
+(
+	IN psIdCliente INT,
+	IN psIdFuncionario INT,
+	IN psDataHoraRetirada DATETIME,
+	IN psDataHoraDevolucao DATETIME,
+	IN psValorAPagar DECIMAL(10,2),
+	IN psValorPago DECIMAL(10,2),
+	IN psPago BIT,
+	IN psFormaPagamento VARCHAR(50),
+	IN psQtVezes INT,
+	IN psIdEquipamento INT,
+	IN psValorItem DECIMAL(10,2),
+	IN psValorUnitario DECIMAL(10,2),
+	IN psQtd INT,
+	IN psIdAluguel int
+)
+
+INSERT INTO aluguel (idCliente, idFuncionario, dataHoraRetirada, dataHoraDevolucao, valorAPagar, valorPago, pago, formaPagamento, qtVezes)
+VALUES 
+(psIdCliente, psIdFuncionario, psDataHoraRetirada, psDataHoraDevolucao, psValorAPagar, psValorPago, psPago, psFormaPagamento, psQtVezes);
+
+SET @idAluguel = LAST_INSERT_ID();
+
+INSERT INTO aluguelequipamento (idEquipamento, idAluguel, valorItem, valorUnitario, qtd)
+VALUES
+(psIdEquipamento, @idAluguel, psValorItem, psValorUnitario, psQtd);
+
+UPDATE TABLE equipamento
+SET qtd = qtd-psQtd 
+WHERE idEquipamento = LAST_INSERT_ID(); 
 
 
+CALL ps_alugarCadeiras()
 
+CREATE PROCEDURE sp_realizar_aluguel(
+    IN p_idCliente       INT,
+    IN p_idFuncionario   INT,
+    IN p_idEquipamento   INT,
+    IN p_qtd             INT,
+    IN p_dataRetirada    DATETIME
+)
+    INSERT INTO aluguel
+        (idCliente, idFuncionario, dataHoraRetirada, 
+		  dataHoraDevolucao, valorAPagar, valorPago, pago)
+    VALUES
+        (p_idCliente, p_idFuncionario, p_dataRetirada, 
+		  p_dataDevolucao, 0.00, 0.00, 0);
+    SET @idAluguel = LAST_INSERT_ID();
+    INSERT INTO aluguelequipamento
+        (idAluguel, idEquipamento, valorUnitario, qtd, 
+		  valorItem)
+    SELECT
+        @idAluguel, idEquipamento, valorHora, p_qtd, 
+		  valorDiaria * p_qtd
+    FROM equipamento
+    WHERE nomeEquipamento = p_nomeEquipamento;
+    UPDATE equipamento
+    SET qtd = qtd - p_qtd
+    WHERE nomeEquipamento = p_nomeEquipamento;
+    UPDATE aluguel
+    SET valorAPagar = (
+        SELECT SUM(valorItem)
+        FROM aluguelequipamento
+        WHERE idAluguel = @idAluguel
+    )
+    WHERE idAluguel = @idAluguel;
 
