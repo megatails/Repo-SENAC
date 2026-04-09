@@ -123,28 +123,25 @@ VALUES
 
 (/*nmCliente*/ 'Pão Duro Mac Money', /*cpf*/ '07251764822',  /*email*/ 'ElegantMouseXOXO@gmail.com', /*cep*/ '50740083', /*cidade*/'Recife', /*estado*/ 'SP', /*nomeLogradouro*/ '3ª Travessa Barão de Bonito', /*bairro*/ 'Cidade Universitária', /*numero*/ '420', /*complemento*/ 'apto 77A')
 
+DELIMITER //
 
-CREATE PROCEDURE ps_alugarCadeiras
+CREATE PROCEDURE ps_alugar
 (
 	IN psIdCliente INT,
 	IN psIdFuncionario INT,
-	IN psDataHoraRetirada DATETIME,
-	IN psDataHoraDevolucao DATETIME,
 	IN psValorAPagar DECIMAL(10,2),
-	IN psValorPago DECIMAL(10,2),
-	IN psPago BIT,
 	IN psFormaPagamento VARCHAR(50),
 	IN psQtVezes INT,
 	IN psIdEquipamento INT,
 	IN psValorItem DECIMAL(10,2),
 	IN psValorUnitario DECIMAL(10,2),
-	IN psQtd INT,
-	IN psIdAluguel int
+	IN psQtd INT
 )
+BEGIN
 
 INSERT INTO aluguel (idCliente, idFuncionario, dataHoraRetirada, dataHoraDevolucao, valorAPagar, valorPago, pago, formaPagamento, qtVezes)
 VALUES 
-(psIdCliente, psIdFuncionario, psDataHoraRetirada, psDataHoraDevolucao, psValorAPagar, psValorPago, psPago, psFormaPagamento, psQtVezes);
+(psIdCliente, psIdFuncionario, NOW(), null, psValorAPagar, null, 0, psFormaPagamento, psQtVezes);
 
 SET @idAluguel = LAST_INSERT_ID();
 
@@ -152,12 +149,37 @@ INSERT INTO aluguelequipamento (idEquipamento, idAluguel, valorItem, valorUnitar
 VALUES
 (psIdEquipamento, @idAluguel, psValorItem, psValorUnitario, psQtd);
 
-UPDATE TABLE equipamento
+UPDATE equipamento
 SET qtd = qtd-psQtd 
-WHERE idEquipamento = LAST_INSERT_ID(); 
+WHERE idEquipamento = psIdEquipamento;
+
+END //
+DELIMITER ;
+
+/* 
+DROP PROCEDURE ps_alugar
+
+SELECT * FROM cliente 
+SELECT * FROM aluguel
+SELECT * FROM aluguelequipamento
+select* FROM equipamento
+
+*/
+
+CALL ps_alugar(1, 2, 10.00, NULL, NULL, 1, 10.00, 2.00, 5)
 
 
-CALL ps_alugarCadeiras()
+
+
+
+
+
+
+
+
+
+
+
 
 CREATE PROCEDURE sp_realizar_aluguel(
     IN p_idCliente       INT,

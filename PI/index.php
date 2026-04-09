@@ -11,9 +11,10 @@
   ?>
 
 <body>
-  <div class=".backdrop">
-    olá
-
+  <div class="centro fundo">
+    <div class="textinho">
+      olá
+    </div>
   </div>
 </body>
 </html>
