@@ -37,7 +37,7 @@ footer {
     box-sizing:border-box;
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 700;
-    
+    color: var(--text);
 }
 
 html {
@@ -62,48 +62,40 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-color: rgb(9, 15, 63);
+    
 }
 
 .centro {
     padding: 40px;
-    padding-left: 360px;
-    padding-right: 360px;
-    padding-bottom: 1000px;
+    width: 50%;
+    height: 50%;
+
     align-items: center;
-    text-align: center;
-    margin-top: 70px;
+    text-align: justify;
     border-radius: 12px;
 
     font-size: 20px;
-    position: absolute;
-    color: rgb(255, 255, 255);
-    top: 90%;
-    left: 50%;
+    position: relative;
+    margin-top: 400px;
+    left: 25%;
     -ms-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
+
+    background-color: var(--base);
 }
 
-    @supports 
-        (backdrop-filter: blur(16px)) or
-        (-webkit-backdrop-filter: blur(16px))
-    {
+.centro h1, .centro h2{
+    margin-bottom: 15px;
+    font-size: 12px;
+    display: flex;
+}
+.centro p{
+    line-height: 1.6;
+    font-size: 8px;
+}
 
-    .fundo {
-        background: #2d4d6b67;
-        -webkit-backdrop-filter: blur(12px) brightness(0.96);
-        backdrop-filter: blur(12px) brightness(0.96);
-        pointer-events: none;
-        box-shadow: 0 2px 2px 2px #05173380;
-        position: absolute;
-        background-repeat: round;
-        background-image: url("/Images/acrilico.jpg") ;
-        background-size: 600px;
-        mix-blend-mode: multiply;
-        z-index: -1;
-    }
 
-    }
 
 
 .botao {

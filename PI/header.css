@@ -17,6 +17,7 @@ header {
         (-webkit-backdrop-filter: blur(16px))
     {
     header {
+        z-index: 4;
       background: hsla(0, 0%, 100%, 0.068);
     }
 
@@ -82,3 +83,19 @@ header {
         );
     }
   }
+
+.card{
+    background-color: #2b2d31;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px rgb(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+
+}
+.card h1, .card h2{
+    margin-bottom: 15px;
+}
+.card p{
+    line-height: 1.6;
+    font-size: 16px;
+}
