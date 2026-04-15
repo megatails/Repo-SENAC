@@ -33,7 +33,7 @@
                 <select name="categoria" required>
                     <option value="">Selecione...</option>
                     <option value="Romance">Romance</option>
-                    <option value="BL">Boy love</option>
+                    <option value="BL">RPG</option>
                     <option value="Fantasia">Fantasia</option>
                     <option value="fic">Ficção Científica</option>
                     <option value="tech">Tecnologia</option>
