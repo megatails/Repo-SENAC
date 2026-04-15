@@ -5,6 +5,8 @@
     $nota1 = $_SESSION['nota1'];
     $nota2 = $_SESSION['nota2'];
     $faltas = $_SESSION['faltas'];
+    $notafinal = $_SESSION['notafinal'];
+    $status = $_SESSION['status'];
 ?>
 
 <!DOCTYPE html>
@@ -38,16 +40,9 @@
                     <td><?= htmlspecialchars($nome[$i]) ?></td>
                     <td><?= htmlspecialchars($nota1[$i]) ?></td>
                     <td><?= htmlspecialchars($nota2[$i]) ?></td>
-                    <td><?= htmlspecialchars(($nota1[$i] + $nota2[$i]) / 2) ?></td>
+                    <td><?= htmlspecialchars($notafinal[$i]) ?></td>
                     <td><?= htmlspecialchars($faltas[$i]) ?></td>
-                    <?php $frequencia = (256 - $faltas[$i]) / 256 * 100;
-                     ?>
-                    <td><?php if ((($nota1[$i] + $nota2[$i]) / 2) >= 6 && $frequencia > 65 ) {
-                        echo "<span style='color: lightgreen'>APROVADO! </span>";
-                    }  else {
-                        echo "<span style='color: crimson'>REPROVADO! </span>";
-                    }
-                    ?></td>
+                    <td><?= htmlspecialchars($status[$i]) ?></td>
                 </tr>
                 <?php } ?>
             </table>

@@ -5,6 +5,8 @@
     $nota1 = $_SESSION['nota1'];
     $nota2 = $_SESSION['nota2'];
     $faltas = $_SESSION['faltas'];
+    $notafinal = $_SESSION['notafinal'];
+    $status = $_SESSION['status'];
 ?>
 
 <!DOCTYPE html>

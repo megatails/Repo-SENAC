@@ -6,6 +6,37 @@ ColWidths_connform.ListSessions<|||>1<|||>163,50,50,50,50,50,10
 ColsVisible_connform.ListSessions<|||>1<|||>0,1,4,6
 ColPositions_connform.ListSessions<|||>1<|||>0,1,2,3,4,5,6
 ColSort_connform.ListSessions<|||>1<|||>0,0
+querymemoheight<|||>3<|||>587
+sqloutheight<|||>3<|||>134
+MainWinOnMonitor<|||>3<|||>0
+MainWinLeft<|||>3<|||>497
+MainWinTop<|||>3<|||>0
+MainWinWidth<|||>3<|||>1427
+MainWinHeight<|||>3<|||>1039
+ColWidths_MainForm.ListDatabases<|||>1<|||>150,80,50,50,50,50,50,50,50,50,120
+ColsVisible_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
+ColPositions_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
+ColSort_MainForm.ListDatabases<|||>1<|||>0,0
+ColWidths_MainForm.ListVariables<|||>1<|||>160,200,316
+ColsVisible_MainForm.ListVariables<|||>1<|||>0,1,2
+ColPositions_MainForm.ListVariables<|||>1<|||>0,1,2
+ColSort_MainForm.ListVariables<|||>1<|||>0,0
+ColWidths_MainForm.ListStatus<|||>1<|||>160,316,100,100
+ColsVisible_MainForm.ListStatus<|||>1<|||>0,1,2,3
+ColPositions_MainForm.ListStatus<|||>1<|||>0,1,2,3
+ColSort_MainForm.ListStatus<|||>1<|||>0,0
+ColWidths_MainForm.ListProcesses<|||>1<|||>70,80,80,80,80,50,50,186
+ColsVisible_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
+ColPositions_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
+ColSort_MainForm.ListProcesses<|||>1<|||>0,1
+ColWidths_MainForm.ListCommandStats<|||>1<|||>120,100,100,100,256
+ColsVisible_MainForm.ListCommandStats<|||>1<|||>0,1,2,3,4
+ColPositions_MainForm.ListCommandStats<|||>1<|||>0,1,2,3,4
+ColSort_MainForm.ListCommandStats<|||>1<|||>1,1
+ColWidths_MainForm.ListTables<|||>1<|||>120,70,70,120,120,70,100,50,70,70,70,70,70,90,120,70,70,70,50
+ColsVisible_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,18
+ColPositions_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+ColSort_MainForm.ListTables<|||>1<|||>0,0
 Servers\dbInicio\SessionCreated<|||>1<|||>2026-03-15 21:47:09
 Servers\dbInicio\Host<|||>1<|||>127.0.0.1
 Servers\dbInicio\WindowsAuth<|||>3<|||>0
@@ -53,3 +84,11 @@ Servers\dbInicio\lastUsedDB<|||>1<|||>jucacursosrodrigo
 Servers\dbInicio\QueryHistory\1<|||>1<|||>2026-03-15 21:55:37|JucaCursosRodrigo|0|CREATE DATABASE JucaCursosRodrigo;<{{{><}}}>USE JucaCursosRodrigo;
 Servers\dbInicio\QueryHistory\2<|||>1<|||>2026-03-15 21:56:25|JucaCursosRodrigo|15|CREATE TABLE alunos (<{{{><}}}>    idAluno INT AUTO_INCREMENT PRIMARY KEY,<{{{><}}}>    nome VARCHAR(100) NOT NULL,<{{{><}}}>    email VARCHAR(100) NOT NULL UNIQUE,<{{{><}}}>    dataNascimento DATE NOT NULL<{{{><}}}>)
 Servers\dbInicio\QueryHistory\3<|||>1<|||>2026-03-15 21:56:28|JucaCursosRodrigo|15|CREATE TABLE cursos (<{{{><}}}>    idCurso INT AUTO_INCREMENT PRIMARY KEY,<{{{><}}}>    nomeCurso VARCHAR(150) NOT NULL,<{{{><}}}>    cargaHoraria INT NOT NULL CHECK (carga_horaria > 0),<{{{><}}}>    valor DECIMAL(8,2) NOT NULL CHECK (valor > 0)<{{{><}}}>)
+Servers\dbInicio\QueryHistory\4<|||>1<|||>2026-03-15 21:59:13|jucacursosrodrigo|0|INSERT INTO alunos (nome, email, dataNascimento) <{{{><}}}>VALUES<{{{><}}}>('Ana Souza', 'ana@gmail.com', '2005-03-10'),<{{{><}}}>('Bruno Lima', 'bruno@gmail.com', '2000-07-21'),<{{{><}}}>('Carla Mendes', 'carla@gmail.com', '2003-11-05'),<{{{><}}}>('Daniel Rocha', 'daniel@gmail.com', '1997-01-18'),<{{{><}}}>('Amanda Silva', 'amanda@gmail.com', '2006-09-30')
+Servers\dbInicio\QueryHistory\5<|||>1<|||>2026-03-15 21:59:18|jucacursosrodrigo|0|INSERT INTO cursos (nomeCurso, cargaHoraria, valor) <{{{><}}}>VALUES<{{{><}}}>('SQL Básico – Uma linguagem para banco de dados', 40, 299.90),<{{{><}}}>('Java Fundamentos', 60, 399.90),<{{{><}}}>('C# para Iniciantes', 50, 349.90),<{{{><}}}>('Banco de Dados Avançado', 80, 499.90),<{{{><}}}>('Lógica de Programação', 30, 199.90)
+Servers\dbInicio\QueryHistory\6<|||>1<|||>2026-03-15 22:00:26|jucacursosrodrigo|0|SELECT * FROM cursos
+Servers\dbInicio\QueryHistory\7<|||>1<|||>2026-03-15 22:01:01|jucacursosrodrigo|0|SELECT nome<{{{><}}}>FROM alunos<{{{><}}}>WHERE TIMESTAMPDIFF(YEAR, dataNascimento, CURDATE()) > 21
+Servers\dbInicio\QueryHistory\8<|||>1<|||>2026-03-15 22:02:23|jucacursosrodrigo|0|SELECT *<{{{><}}}>FROM cursos<{{{><}}}>WHERE valor < 400
+Servers\dbInicio\QueryHistory\9<|||>1<|||>2026-03-15 22:02:27|jucacursosrodrigo|0|SELECT *<{{{><}}}>FROM alunos<{{{><}}}>WHERE nome LIKE 'A%'
+Servers\dbInicio\QueryHistory\10<|||>1<|||>2026-03-15 22:02:51|jucacursosrodrigo|0|SELECT nomeCurso, valor<{{{><}}}>FROM cursos<{{{><}}}>WHERE nomeCurso LIKE '%Banco%'
+Servers\dbInicio\QueryHistory\11<|||>1<|||>2026-03-15 22:04:59|jucacursosrodrigo|0|SELECT nome, dataNascimento, TIMESTAMPDIFF(YEAR, dataNascimento, CURDATE()) AS idade<{{{><}}}>FROM alunos<{{{><}}}>ORDER BY idade DESC

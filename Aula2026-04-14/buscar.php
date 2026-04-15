@@ -7,6 +7,8 @@
     $nota1 = $_SESSION['nota1'];
     $nota2 = $_SESSION['nota2'];
     $faltas = $_SESSION['faltas'];
+    $notafinal = $_SESSION['notafinal'];
+    $status = $_SESSION['status'];
 
     $busca = $_POST['busca'];
 ?>
@@ -28,38 +30,49 @@
                 <h2>Buscar aluno pelo nome</h2>
                 <div class="form-container">
                     <div>
-                        <label for="busca">Digite o nome do aluno para buscar:</label>
+                        <label for="busca">Digite a matricula do aluno para buscar:</label>
                         <input type="text" name="busca" id="busca" required>
                         <button>Buscar</button>
                     </div>
                 </div>
-                <table>
+                <table class="form-container">
                     <tr>
-                        <th>Nome<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></th>
-                        <th>Idade<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></th>
-                        <th>Curso<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></th>
-                        <th>Nota Final<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></th>
+                        <th>Matricula</th>
+                        <th>Nome</th>
+                        <th>Nota1</th>
+                        <th>Nota2</th>
+                        <th>Nota Final</th>
+                        <th>Faltas</th>
+                        <th>Status</th> 
                     </tr>
                     <?php 
+                    $matriculaBusca = [];
                     $nomeBusca = [];
-                    $idadeBusca = [];
-                    $cursoBusca = [];
+                    $nota1Busca = [];
+                    $nota2Busca = [];
+                    $notaFBusca = [];
+                    $faltasBusca = [];
                     $notaFBusca = [];
                     if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($busca)) {
-                        for ($i = 0; $i < count($nome); $i++) {
-                            if (isset($nome[$i]) && stripos($nome[$i], $busca) !== false) {
+                        for ($i = 0; $i < count($matricula); $i++) {
+                            if (isset($matricula[$i]) && stripos($matricula[$i], $busca) !== false) {
+                                $matriculaBusca[] = $matricula[$i];
                                 $nomeBusca[] = $nome[$i];
-                                $idadeBusca[] = $idade[$i];
-                                $cursoBusca[] = $curso[$i];
+                                $nota1Busca[] = $nota1[$i];
+                                $nota2Busca[] = $nota2[$i];
                                 $notaFBusca[] = $notaF[$i];
+                                $faltasBusca[] = $faltas[$i];
                             }
                         }
-                        for ($j = 0; $j < count($nomeBusca); $j++) { ?>
+                        for ($j = 0; $j < count($matriculaBusca); $j++) { ?>
                     <tr>
+                        <td><?= htmlspecialchars($matriculaBusca[$j]) ?></td>
                         <td><?= htmlspecialchars($nomeBusca[$j]) ?></td>
-                        <td><?= htmlspecialchars($idadeBusca[$j]) ?></td>
-                        <td><?= htmlspecialchars($cursoBusca[$j]) ?></td>
+                        <td><?= htmlspecialchars($nota1Busca[$j]) ?></td>
+                        <td><?= htmlspecialchars($nota2Busca[$j]) ?></td>
                         <td><?= htmlspecialchars($notaFBusca[$j]) ?></td>
+                        <td><?= htmlspecialchars($faltasBusca[$j]) ?></td>
+                        <td><?= htmlspecialchars($statusBusca[$j]) ?></td>
                     </tr>
                 <?php } } ?>
                 </table>

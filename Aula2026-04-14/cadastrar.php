@@ -7,12 +7,16 @@
     $nota1 = $_SESSION['nota1'];
     $nota2 = $_SESSION['nota2'];
     $faltas = $_SESSION['faltas'];
+    $notafinal = $_SESSION['notafinal'];
+    $status = $_SESSION['status'];
     } else {
         $matricula = [];
         $nome = [];
         $nota1 = [];
         $nota2 = [];
         $faltas = [];
+        $notafinal = [];
+        $status = [];
     }
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -24,12 +28,23 @@
             $nota1[] = $_POST["nota1$i"];
             $nota2[] = $_POST["nota2$i"];
             $faltas[] = $_POST["faltas$i"];
+            $notafinal[] = (($nota1[$i] + $nota2[$i]) / 2);
+            $frequencia = (256 - $faltas[$i]) / 256 * 100;
+
+            if ((($nota1[$i] + $nota2[$i]) / 2) >= 6 && $frequencia > 65 ) {
+                $status[$i] = "APROVADO!";
+            }  else {
+                $status[$i] = "REPROVADO!";
+            }
+            
             
                 $_SESSION['matricula'] = $matricula;
                 $_SESSION['nome'] = $nome;
                 $_SESSION['nota1'] = $nota1;
                 $_SESSION['nota2'] = $nota2;
                 $_SESSION['faltas'] = $faltas;
+                $_SESSION['notafinal'] = $notafinal;
+                $_SESSION['status'] = $status;
             } 
         }
     }
