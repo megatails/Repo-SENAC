@@ -160,6 +160,11 @@ th{
     background:#202225;
 }
 
+caption {
+  caption-side: bottom;
+  padding: 10px;
+}
+
 a.menu{
     position:fixed;
     bottom:20px;

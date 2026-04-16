@@ -22,21 +22,22 @@
     <title>Buscar Alunos</title>
 </head>
     <body>
-    <?php 
-        include('menu.php');
-    ?>
+        <?php 
+            include('menu.php');
+        ?>
+
         <div class="conteudo">
             <form action="" method="post">
-                <h2>Buscar aluno pelo nome</h2>
                 <div class="form-container">
-                    <div>
+                <h2>Buscar aluno pelo nome</h2>
                         <label for="busca">Digite a matricula do aluno para buscar:</label>
-                        <input type="text" name="busca" id="busca" required>
+                        <input type="text" name="busca" id="busca">
                         <button>Buscar</button>
-                    </div>
                 </div>
+            </form><br><br>
                 <table class="form-container">
                     <tr>
+                        <th>Ações</th>
                         <th>Matricula</th>
                         <th>Nome</th>
                         <th>Nota1</th>
@@ -64,8 +65,24 @@
                                 $faltasBusca[] = $faltas[$i];
                             }
                         }
+                        if (empty($matriculaBusca)) {
+                            echo "<caption>
+                                    Nenhum Aluno encontrado.
+                                  </caption>";
+                        }
                         for ($j = 0; $j < count($matriculaBusca); $j++) { ?>
                     <tr>
+                        <td> <form action="editar.php" method="post"> 
+                            <input type="text" name="matriculaEdit" hidden value="<?= $matriculaBusca[$j] ?>"> 
+                            <input type="text" name="nomeEdit" hidden value="<?= $nomeBusca[$j] ?>"> 
+                            <input type="number" name="nota1Edit" hidden value="<?= $nota1Busca[$j] ?>"> 
+                            <input type="number" name="nota2Edit" hidden value="<?= $nota2Busca[$j] ?>">
+                            <input type="number" name="faltasEdit" hidden value="<?= $faltasBusca[$j] ?>">    
+                            <input type="number" name="idAluno" hidden value="<?= $j ?>">  
+
+                            <button >Editar</button> 
+                            </form>
+                        </td>
                         <td><?= htmlspecialchars($matriculaBusca[$j]) ?></td>
                         <td><?= htmlspecialchars($nomeBusca[$j]) ?></td>
                         <td><?= htmlspecialchars($nota1Busca[$j]) ?></td>
@@ -74,9 +91,19 @@
                         <td><?= htmlspecialchars($faltasBusca[$j]) ?></td>
                         <td><?= htmlspecialchars($statusBusca[$j]) ?></td>
                     </tr>
-                <?php } } ?>
+                    <?php } } elseif (empty($busca)) {
+                        for ($i = 0; $i < count($matricula); $i++) { ?>
+                        <tr>
+                            <td><?= htmlspecialchars($matricula[$i]) ?></td>
+                            <td><?= htmlspecialchars($nome[$i]) ?></td>
+                            <td><?= htmlspecialchars($nota1[$i]) ?></td>
+                            <td><?= htmlspecialchars($nota2[$i]) ?></td>
+                            <td><?= htmlspecialchars($notafinal[$i]) ?></td>
+                            <td><?= htmlspecialchars($faltas[$i]) ?></td>
+                            <td><?= htmlspecialchars($status[$i]) ?></td>
+                        </tr>
+                    <?php } } ?>
                 </table>
-            </form>
         </div>
     </body>
 
