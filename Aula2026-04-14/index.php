@@ -36,7 +36,6 @@
         <div class="conteudo">
             <h2>Bem-vindo ao Sistema de Cadastro de Alunos</h2>
             <p>Escolha uma opção no menu para começar.</p>
-            <?php echo "aluno: " . $nome[3]; ?>
         </div>
         
     </body>

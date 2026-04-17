@@ -71,7 +71,7 @@
                         
                         <label for="matricula<?= $i ?>">Digite a matricula do aluno</label>
                         <input type="text" name="matricula<?= $i ?>" 
-                            required value="<?= htmlspecialchars($nome[$i] ?? '') ?>">
+                            required value="<?= htmlspecialchars($matricula[$i] ?? '') ?>">
 
                         <label for="nome<?= $i ?>">Digite o nome do aluno</label>
                         <input type="text" name="nome<?= $i ?>" 
@@ -79,15 +79,15 @@
 
                         <label for="nota1<?= $i ?>">Digite a 1º nota do aluno</label>
                         <input type="number" name="nota1<?= $i ?>" min="0" max="10" step="0.01"
-                            required value="<?= htmlspecialchars($idade[$i] ?? '') ?>">
+                            required value="<?= htmlspecialchars($nota1[$i] ?? '') ?>">
 
                         <label for="nota2<?= $i ?>">Digite a 2º nota do aluno</label>
                         <input type="number" name="nota2<?= $i ?>" min="0" max="10" step="0.01"
-                            required value="<?= htmlspecialchars($curso[$i] ?? '') ?>">
+                            required value="<?= htmlspecialchars($nota2[$i] ?? '') ?>">
 
                         <label for="faltas<?= $i ?>">Digite quantas vezes o Aluno faltou</label>
                         <input min="0" type="number" name="faltas<?= $i ?>" 
-                            required value="<?= htmlspecialchars($notaF[$i] ?? '') ?>">
+                            required value="<?= htmlspecialchars($faltas[$i] ?? '') ?>">
 
                         <button>Cadastrar</button>
                     </div>

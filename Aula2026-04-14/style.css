@@ -220,15 +220,16 @@ a.menu:hover{
 .btn {
     display: inline-block;
     margin-top: 10px;
-    background-color: #4752c4;
+    background-color: #5865F2;
     color: aliceblue;
     padding: 10px;
     border-radius: 6px;
     text-decoration: none;
     font-size: 14px;
     transition: 0.3s;
+    font-weight:bold;
 }
 
 .btn:hover {
-    background:#5865F2 ;
+    background:#4752c4;
 }
