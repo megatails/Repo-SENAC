@@ -31,7 +31,7 @@
             $notafinal[] = (($nota1[$i] + $nota2[$i]) / 2);
             $frequencia = (256 - $faltas[$i]) / 256 * 100;
 
-            if ((($nota1[$i] + $nota2[$i]) / 2) >= 6 && $frequencia > 65 ) {
+            if ((($nota1[$i] + $nota2[$i]) / 2) >= 6 && $frequencia > 75 ) {
                 $status[$i] = "APROVADO!";
             }  else {
                 $status[$i] = "REPROVADO!";

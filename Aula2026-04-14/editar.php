@@ -1,5 +1,6 @@
 <?php    
     session_start();
+    $idAluno = $_POST['idAluno'];
 
     if (isset($_SESSION['matricula']) && is_array($_SESSION['matricula'])) {
     $matricula = $_SESSION['matricula'];
@@ -10,44 +11,9 @@
     $notafinal = $_SESSION['notafinal'];
     $status = $_SESSION['status'];
     } else {
-        $matricula = [];
-        $nome = [];
-        $nota1 = [];
-        $nota2 = [];
-        $faltas = [];
-        $notafinal = [];
-        $status = [];
+        echo '<span class="resultado"> an error has occurred</span>';
     }
-    
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        if (isset($_POST["matriculaEdit"]) && $_POST["matriculaEdit"] !== '') {
-            {
-            $idAluno = $_POST['idAluno'];
-            $matricula[$idAluno] = $_POST["matriculaEdit"];
-            $nome[$idAluno] = $_POST["nomeEdit"];
-            $nota1[$idAluno] = $_POST["nota1Edit"];
-            $nota2[$idAluno] = $_POST["nota2Edit"];
-            $faltas[$idAluno] = $_POST["faltasEdit"];
-            $notafinal[] = (($nota1[$iidAluno] + $nota2[$idAluno]) / 2);
-            $frequencia = (256 - $faltas[$idAluno]) / 256 * 100;
 
-            if ((($nota1[$idAluno] + $nota2[$idAluno]) / 2) >= 6 && $frequencia > 65 ) {
-                $status[$idAluno] = "APROVADO!";
-            }  else {
-                $status[$idAluno] = "REPROVADO!";
-            }
-            
-            
-                $_SESSION['matricula'] = $matricula[$idAluno];
-                $_SESSION['nome'] = $nome[$idAluno];
-                $_SESSION['nota1'] = $nota1[$idAluno];
-                $_SESSION['nota2'] = $nota2[$idAluno];
-                $_SESSION['faltas'] = $faltas[$idAluno];
-                $_SESSION['notafinal'] = $notafinal[$idAluno];
-                $_SESSION['status'] = $status[$idAluno];
-            } 
-        }
-    }
 ?>
 
 <!DOCTYPE html>
@@ -63,34 +29,62 @@
         include('menu.php');
     ?>
         <div class="conteudo">
-            <form action="" method="post">
+            <form action="buscar.php" method="post">
                 <div class="form-container">
-                        <h4>Dados do Aluno Nº <?= $idAluno ?></h4>
+                        <h4>Dados do Aluno Nº <?= $idAluno+1 ?></h4>
                         
                         <label for="matriculaEdit">Digite a matricula do aluno</label>
                         <input type="text" name="matriculaEdit" placeholder="<?= $matricula[$idAluno] ?>"
-                            required value="<?= htmlspecialchars($nome[$idAluno] ?? '') ?>">
+                            required value="<?= htmlspecialchars($matricula[$idAluno] ?? '') ?>">
 
                         <label for="nomeEdit">Digite o nome do aluno</label>
-                        <input type="text" name="nomeEdit" placeholder="<?= $nome[$idAluno] ?>"
+                        <input type="text" name="nomeEdit" placeholder="<?= $nome[$idAluno+1] ?>"
                             required value="<?= htmlspecialchars($nome[$idAluno] ?? '') ?>">
 
                         <label for="nota1Edit">Digite a 1º nota do aluno</label>
                         <input type="number" name="nota1Edit" min="0" max="10" step="0.01" placeholder="<?= $nota1[$idAluno] ?>"
-                            required value="<?= htmlspecialchars($idade[$idAluno] ?? '') ?>">
+                            required value="<?= htmlspecialchars($nota1[$idAluno] ?? '') ?>">
 
                         <label for="nota2Edit">Digite a 2º nota do aluno</label>
                         <input type="number" name="nota2Edit" min="0" max="10" step="0.01" placeholder="<?= $nota2[$idAluno] ?>"
-                            required value="<?= htmlspecialchars($curso[$idAluno] ?? '') ?>">
+                            required value="<?= htmlspecialchars($nota2[$idAluno] ?? '') ?>">
 
                         <label for="faltasEdit">Digite quantas vezes o Aluno faltou</label>
-                        <input min="0" type="number" name="faltasEdit" placeholder="<?= $faltas[$idAluno] ?>"
-                            required value="<?= htmlspecialchars($notaF[$idAluno] ?? '') ?>">
+                        <input type="number" name="faltasEdit" min="0" placeholder="<?= $faltas[$idAluno] ?>"
+                            required value="<?= htmlspecialchars($faltas[$idAluno] ?? '') ?>">
 
-                        <button>Cadastrar</button>
+                        <button>Finalizar Edição</button>
                     </div>
                 </div>
             </form>
         </div>
 </body>
 </html>
+
+<?php 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST["matriculaEdit"]) && $_POST["matriculaEdit"] !== '') {
+            {
+            
+            $frequencia = (256 - $faltas[$idAluno]) / 256 * 100;
+
+            if ((($nota1[$idAluno] + $nota2[$idAluno]) / 2) >= 6 && $frequencia > 65 ) {
+                $status[$idAluno] = "APROVADO!";
+            }  else {
+                $status[$idAluno] = "REPROVADO!";
+            }
+
+                $_SESSION['matricula'][$idAluno] = $_POST['matriculaEdit'];
+                $_SESSION['nome'][$idAluno] = $_POST['nomeEdit'];
+                $_SESSION['nota1'][$idAluno] = $_POST['nota1Edit'];
+                $_SESSION['nota2'][$idAluno] = $_POST['nota2Edit'];
+                $_SESSION['faltas'][$idAluno] = $_POST['faltasEdit'];
+                $_SESSION['notafinal'][$idAluno] = (($_POST['nota1Edit'][$idAluno] + $_POST['nota2Edit'][$idAluno]) / 2);
+                $_SESSION['status'][$idAluno] = $status;
+
+            } 
+        }
+    }
+
+
+?>

@@ -61,8 +61,9 @@
                                 $nomeBusca[] = $nome[$i];
                                 $nota1Busca[] = $nota1[$i];
                                 $nota2Busca[] = $nota2[$i];
-                                $notaFBusca[] = $notaF[$i];
+                                $notaFBusca[] = $notafinal[$i];
                                 $faltasBusca[] = $faltas[$i];
+                                
                             }
                         }
                         if (empty($matriculaBusca)) {
@@ -70,14 +71,9 @@
                                     Nenhum Aluno encontrado.
                                   </caption>";
                         }
-                        for ($j = 0; $j < count($matriculaBusca); $j++) { ?>
+                        for ($j = 0; $j < count($matriculaBusca); $j++) { $idAluno = array_search($matriculaBusca, $matricula); //mostra somente a pesquisa ?>
                     <tr>
                         <td> <form action="editar.php" method="post"> 
-                            <input type="text" name="matriculaEdit" hidden value="<?= $matriculaBusca[$j] ?>"> 
-                            <input type="text" name="nomeEdit" hidden value="<?= $nomeBusca[$j] ?>"> 
-                            <input type="number" name="nota1Edit" hidden value="<?= $nota1Busca[$j] ?>"> 
-                            <input type="number" name="nota2Edit" hidden value="<?= $nota2Busca[$j] ?>">
-                            <input type="number" name="faltasEdit" hidden value="<?= $faltasBusca[$j] ?>">    
                             <input type="number" name="idAluno" hidden value="<?= $j ?>">  
 
                             <button >Editar</button> 
@@ -91,17 +87,6 @@
                         <td><?= htmlspecialchars($faltasBusca[$j]) ?></td>
                         <td><?= htmlspecialchars($statusBusca[$j]) ?></td>
                     </tr>
-                    <?php } } elseif (empty($busca)) {
-                        for ($i = 0; $i < count($matricula); $i++) { ?>
-                        <tr>
-                            <td><?= htmlspecialchars($matricula[$i]) ?></td>
-                            <td><?= htmlspecialchars($nome[$i]) ?></td>
-                            <td><?= htmlspecialchars($nota1[$i]) ?></td>
-                            <td><?= htmlspecialchars($nota2[$i]) ?></td>
-                            <td><?= htmlspecialchars($notafinal[$i]) ?></td>
-                            <td><?= htmlspecialchars($faltas[$i]) ?></td>
-                            <td><?= htmlspecialchars($status[$i]) ?></td>
-                        </tr>
                     <?php } } ?>
                 </table>
         </div>
