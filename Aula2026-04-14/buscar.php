@@ -10,7 +10,58 @@
     $notafinal = $_SESSION['notafinal'];
     $status = $_SESSION['status'];
 
-    $busca = $_POST['busca'];
+    $filtro = $_POST['filtro'] ?? 'todos';
+    $indicesAlunos = [];
+
+    // Processa o filtro e popula um array com os índices a exibir
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        switch ($filtro) {
+            case 'maiorMedia':
+                if (count($notafinal) > 0) {
+                    $indicesAlunos[] = array_search(max($notafinal), $notafinal);
+                }
+                break;
+
+            case 'menorMedia':
+                if (count($notafinal) > 0) {
+                    $indicesAlunos[] = array_search(min($notafinal), $notafinal);
+                }
+                break;
+
+            case 'aprovados':
+                for ($i = 0; $i < count($status); $i++) {
+                    if ($status[$i] === "APROVADO!") {
+                        $indicesAlunos[] = $i;
+                    }
+                }
+                break;
+
+            case 'reprovados':
+                for ($i = 0; $i < count($status); $i++) {
+                    if ($status[$i] === "REPROVADO!") {
+                        $indicesAlunos[] = $i;
+                    }
+                }
+                break;
+
+            default:
+                if (!empty($_POST['busca'])) {
+                    for ($i = 0; $i < count($matricula); $i++) {
+                        if (stripos($matricula[$i], $_POST['busca']) !== false) {
+                            $indicesAlunos[] = $i;
+                        }
+                    }
+                } else {
+                    for ($i = 0; $i < count($matricula); $i++) {
+                        $indicesAlunos[] = $i;
+                    }
+                }
+        }
+    } else {
+        for ($i = 0; $i < count($matricula); $i++) {
+            $indicesAlunos[] = $i;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +80,20 @@
         <div class="conteudo">
             <form action="" method="post">
                 <div class="form-container">
-                <h2>Buscar aluno pelo nome</h2>
+                <h2>Buscar Alunos</h2>
                         <label for="busca">Digite a matricula do aluno para buscar:</label>
                         <input type="text" name="busca" id="busca">
-                        <button>Buscar</button>
+                        
+                        <label for="filtro">Filtrar por:</label>
+                        <select name="filtro" id="filtro">
+                            <option value="todos">Todos</option>
+                            <option value="aprovados">Aprovados</option>
+                            <option value="reprovados">Reprovados</option>
+                            <option value="maiorMedia">Maior Média</option>
+                            <option value="menorMedia">Menor Média</option>
+                        </select>
+                        
+                        <button>Filtrar</button>
                 </div>
             </form><br><br>
                 <table class="form-container">
@@ -46,49 +107,26 @@
                         <th>Faltas</th>
                         <th>Status</th> 
                     </tr>
-                    <?php 
-                    $matriculaBusca = [];
-                    $nomeBusca = [];
-                    $nota1Busca = [];
-                    $nota2Busca = [];
-                    $notaFBusca = [];
-                    $faltasBusca = [];
-                    $notaFBusca = [];
-                    if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($busca)) {
-                        for ($i = 0; $i < count($matricula); $i++) {
-                            if (isset($matricula[$i]) && stripos($matricula[$i], $busca) !== false) {
-                                $matriculaBusca[] = $matricula[$i];
-                                $nomeBusca[] = $nome[$i];
-                                $nota1Busca[] = $nota1[$i];
-                                $nota2Busca[] = $nota2[$i];
-                                $notaFBusca[] = $notafinal[$i];
-                                $faltasBusca[] = $faltas[$i];
-                                
-                            }
-                        }
-                        if (empty($matriculaBusca)) {
-                            echo "<caption>
-                                    Nenhum Aluno encontrado.
-                                  </caption>";
-                        }
-                        for ($j = 0; $j < count($matriculaBusca); $j++) { $idAluno = array_search($matriculaBusca, $matricula); //mostra somente a pesquisa ?>
+                    <?php foreach ($indicesAlunos as $i) { ?>
                     <tr>
                         <td> <form action="editar.php" method="post"> 
-                            <input type="number" name="idAluno" hidden value="<?= $j ?>">  
-
-                            <button >Editar</button> 
+                            <input type="number" name="idAluno" hidden value="<?= $i ?>">  
+                            <button type="submit" class="btn">Editar</button>
                             </form>
                         </td>
-                        <td><?= htmlspecialchars($matriculaBusca[$j]) ?></td>
-                        <td><?= htmlspecialchars($nomeBusca[$j]) ?></td>
-                        <td><?= htmlspecialchars($nota1Busca[$j]) ?></td>
-                        <td><?= htmlspecialchars($nota2Busca[$j]) ?></td>
-                        <td><?= htmlspecialchars($notaFBusca[$j]) ?></td>
-                        <td><?= htmlspecialchars($faltasBusca[$j]) ?></td>
-                        <td><?= htmlspecialchars($statusBusca[$j]) ?></td>
+                        <td><?= htmlspecialchars($matricula[$i]) ?></td>
+                        <td><?= htmlspecialchars($nome[$i]) ?></td>
+                        <td><?= htmlspecialchars($nota1[$i]) ?></td>
+                        <td><?= htmlspecialchars($nota2[$i]) ?></td>
+                        <td><?= htmlspecialchars($notafinal[$i]) ?></td>
+                        <td><?= htmlspecialchars($faltas[$i]) ?></td>
+                        <td><?= htmlspecialchars($status[$i]) ?></td>
                     </tr>
-                    <?php } } ?>
+                    <?php } ?>
                 </table>
+            <div class="form-container" style="padding: 15px; margin-top: 20px;">
+                <h3>Total de Alunos Cadastrados: <span style="color: #5865F2; font-weight: bold;"><?= count($nome) ?></span></h3>
+            </div>
         </div>
     </body>
 
