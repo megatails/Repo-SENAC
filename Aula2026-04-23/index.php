@@ -4,8 +4,6 @@
         echo "Saudações " . $nome . "<br>Boas Vindas ao meu site!!!";
     }
 
-    entrada('Rodrigo');
-
     function soma($a, $b){
         
         echo "<h4>o valor da soma é: <span style='color: lightgreen'>" . $a + $b . "</span></h4>";
@@ -32,7 +30,7 @@
         }
     }
     else {
-        echo "<h1 class='resposta'>Há número repetidos! <br> tente números diferentes<h1>";
+        echo "<h4 class='resposta'>Há número repetidos! <br> tente números diferentes<h4>";
     }
     }
 
@@ -107,13 +105,9 @@
         }
     }
 
-    function gerarToken($size){
-        
-        $string = bin2hex(random_bytes($size));
+    function gerarToken($size){ //faz o tamanho de $print ter a quantidade de caracteres de $size
+        $token = bin2hex(random_bytes($size/2));
 
-        foreach ($string as $size) {
-            echo 
-        }
 
     return $token;
     }
@@ -128,6 +122,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Aula Funções</title>
 </head>
+<header><?=entrada('Rodrigo');?><br></header>
 <body>
     <div class='container'>
     <form action="" method="post">
@@ -150,10 +145,12 @@
         <br><br>
         <input type="submit" value="Mostrar">
     </form>
+    </div>
     
 </body>
 </html>
 
+<div class='container'>
 <?php 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $var1 = $_POST['num1'];
@@ -162,29 +159,33 @@
         $var4 = $_POST['string1'];
         $var5 = $_POST['string2'];
 
-    // echo " <h3>Exercicio 2 - Soma:</h3>";
-    // soma($var1, $var2);
+    echo " <h3>Exercicio 2 - Soma:</h3>";
+    soma($var1, $var2);
 
-    // echo " <h3>Exercicio 3 - Impar ou Par:</h3>";
-    // parImpar(12);
+    echo " <h3>Exercicio 3 - Impar ou Par:</h3>";
+    parImpar(12);
 
-    // echo " <h3>Exercicio 4 - Maior número:</h3>";
-    // maiorNum($var1, $var2, $var3);
+    echo " <h3>Exercicio 4 - Maior número:</h3>";
+    maiorNum($var1, $var2, $var3);?>
+</div>
+<div class="container">
+<?php
+    echo " <h3>Exercicio 5 - String Invertida:</h3>";
+    reverseString($var4);
 
-    // echo " <h3>Exercicio 5 - String Invertida:</h3>";
-    // reverseString($var4);
 
-    // echo " <h3>Exercicio 6 - Descontos:</h3>";
-    // desconto($var1);
 
-    // echo " <h3>Exercicio 7 - Login:</h3>";
-    // genLogin($var4, $var5);
+    echo " <h3>Exercicio 6 - Descontos:</h3>";
+    desconto($var1);
 
-    // echo " <h3>Exercicio 8 - Valor frete:</h3>";
-    // calcFrete($var1);
+    echo " <h3>Exercicio 7 - Login:</h3>";
+    genLogin($var4, $var5);
+
+    echo " <h3>Exercicio 8 - Valor frete:</h3>";
+    calcFrete($var1);
     
-    // echo " <h3>Exercicio 9 - Criterio de Senha:</h3>";
-    // checkSenha($var4);
+    echo " <h3>Exercicio 9 - Criterio de Senha:</h3>";
+    checkSenha($var4);
 
     echo " <h3>Exercicio 10 - Token Generator:</h3>";
         echo 'Aqui está seu token: ' . gerarToken($var2);
