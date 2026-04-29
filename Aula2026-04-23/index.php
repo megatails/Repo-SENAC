@@ -36,33 +36,92 @@
     }
     }
 
-    function reverseString(){
+    function reverseString($string){
+        echo 'String Normal: ' . $string. '<br>';
+        echo 'String ao contrario: ';
+        for ($i=strlen($string)-1; $i >= 0; $i--) { 
+             echo $string[$i];            
+        }
+    }
+
+    function desconto($valor){
+        if (!empty($valor)) {
+            echo "valor do produto: $valor<br>";
+            if ($valor >=500) {
+                $valor = $valor * 0.80;
+                $desconto = 20;
+            } elseif ($valor >= 300) {
+                $valor = $valor * 0.85;
+                $desconto = 15;
+            }
+            elseif ($valor >= 100) {
+                $valor = $valor * 0.90;
+                $desconto = 10;
+            }
+            else{
+                echo 'Sem desconto aplicado!<br>';
+            }
+            if (!empty($desconto)) echo "Desconto de $desconto% aplicado!";
+            echo '<br>Valor Final: ' . $valor;
+        }
+    }
+
+    function genLogin($nome, $sobrenome){
+        echo 'Seu login: '.($nome.'.'.$sobrenome);
+    }
+
+    function calcFrete($valor){
+        if(!empty($valor)){
+            echo "valor do produto: $valor<br>";
+            if ($valor > 300) {
+                echo "Parabens! Você tem frete gratis!";
+            } elseif ($valor <= 100) {
+                echo "O valor do frete é de: R$20 Reais.";
+            } else {
+                echo "O valor do frete é de: R$15 Reais.";
+            }
+        }
+    }
+
+    function checkSenha($string){
+        $hasNum = false;
+        if(!empty($string)) {
+            if (strlen($string) < 8) {
+                echo 'Senha muito curta, deve ter no minimo 8 caracteres!';
+            }
+
+            for ($i=0; $i < 10 ; $i++) { 
+                if (str_contains($string, $i)) 
+                { 
+                    $hasNum = true;
+                    break;
+                }
+                    
+            }
+
+            if ($hasNum == false) echo '<br>É necessario ter pelo menos 1 número'; 
+
+            if (!preg_match('/[A-Z]/',$string)) { 
+                echo '<br>é necessario ter pelo menos 1 letra maiuscula';
+            }
+        }
+    }
+
+    function gerarToken($size){
         
-    }
+        $string = bin2hex(random_bytes($size));
 
-    function desconto(){
+        foreach ($string as $size) {
+            echo 
+        }
 
-    }
-
-    function genLogin(){
-
-    }
-
-    function calcFrete(){
-
-    }
-
-    function checkSenha(){
-
-    }
-
-    function gerarToken(){
-
+    return $token;
     }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+    <style>html {color-scheme: dark;} </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,6 +129,7 @@
     <title>Aula Funções</title>
 </head>
 <body>
+    <div class='container'>
     <form action="" method="post">
         <h3>Exercicios de Funções:</h3>
         <label for="num1">Digite o 1º número: </label>
@@ -81,9 +141,13 @@
         <label for="num3">Digite o 3º número: </label>
         <input type="number" name="num3" value=0 ><br><br> 
 
-        <label for="string">Digite alguma coisa: </label>
+        <label for="string1">Digite alguma coisa: </label>
+        <input type="text" name="string1"><br><br>
 
-        
+        <label for="string2">Digite outra coisa: </label>
+        <input type="text" name="string2">
+
+        <br><br>
         <input type="submit" value="Mostrar">
     </form>
     
@@ -91,30 +155,41 @@
 </html>
 
 <?php 
-    echo " <h3>Exercicio 2 - Soma:</h3>";
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $var1 = $_POST['num1'];
         $var2 = $_POST['num2'];
-        $var3 - $_POST['num3'];
-        soma($var1, $var2);
-    }
+        $var3 = $_POST['num3'];
+        $var4 = $_POST['string1'];
+        $var5 = $_POST['string2'];
 
-    echo " <h3>Exercicio 3 - Impar ou Par:</h3>";
-    parImpar(12);
+    // echo " <h3>Exercicio 2 - Soma:</h3>";
+    // soma($var1, $var2);
 
-    echo " <h3>Exercicio 4 - Maior número:</h3>";
-    maiorNum($var1, $var2, $var3);
+    // echo " <h3>Exercicio 3 - Impar ou Par:</h3>";
+    // parImpar(12);
 
-    echo " <h3>Exercicio 5 - String Invertida:</h3>";
+    // echo " <h3>Exercicio 4 - Maior número:</h3>";
+    // maiorNum($var1, $var2, $var3);
 
-    echo " <h3>Exercicio 6 - Descontos:</h3>";
+    // echo " <h3>Exercicio 5 - String Invertida:</h3>";
+    // reverseString($var4);
 
-    echo " <h3>Exercicio 7 - Login:</h3>";
+    // echo " <h3>Exercicio 6 - Descontos:</h3>";
+    // desconto($var1);
 
-    echo " <h3>Exercicio 8 - Valor frete:</h3>";
+    // echo " <h3>Exercicio 7 - Login:</h3>";
+    // genLogin($var4, $var5);
 
-    echo " <h3>Exercicio 9 - Criterio de Senha:</h3>";
+    // echo " <h3>Exercicio 8 - Valor frete:</h3>";
+    // calcFrete($var1);
+    
+    // echo " <h3>Exercicio 9 - Criterio de Senha:</h3>";
+    // checkSenha($var4);
 
     echo " <h3>Exercicio 10 - Token Generator:</h3>";
+        echo 'Aqui está seu token: ' . gerarToken($var2);
+
+    }
 ?>
+
+</div>
