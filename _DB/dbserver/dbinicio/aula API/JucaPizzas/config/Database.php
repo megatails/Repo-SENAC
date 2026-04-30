@@ -6,7 +6,7 @@ class Database
     private $db_name = 'jucapizzas';
     private $username = 'root';
     private $password = 'usbw';
-    //private $port = '0000'; 
+    private $port = '3307'; 
 
     public $conn;
 
