@@ -145,6 +145,7 @@
         <br><br>
         <input type="submit" value="Mostrar">
     </form>
+    <a href="complementares/index.php">Ir para Exercicios Complementares</a>
     </div>
     
 </body>
