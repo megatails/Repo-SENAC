@@ -1,56 +1,61 @@
-<?php
-    function entrada($nome){
-        echo "<h3>Saudações " . $nome . "<br>Esses são os Exercicios Complementares!</h3><br><br>";
+<?php 
+    function entrada($nome) {
+        return "<h1>Saudações, $nome!<br>Esses são os Exercicios Complementares</h1>";
     }
 
     function displayEx($num){
-        echo "<h3 style='color: lightgreen'>Exercicio $num</h3>";
+        echo "<h2 style='color: lightblue'>Exercício $num</h2>";
     }
 
-    function divisivelPor($var1){
+    function divisivelPor($valor){
         displayEx(1);
-        echo "<h4>". "O número " . "<span style='color: dodgerblue'>$var1:</span></h4>";
-        if ($var1 % 2== 0) {
-            echo "é<span style='color: crimson'> > Divisível por 2 < </span></h4>";
+        echo "<h3>O Valor <span style='font-weight: bold; color: dodgerblue;'>$valor</span>:</h3>";
+        if($valor % 2 == 0){
+            echo "<p style='color: lightgreen;'>> é divisível por 2 <</p>";
         } else {
-            echo "<span style='color: crimson'> > Não é divisível por 2 < </span></h4>";
+            echo "<p style='color: crimson;'>> não é divisível por 2 <</p>";
         }
 
-        if ($var1 % 5== 0) {
-            echo "é<span style='color: crimson'> > Divisível por 5 < </span></h4>";
+        if($valor % 5 == 0){
+            echo "<p style='color: lightgreen;'>> é divisível por 5 <</p>";
         } else {
-            echo "<span style='color: crimson'> > Não é divisível por 5 < </span></h4>";
+            echo "<p style='color: crimson;'>> não é divisível por 5 <</p>";
         }
 
-        if ($var1 % 10== 0) {
-            echo "é<span style='color: crimson'> > Divisível por 10 < </span></h4>";
+        if($valor % 10 == 0){
+            echo "<p style='color: lightgreen;'>> é divisível por 10 <</p>";
         } else {
-            echo "<span style='color: crimson'> > Não é divisível por 10 < </span></h4>";
+            echo "<p style='color: crimson;'>> não é divisível por 10 <</p>";
         }
     }
-    
-    function classifTriangulo($a, $b, $c){
+
+    function classTriagulo($a, $b, $c){
         displayEx(2);
-        if ($a == $b && $b == $c) {
-            echo "<h4>O triângulo é <span style='color: crimson'>Equilátero</span></h4>";
-        } elseif ($a == $b || $a == $c || $b == $c) {
-            echo "<h4>O triângulo é <span style='color: crimson'>Isósceles</span></h4>";
+        if($a == $b && $b == $c){
+            echo "<p>Os lados são iguais, portanto: <span style='color: lightgreen;'>> é um triângulo equilátero <</p>";
+        } else if($a == $b || $a == $c || $b == $c){
+            echo "<p>Dois lados são iguais e um é diferente, portanto: <span style='color: lightgreen;'>> é um triângulo isósceles <</p>";
         } else {
-            echo "<h4>O triângulo é <span style='color: crimson'>Escaleno</span></h4>";
+            echo "<p>Todos os lados são diferentes, portanto: <span style='color: lightgreen;'>> é um triângulo escaleno<</p>";
         }
+    }
 
-        function calcMassa($massa){
-            displayEx(3);
-            $tempo = 0;
+    function calcMassa($massa){
+        displayEx(3);
+        $tempo = 0;
+        
+        while($massa >= 0.10){
+            $massa = $massa * 0.75;
+            $tempo += 30;
+        }
+        echo "<p>Tempo necessário para que a massa seja menor que 0.10: <span style='color: dodgerblue;'>$tempo segundos</span>
+        <br>Massa final: <span style='color: dodgerblue;'>$massa</span></p>";
+    }
 
-            return $tempo;
-        }
-        function calcularIMC($peso, $altura){
-            displayEx(4);
-            $imc = $peso / ($altura * $altura);
-            echo "<h4>O peso e a altura são: <span style='color: lightgreen'>" . $peso . "kg</span> e <span style='color: lightgreen'>" . $altura . "m</span><br>";
-            echo "O IMC é: <span style='color: lightgreen'>" . number_format($imc, 2) . "</span></h4>";
-        }
+    function calcularIMC($peso, $altura){
+        displayEx(4);
+        $imc = $peso / ($altura * $altura);
+        echo "<p>O IMC calculado é: <span style='color: dodgerblue;'>" . number_format($imc, 2) . "</span></p>";
     }
 ?>
 
@@ -60,36 +65,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>Document</title>
+    <title>Complementar</title>
 </head>
 <body>
-    <div class="container2">
-        <?php
-            entrada("João");
-        ?>
-        <form action="" method="post">
-            <label for="var1">Digite o 1º número:</label>
-            <input type="number" id="var1" name="var1" value=0><br>
-            <label for="var2">Digite o 2º número:</label>
-            <input type="number" id="var2" name="var2" value=0><br>
-            <label for="var3">Digite o 3º número:</label>
-            <input type="number" id="var3" name="var3" value=0><br>
-            <button type="submit">Verificar</button>
+    <div class="container"
+    <?= entrada("Rodrigo") ?>
+        <form action="" method="POST">
+            <label for="var1">Digite o 1º valor:</label>
+            <input type="number" name="var1" id="var1" value=0 required><br>
+            <label for="var2">Digite o 2º valor:</label>
+            <input type="number" name="var2" id="var2" value=0 required><br>
+            <label for="var3">Digite o 3º valor:</label>
+            <input type="number" name="var3" id="var3" value=0 required><br>
+            <button type="submit">Verificar</button><br>
         </form>
-    
 </body>
 </html>
 
 <?php
-    if ($_POST) {
-        $var1 = $_POST['var1'];
-        $var2 = $_POST['var2'];
-        $var3 = $_POST['var3'];
-        divisivelPor($var1);
-        classifTriangulo($var1, $var2, $var3);
+    $var1 = $_POST['var1'];
+    $var2 = $_POST['var2'];
+    $var3 = $_POST['var3'];
 
-        calcularIMC('80', '1.80');
-    }
+    divisivelPor($var1);
+    classTriagulo($var1, $var2, $var3);
+    calcMassa($var1);
+    calcularIMC(80, 1.80);
 ?>
 
 </div>
