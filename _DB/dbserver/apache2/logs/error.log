@@ -6,3 +6,8 @@
 [Wed Apr 29 20:22:25 2026] [notice] Child 35572: Starting 64 worker threads.
 [Wed Apr 29 20:22:25 2026] [notice] Child 35572: Starting thread to listen on port 8080.
 [Wed Apr 29 20:22:25 2026] [notice] Child 35572: Starting thread to listen on port 8080.
+[Wed Apr 29 20:29:22 2026] [error] [client ::1] File does not exist: C:/Users/rodrigo.lcassilhas/Documents/usbwebserver/root/_DB/dbserver/root/_DB
+[Wed Apr 29 20:29:22 2026] [error] [client ::1] File does not exist: C:/Users/rodrigo.lcassilhas/Documents/usbwebserver/root/_DB/dbserver/root/favicon.ico, referer: http://localhost:8080/_DB/dbserver/dbinicio/aula%20API/JucaPizzas/tmptestedb.php
+[Wed Apr 29 20:31:25 2026] [error] [client ::1] PHP Parse error:  syntax error, unexpected '{' in C:\\Users\\rodrigo.lcassilhas\\Documents\\usbwebserver\\root\\_DB\\dbserver\\root\\_DB\\dbserver\\dbinicio\\aula API\\JucaPizzas\\config\\Database.php on line 39
+[Wed Apr 29 20:31:33 2026] [error] [client ::1] PHP Parse error:  syntax error, unexpected '{' in C:\\Users\\rodrigo.lcassilhas\\Documents\\usbwebserver\\root\\_DB\\dbserver\\root\\_DB\\dbserver\\dbinicio\\aula API\\JucaPizzas\\config\\Database.php on line 39
+[Wed Apr 29 20:31:33 2026] [error] [client ::1] File does not exist: C:/Users/rodrigo.lcassilhas/Documents/usbwebserver/root/_DB/dbserver/root/favicon.ico, referer: http://localhost:8080/_DB/dbserver/dbinicio/aula%20API/JucaPizzas/tmptestedb.php
