@@ -1,9 +1,0 @@
-::1 - - [29/Apr/2026:20:29:22 -0300] "GET /_DB/dbserver/dbinicio/aula%20API/JucaPizzas/tmptestedb.php HTTP/1.1" 404 254
-::1 - - [29/Apr/2026:20:29:22 -0300] "GET /favicon.ico HTTP/1.1" 404 209
-::1 - - [29/Apr/2026:20:30:56 -0300] "-" 408 -
-::1 - - [29/Apr/2026:20:30:56 -0300] "-" 408 -
-::1 - - [29/Apr/2026:20:31:20 -0300] "-" 408 -
-::1 - - [29/Apr/2026:20:31:25 -0300] "GET /_DB/dbserver/dbinicio/aula%20API/JucaPizzas/tmptestedb.php HTTP/1.1" 200 227
-::1 - - [29/Apr/2026:20:31:32 -0300] "GET /_DB/dbserver/dbinicio/aula%20API/JucaPizzas/tmptestedb.php HTTP/1.1" 200 227
-::1 - - [29/Apr/2026:20:31:33 -0300] "GET /favicon.ico HTTP/1.1" 404 209
-::1 - - [29/Apr/2026:20:36:33 -0300] "-" 408 -
