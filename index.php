@@ -14,12 +14,13 @@ function listarPastas($dir, $ignorar = []) {
 }
 
 
-$pastas = listarPastas("./", ["Styles", "Fonts", "_DB", "Images"]);
+$pastas = listarPastas("./", ["Styles", "Fonts", "_DB", "Images","_Programs","_Aulas"]);
 ?>
 
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+    <style>html {color-scheme: dark;}</style>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

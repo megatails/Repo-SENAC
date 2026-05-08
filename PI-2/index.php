@@ -1,4 +1,5 @@
 <?php 
+    include "header.php";
     function mensagem() {
         echo "Boas Vindas!";
     }
@@ -7,21 +8,22 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/main.css">
     <title>Fisio com a Ana</title>
 </head>
-<header>
-    <button class="botao type1">Inicio</button>
-    <button class="botao type1">Sobre</button>
-    <button class="botao type1">Entre em Contato</button>
-</header>
+
 <body>
     <div class="container" >
         <h2>Teste</h2>
+
+        <div class="form-group">
+            <input class="form-field" type="email" placeholder="Email">
+            <span>@gmail.com</span>
+        </div>
     </div>
 </body>
 </html>

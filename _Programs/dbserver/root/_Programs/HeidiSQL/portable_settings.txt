@@ -1,0 +1,113 @@
+LastSessions<|||>1<|||>dbInicio
+LastActiveSession<|||>1<|||>dbInicio
+SessionManager_WindowLeft<|||>3<|||>731
+SessionManager_WindowTop<|||>3<|||>209
+ColWidths_connform.ListSessions<|||>1<|||>163,50,50,50,50,50,69
+ColsVisible_connform.ListSessions<|||>1<|||>0,1,4,6
+ColPositions_connform.ListSessions<|||>1<|||>0,1,2,3,4,5,6
+ColSort_connform.ListSessions<|||>1<|||>0,0
+querymemoheight<|||>3<|||>587
+sqloutheight<|||>3<|||>134
+MainWinOnMonitor<|||>3<|||>0
+MainWinLeft<|||>3<|||>497
+MainWinTop<|||>3<|||>0
+MainWinWidth<|||>3<|||>881
+MainWinHeight<|||>3<|||>467
+ColWidths_MainForm.ListDatabases<|||>1<|||>150,80,50,50,50,50,50,50,50,50,120
+ColsVisible_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
+ColPositions_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
+ColSort_MainForm.ListDatabases<|||>1<|||>0,0
+ColWidths_MainForm.ListVariables<|||>1<|||>160,200,316
+ColsVisible_MainForm.ListVariables<|||>1<|||>0,1,2
+ColPositions_MainForm.ListVariables<|||>1<|||>0,1,2
+ColSort_MainForm.ListVariables<|||>1<|||>0,0
+ColWidths_MainForm.ListStatus<|||>1<|||>160,316,100,100
+ColsVisible_MainForm.ListStatus<|||>1<|||>0,1,2,3
+ColPositions_MainForm.ListStatus<|||>1<|||>0,1,2,3
+ColSort_MainForm.ListStatus<|||>1<|||>0,0
+ColWidths_MainForm.ListProcesses<|||>1<|||>70,80,80,80,80,50,50,186
+ColsVisible_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
+ColPositions_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
+ColSort_MainForm.ListProcesses<|||>1<|||>0,1
+ColWidths_MainForm.ListCommandStats<|||>1<|||>120,100,100,100,256
+ColsVisible_MainForm.ListCommandStats<|||>1<|||>0,1,2,3,4
+ColPositions_MainForm.ListCommandStats<|||>1<|||>0,1,2,3,4
+ColSort_MainForm.ListCommandStats<|||>1<|||>1,1
+ColWidths_MainForm.ListTables<|||>1<|||>120,70,70,120,120,70,100,50,70,70,70,70,70,90,120,70,70,70,50
+ColsVisible_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,18
+ColPositions_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+ColSort_MainForm.ListTables<|||>1<|||>0,0
+MainWinMaximized<|||>3<|||>1
+SessionManager_ListWidth<|||>3<|||>336
+SessionManager_WindowWidth<|||>3<|||>870
+ColWidths_frmTableEditor.listColumns<|||>1<|||>60,100,168,90,60,65,50,127,130,152,100,100,50,50,50
+ColsVisible_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11,12,13,14
+ColPositions_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11,12,13,14
+ColSort_frmTableEditor.listColumns<|||>1<|||>0,0
+ColWidths_frmTableEditor.treeIndexes<|||>1<|||>182,100,80,120,80
+ColsVisible_frmTableEditor.treeIndexes<|||>1<|||>0,1,2,3,4
+ColPositions_frmTableEditor.treeIndexes<|||>1<|||>0,1,2,3,4
+ColSort_frmTableEditor.treeIndexes<|||>1<|||>-1,0
+ColWidths_frmTableEditor.listForeignKeys<|||>1<|||>196,80,100,80,80,72
+ColsVisible_frmTableEditor.listForeignKeys<|||>1<|||>0,1,2,3,4,5
+ColPositions_frmTableEditor.listForeignKeys<|||>1<|||>0,1,2,3,4,5
+ColSort_frmTableEditor.listForeignKeys<|||>1<|||>-1,0
+ColWidths_frmTableEditor.listCheckConstraints<|||>1<|||>200,408
+ColsVisible_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
+ColPositions_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
+ColSort_frmTableEditor.listCheckConstraints<|||>1<|||>-1,0
+FileDialogEncoding_MainForm<|||>3<|||>0
+SQLFile0<|||>1<|||>C:\Users\rodrigo.lcassilhas\Documents\usbwebserver\root\_DB\_models\JucaPizzas\jucaPizzas.sql
+SQLFile1<|||>1<|||>C:\Users\rodrigo.lcassilhas\Documents\usbwebserver\root\projeto-biblioteca\DB\biblioteca.sql
+Servers\dbInicio\SessionCreated<|||>1<|||>2026-03-15 21:47:09
+Servers\dbInicio\Host<|||>1<|||>127.0.0.1
+Servers\dbInicio\WindowsAuth<|||>3<|||>0
+Servers\dbInicio\CleartextPluginEnabled<|||>3<|||>0
+Servers\dbInicio\User<|||>1<|||>root
+Servers\dbInicio\Password<|||>1<|||>767463781
+Servers\dbInicio\LoginPrompt<|||>3<|||>0
+Servers\dbInicio\Port<|||>1<|||>3307
+Servers\dbInicio\NetType<|||>3<|||>0
+Servers\dbInicio\Compressed<|||>3<|||>0
+Servers\dbInicio\LocalTimeZone<|||>3<|||>0
+Servers\dbInicio\QueryTimeout<|||>3<|||>30
+Servers\dbInicio\KeepAlive<|||>3<|||>20
+Servers\dbInicio\FullTableStatus<|||>3<|||>1
+Servers\dbInicio\Databases<|||>1<|||>
+Servers\dbInicio\Library<|||>1<|||>libmariadb.dll
+Servers\dbInicio\Comment<|||>1<|||>
+Servers\dbInicio\StartupScriptFilename<|||>1<|||>
+Servers\dbInicio\TreeBackground<|||>3<|||>536870911
+Servers\dbInicio\SSHtunnelActive<|||>3<|||>0
+Servers\dbInicio\SshExecutable<|||>1<|||>
+Servers\dbInicio\SSHtunnelHost<|||>1<|||>
+Servers\dbInicio\SSHtunnelHostPort<|||>3<|||>22
+Servers\dbInicio\SSHtunnelUser<|||>1<|||>
+Servers\dbInicio\SSHtunnelPassword<|||>1<|||>7
+Servers\dbInicio\SSHtunnelTimeout<|||>3<|||>4
+Servers\dbInicio\SSHtunnelPrivateKey<|||>1<|||>
+Servers\dbInicio\SSHtunnelPort<|||>3<|||>3307
+Servers\dbInicio\SSL_Active<|||>3<|||>0
+Servers\dbInicio\SSL_Key<|||>1<|||>
+Servers\dbInicio\SSL_Cert<|||>1<|||>
+Servers\dbInicio\SSL_CA<|||>1<|||>
+Servers\dbInicio\SSL_Cipher<|||>1<|||>
+Servers\dbInicio\SSL_Verification<|||>3<|||>2
+Servers\dbInicio\IgnoreDatabasePattern<|||>1<|||>
+Servers\dbInicio\LogFileDdl<|||>3<|||>0
+Servers\dbInicio\LogFileDml<|||>3<|||>0
+Servers\dbInicio\LogFilePath<|||>1<|||>C:\Users\megat\AppData\Roaming\HeidiSQL\Logs\%session\%db\%y%m%d.sql
+Servers\dbInicio\RefusedCount<|||>3<|||>8
+Servers\dbInicio\ServerVersionFull<|||>1<|||>5.5.20 - MySQL Community Server (GPL)
+Servers\dbInicio\ConnectCount<|||>3<|||>5
+Servers\dbInicio\ServerVersion<|||>3<|||>50520
+Servers\dbInicio\LastConnect<|||>1<|||>2026-05-07 19:18:19
+Servers\dbInicio\lastUsedDB<|||>1<|||>jucapizzas
+Servers\dbInicio\FavoriteObjects<|||>1<|||>jucapizzas||pizzas<{{{><}}}>
+Servers\dbInicio\QueryHistory\12<|||>1<|||>2026-05-05 22:03:31|biblioteca|0|USE biblioteca;
+Servers\dbInicio\QueryHistory\1<|||>1<|||>2026-05-05 22:04:42|biblioteca|0|INSERT INTO usuarios (nome, email, senha)<{{{><}}}>VALUES ('Usuário Senac', 'senac@gmail.com', '123456');
+Servers\dbInicio\QueryHistory\2<|||>1<|||>2026-05-07 19:55:10|jucapizzas|16|CREATE TABLE bebidas (<{{{><}}}>	idBebida INT AUTO_INCREMENT PRIMARY KEY,<{{{><}}}>	nome VARCHAR(50) NOT NULL,<{{{><}}}>	valor decimal(10,2) NOT NULL,<{{{><}}}>	tipo VARCHAR(50) NOT NULL,<{{{><}}}>	volumeMl INT NOT null<{{{><}}}>);
+Servers\dbInicio\QueryHistory\3<|||>1<|||>2026-05-07 19:55:24|jucapizzas|0|<{{{><}}}>INSERT INTO bebidas (nome, valor, tipo, volumeMl)<{{{><}}}>VALUES<{{{><}}}>('Coca-Cola Lata', 4.00, 'Refrigerante', 350),<{{{><}}}>('Coca-Cola Vidro', 8.00, 'Refrigerante', 700),<{{{><}}}>('Coca-Cola Garrafa', 11.00, 'Refrigerante', 1000),<{{{><}}}>('Coca-Cola Garrafa', 14.00, 'Refrigerante', 2000),<{{{><}}}>('Café', 4.00, 'Café', 150),<{{{><}}}>('Cappuccino', 5.50, 'Café', 150),<{{{><}}}>('Caipirinha', 15.00, 'Alcoolico', 500),<{{{><}}}>('Vinho', 21.00, 'Alcoolico', 1000),<{{{><}}}>('Cerveja Heineken', 5.00, 'Alcoolico', 400),<{{{><}}}>('Whiskey', 19.00, 'Alcoolico', 700),<{{{><}}}>('Monster Rio Punch', 8.00, 'Energético', 470),<{{{><}}}>('Monster Mango Loco', 8.00, 'Energético', 470),<{{{><}}}>('Monster Pacific Punch', 8.00, 'Energético', 470),<{{{><}}}>('Suco Del Valle Morango', 8.00, 'Suco', 1000),<{{{><}}}>('Suco Del Valle Uva', 8.00, 'Suco', 1000),<{{{><}}}>('Suco Del Valle Laranja', 8.00, 'Suco', 1000),<{{{><}}}>('Suco Del Valle Maracuja', 8.00, 'Suco', 1000),<{{{><}}}>('Fanta Uva', 10.00, 'Refrigerante', 1000),<{{{><}}}>('Fanta Maça Verde', 10.00, 'Refrigerante', 1000)
+Servers\dbInicio\QueryHistory\4<|||>1<|||>2026-05-07 19:55:55|jucapizzas|0|SELECT tipo FROM bebidas WHERE 'Alcoolico'
+Servers\dbInicio\QueryHistory\5<|||>1<|||>2026-05-07 19:56:14|jucapizzas|0|SELECT tipo FROM bebidas WHERE tipo = 'Alcoolico'
+Servers\dbInicio\QueryHistory\6<|||>1<|||>2026-05-07 19:56:21|jucapizzas|0|SELECT * FROM bebidas WHERE tipo = 'Alcoolico'
