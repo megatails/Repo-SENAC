@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'GET') {
         "nome" => $bebida->nome,
         "valor" => $bebida->valor,
         "tipo" => $bebida->tipo,
-        "volumeMl" > $bebida->volumeMl
+        "volumeMl" -> $bebida->volumeMl
        );
 
        echo json_encode($bebidaArray, JSON_PRETTY_PRINT);
@@ -28,12 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] === 'GET') {
        http_response_code(200);
     }
     else {
-        http_response_code(404);
-        echo json_encode(array("mensagem" => 'bebida não encontrada!'));
+        
     }
 }
 else 
 {
-    http_response_code(405);
-    echo json_encode(array("mensagem" => 'metodo não permitido.'));
+    
 }

@@ -15,11 +15,10 @@ class Bebida
     }
 
     public function get(){
-        $query = "SELECT idBebida, nome, valor, tipo, volumeMl from {$this->tabela} WHERE = ? LIMIT 1";
+        $query = "SELECT idBebida, nome, valor, tipo, volumeMl from {$this->tabela} WHERE idBebida = ? LIMIT 1";
+
         $stmt = $this->conn->prepare($query);
-
         $stmt->bindParam(1, $this->idBebida);
-
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
