@@ -111,3 +111,5 @@ Servers\dbInicio\QueryHistory\3<|||>1<|||>2026-05-07 19:55:24|jucapizzas|0|<{{{>
 Servers\dbInicio\QueryHistory\4<|||>1<|||>2026-05-07 19:55:55|jucapizzas|0|SELECT tipo FROM bebidas WHERE 'Alcoolico'
 Servers\dbInicio\QueryHistory\5<|||>1<|||>2026-05-07 19:56:14|jucapizzas|0|SELECT tipo FROM bebidas WHERE tipo = 'Alcoolico'
 Servers\dbInicio\QueryHistory\6<|||>1<|||>2026-05-07 19:56:21|jucapizzas|0|SELECT * FROM bebidas WHERE tipo = 'Alcoolico'
+Servers\dbInicio\QueryHistory\7<|||>1<|||>2026-05-07 20:16:37|jucapizzas|0|SELECT nome, tipo, valor, volumeMl FROM bebidas WHERE tipo = 'Alcoolico'
+Servers\dbInicio\QueryHistory\8<|||>1<|||>2026-05-07 20:17:08|jucapizzas|0|SELECT valor, tipo, nome, volumeMl FROM bebidas WHERE tipo = 'Alcoolico'

@@ -13,27 +13,34 @@ $bebida->idBebida = isset($_GET['id']) ? $_GET['id'] : null;
 
 if ($_SERVER["REQUEST_METHOD"] === 'GET') {
     if ($bebida->idBebida) {
-       $bebida->get();
+        $bebida->get();
 
-       $bebidaArray = array(
+
+    $bebidaArray = array(
         "id" => $bebida->idBebida,
         "nome" => $bebida->nome,
         "valor" => $bebida->valor,
         "tipo" => $bebida->tipo,
         "volumeMl" > $bebida->volumeMl
-       );
+    );
 
-       echo json_encode($bebidaArray, JSON_PRETTY_PRINT);
+    if(empty($bebida->nome)) {
+        http_response_code(404);
+        echo json_encode(array("mensagem" => 'bebida não encontrada!'));
+        exit;
+    }
 
-       http_response_code(200);
+    echo json_encode($bebidaArray, JSON_PRETTY_PRINT);
+
+    http_response_code(200);
     }
     else {
         http_response_code(404);
-        echo json_encode(array("mensagem" => 'bebida não encontrada!'));
+        echo json_encode(array("mensagem" => 'bebida não informada!'));
     }
 }
 else 
 {
-    http_response_code(405);
-    echo json_encode(array("mensagem" => 'metodo não permitido.'));
+http_response_code(405);
+echo json_encode(array("mensagem" => 'metodo não permitido.'));
 }
