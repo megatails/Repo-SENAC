@@ -37,5 +37,26 @@ class Bebida
 
         return $stmt;
     }
+
+    public function add(){
+        $query = 'INSERT INTO ' . $this->tabela . ' SET nome = :nome, tipo = :tipo, valor = :valor, volumeMl = :volumeMl';
+
+        $stmt = $this->conn->prepare($query);
+
+        $this->nome = htmlspecialchars(strip_tags($this->nome));
+        $this->tipo = htmlspecialchars(strip_tags($this->tipo));
+        $this->valor = htmlspecialchars(strip_tags($this->valor));
+        $this->volumeMl = htmlspecialchars(strip_tags($this->volumeMl));
+
+        $stmt->bindParam(':nome', $this->nome);
+        $stmt->bindParam(':tipo', $this->tipo);
+        $stmt->bindParam(':valor', $this->valor);
+        $stmt->bindParam(':volumeMl', $this->volumeMl);
+
+        if ($stmt->execute()){
+            return true;
+        }
+        return false;
+    }
 }
 
