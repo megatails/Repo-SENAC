@@ -8,13 +8,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-function listarPastas($dir, $ignorar = []) {
-    $pastas = array_map('basename', array_filter(glob("$dir/*"), 'is_dir'));
+function listarPastas($dir, $ignorar = []) { 
+    $pastas = array_merge(array_map('basename', array_filter(glob("$dir/*"), 'is_dir')), array_map('basename', array_filter(glob("$dir/*/*/"), 'is_dir')));
     return array_diff($pastas, $ignorar);
 }
 
+$exclusao = ["Styles", "Fonts", "_DB", "Images","_Programs","_Aulas", "_Programs", "_models", "_antigo", "styles", "Arley", "Edu", "exercicios-2025"];
 
-$pastas = listarPastas("./", ["Styles", "Fonts", "_DB", "Images","_Programs","_Aulas"]);
+
+$pastas = listarPastas("./", $exclusao);
 ?>
 
 

@@ -1,2 +1,0 @@
-::1 - - [07/May/2026:21:28:01 -0300] "GET / HTTP/1.1" 200 995
-::1 - - [07/May/2026:21:28:04 -0300] "GET /_Programs/dbserver/dbinicio/aulaAPI/JucaPizzas/api/pizza/getAll.php HTTP/1.1" 404 265

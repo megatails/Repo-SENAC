@@ -1,0 +1,96 @@
+@font-face{
+    font-family: 'MyFont';
+    src: url('/Fonts/DTM-Mono.otf') format('opentype');
+}
+
+body{
+    display: flex;
+    font-family: 'MyFont', Arial, sans-serif;
+    background-color: #2a2f33;
+    color: #333;
+    width: 200;
+    max-width: 550px;
+    margin: 50px auto;
+    padding: 30px;;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(51, 255, 0, 0.6);
+    font-size: 18px;
+}
+
+header{
+    font-family: 'MyFont', Arial, sans-serif;
+    padding: 10px;
+    text-align: center;
+    background-color: #181d22;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: 'MyFont', Arial, sans-serif;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(51, 255, 0, 0.1);
+    overflow: hidden;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+form{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    width: 400px;
+    gap: 5px;
+    margin-left: 5px;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+input{
+    background-color: rgb(0, 0, 0);
+    color: rgb(57, 201, 0);
+    border-color: rgb(17, 187, 40);
+    font-family: 'MyFont', Arial, sans-serif;
+}
+
+.credits{
+    text-align: center;
+    font-size: 6px;
+    color: #888;
+    margin-top: 56px;
+}
+
+select{
+    width: 100%;
+    display: flex;
+    padding: 4px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(57, 201, 0);
+    border-color: rgb(17, 187, 40);
+    font-family: 'MyFont', Arial, sans-serif;
+}
+ 
+.botao{
+    background-color: rgb(0, 0, 0);
+    color: rgb(57, 201, 0);
+    padding: 6px;
+    border: 1px solid;
+    border-color: rgb(17, 187, 40);
+    cursor: pointer;
+    margin-top: 10px;
+    
+}
+
+.botao:hover{
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(43, 255, 0);
+    border: inset;
+    border: 1px solid;
+    box-shadow: 0 0 2px rgba(51, 255, 0, 0.8);
+}
+
+img:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
