@@ -57,8 +57,7 @@ ColsVisible_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
 ColPositions_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
 ColSort_frmTableEditor.listCheckConstraints<|||>1<|||>-1,0
 FileDialogEncoding_MainForm<|||>3<|||>0
-SQLFile0<|||>1<|||>C:\Users\rodrigo.lcassilhas\Documents\usbwebserver\root\_DB\_models\JucaPizzas\jucaPizzas.sql
-SQLFile1<|||>1<|||>C:\Users\rodrigo.lcassilhas\Documents\usbwebserver\root\projeto-biblioteca\DB\biblioteca.sql
+SQLFile0<|||>1<|||>C:\Users\rodrigo.lcassilhas\Documents\usbwebserver\root\Arley\dbinicio\PI_FisioAna.sql
 Servers\dbInicio\SessionCreated<|||>1<|||>2026-03-15 21:47:09
 Servers\dbInicio\Host<|||>1<|||>127.0.0.1
 Servers\dbInicio\WindowsAuth<|||>3<|||>0
@@ -99,10 +98,10 @@ Servers\dbInicio\LogFileDml<|||>3<|||>0
 Servers\dbInicio\LogFilePath<|||>1<|||>C:\Users\megat\AppData\Roaming\HeidiSQL\Logs\%session\%db\%y%m%d.sql
 Servers\dbInicio\RefusedCount<|||>3<|||>8
 Servers\dbInicio\ServerVersionFull<|||>1<|||>5.5.20 - MySQL Community Server (GPL)
-Servers\dbInicio\ConnectCount<|||>3<|||>6
+Servers\dbInicio\ConnectCount<|||>3<|||>7
 Servers\dbInicio\ServerVersion<|||>3<|||>50520
-Servers\dbInicio\LastConnect<|||>1<|||>2026-05-14 20:20:22
-Servers\dbInicio\lastUsedDB<|||>1<|||>biblioteca
+Servers\dbInicio\LastConnect<|||>1<|||>2026-05-19 19:13:21
+Servers\dbInicio\lastUsedDB<|||>1<|||>pi_fisioana
 Servers\dbInicio\FavoriteObjects<|||>1<|||>jucapizzas||pizzas<{{{><}}}>
 Servers\dbInicio\QueryHistory\12<|||>1<|||>2026-05-05 22:03:31|biblioteca|0|USE biblioteca;
 Servers\dbInicio\QueryHistory\1<|||>1<|||>2026-05-05 22:04:42|biblioteca|0|INSERT INTO usuarios (nome, email, senha)<{{{><}}}>VALUES ('Usuário Senac', 'senac@gmail.com', '123456');
