@@ -3,7 +3,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $file = $_POST['doc'];
     if (!empty($file)) {
-        header("Location: {$file}/index.php");
+        header("Location: .{$file}/index.php");
         exit;
     }
 }
@@ -26,12 +26,13 @@ $pastas = listarPastas("./", $exclusao);
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portal!</title>
+        <title>Edu!</title>
         <link rel="stylesheet" href="/Styles/style2.css">
     </head>
 
     <header>
         <h1>Escolha o Documento!</h1>
+        <p style="color: lightgreen; font-size: 28px; display: flex; justify-content:center; position: relative; bottom: 48px; zoom: 0.4;">Pasta Eduardo</p>
     </header>
 
     <body>

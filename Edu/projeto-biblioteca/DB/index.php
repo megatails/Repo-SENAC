@@ -15,7 +15,7 @@
         if($usuario && $senha==$usuario['senha']){
             $SESSION['usuario'] = $usuario['nome'];
             $_SESSION['tipo'] = $usuario['tipo'];
-            header("Location:painel.php");
+            header("Location: painel.php");
             exit;
         }
         else {
@@ -31,10 +31,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Biblioteca</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div class="container">
+    <style>
+        body {
+            position: relative;
+            right:150px;
+        }
+    </style>
+    <div class="conteudo">
         <h1>Login</h1>
         <?php echo $mensagem;?>
         <form method="POST">
