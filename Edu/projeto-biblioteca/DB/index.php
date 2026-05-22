@@ -13,7 +13,7 @@
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if($usuario && $senha==$usuario['senha']){
-            $SESSION['usuario'] = $usuario['nome'];
+            $_SESSION['usuario'] = $usuario['nome'];
             $_SESSION['tipo'] = $usuario['tipo'];
             header("Location: painel.php");
             exit;

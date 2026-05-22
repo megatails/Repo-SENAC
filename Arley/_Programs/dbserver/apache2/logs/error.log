@@ -6,3 +6,4 @@
 [Thu May 21 19:25:42 2026] [notice] Child 20492: Starting 64 worker threads.
 [Thu May 21 19:25:42 2026] [notice] Child 20492: Starting thread to listen on port 8080.
 [Thu May 21 19:25:42 2026] [notice] Child 20492: Starting thread to listen on port 8080.
+[Thu May 21 19:37:05 2026] [error] [client ::1] File does not exist: C:/Users/rodrigo.lcassilhas/Documents/usbwebserver/root/Arley/_Programs/dbserver/root/favicon.ico, referer: http://localhost:8080/
