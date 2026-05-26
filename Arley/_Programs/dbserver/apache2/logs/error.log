@@ -1,9 +1,8 @@
-[Thu May 21 19:25:39 2026] [notice] Apache/2.2.21 (Win32) PHP/5.3.9 configured -- resuming normal operations
-[Thu May 21 19:25:39 2026] [notice] Server built: Sep 10 2011 11:34:11
-[Thu May 21 19:25:40 2026] [notice] Parent: Created child process 20492
-[Thu May 21 19:25:41 2026] [notice] Child 20492: Child process is running
-[Thu May 21 19:25:42 2026] [notice] Child 20492: Acquired the start mutex.
-[Thu May 21 19:25:42 2026] [notice] Child 20492: Starting 64 worker threads.
-[Thu May 21 19:25:42 2026] [notice] Child 20492: Starting thread to listen on port 8080.
-[Thu May 21 19:25:42 2026] [notice] Child 20492: Starting thread to listen on port 8080.
-[Thu May 21 19:37:05 2026] [error] [client ::1] File does not exist: C:/Users/rodrigo.lcassilhas/Documents/usbwebserver/root/Arley/_Programs/dbserver/root/favicon.ico, referer: http://localhost:8080/
+[Mon May 25 19:43:43 2026] [notice] Apache/2.2.21 (Win32) PHP/5.3.9 configured -- resuming normal operations
+[Mon May 25 19:43:43 2026] [notice] Server built: Sep 10 2011 11:34:11
+[Mon May 25 19:43:43 2026] [notice] Parent: Created child process 29756
+[Mon May 25 19:43:44 2026] [notice] Child 29756: Child process is running
+[Mon May 25 19:43:44 2026] [notice] Child 29756: Acquired the start mutex.
+[Mon May 25 19:43:44 2026] [notice] Child 29756: Starting 64 worker threads.
+[Mon May 25 19:43:44 2026] [notice] Child 29756: Starting thread to listen on port 8080.
+[Mon May 25 19:43:44 2026] [notice] Child 29756: Starting thread to listen on port 8080.

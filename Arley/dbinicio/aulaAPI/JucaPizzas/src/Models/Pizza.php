@@ -1,4 +1,6 @@
 <?php
+
+namespace Megatails\JucaPizzas\Models;
 class Pizza
 {
     private $conn;
