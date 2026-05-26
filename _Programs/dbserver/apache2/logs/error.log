@@ -1,0 +1,8 @@
+[Tue May 26 19:33:32 2026] [notice] Apache/2.2.21 (Win32) PHP/5.3.9 configured -- resuming normal operations
+[Tue May 26 19:33:32 2026] [notice] Server built: Sep 10 2011 11:34:11
+[Tue May 26 19:33:32 2026] [notice] Parent: Created child process 29196
+[Tue May 26 19:33:33 2026] [notice] Child 29196: Child process is running
+[Tue May 26 19:33:33 2026] [notice] Child 29196: Acquired the start mutex.
+[Tue May 26 19:33:33 2026] [notice] Child 29196: Starting 64 worker threads.
+[Tue May 26 19:33:33 2026] [notice] Child 29196: Starting thread to listen on port 8080.
+[Tue May 26 19:33:33 2026] [notice] Child 29196: Starting thread to listen on port 8080.

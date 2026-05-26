@@ -1,0 +1,17 @@
+{
+    "name": "megatails/jucapizzas-api",
+    "description": "Projeto pedagogico para demonstrar a criação da API",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Megatails\\JucapizzasApi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "megatails",
+            "email": "megatails03@gmail.com"
+        }
+    ],
+    "require": {}
+}
