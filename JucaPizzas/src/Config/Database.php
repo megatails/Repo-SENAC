@@ -1,4 +1,8 @@
 <?php
+namespace Megatails\JucaPizzas\Config;
+use PDO;
+use PDOException;
+use Throwable;
  
 class Database {
  
@@ -23,7 +27,7 @@ class Database {
             //Isso faz com que o PDO lance exceções em caso de erros, facilitando o tratamento
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
-        catch(Exception $e) //Em caso de erro na conexão, exibe a messagem de erro.
+        catch(PDOException $e) //Em caso de erro na conexão, exibe a messagem de erro.
         {
             echo "Erro de conexão: " . $e->getMessage();
         }

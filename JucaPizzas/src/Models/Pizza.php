@@ -1,6 +1,8 @@
 <?php
 
 namespace Megatails\JucaPizzas\Models;
+
+use PDO;
 class Pizza
 {
     private $conn;
@@ -9,15 +11,13 @@ class Pizza
     public $nome;
     public $ingredientes;
     public $valor;
-
-
     
     public function __construct($db)
     {
         $this->conn = $db;
     }
 
-        public function get(){
+    public function get(){
         $query = "SELECT idPizza, nome, valor, ingredientes from {$this->db_name} WHERE idBebida = ? LIMIT 1";
 
         $stmt = $this->conn->prepare($query);
