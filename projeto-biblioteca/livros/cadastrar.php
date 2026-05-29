@@ -1,5 +1,5 @@
 <?php 
-    require 'DB/conexao.php';
+    require '../DB/conexao.php';
     if($_SERVER['REQUEST_METHOD']==='POST')
         {
             $titulo = trim($_POST['titulo']);
@@ -13,7 +13,7 @@
                     mkdir('../Imagens', 0777, true);
 
                 }
-                $extensao = pathinfo($_FILES['imagem']['name'],PATHINFO_EXTENSION)/
+                $extensao = pathinfo($_FILES['imagem']['name'],PATHINFO_EXTENSION);
                 $nomeArquivo = uniqid().".".$extensao;
                 $caminho = "../Imagens".$nomeArquivo;
                 if(move_uploaded_file($_FILES['imagem']['tmp_name'],$caminho))
@@ -36,7 +36,7 @@
                         ':disponivel'=>$disponivel,
                         ':imagem'=>$imagem
                     ]);
-                    echo "<script>alert ('Livro cadastrado com sucesso!');window.location.href = '../index.php'</script>";
+                    echo "<script>alert ('Livro cadastrado com sucesso!'); window.location.href = '../index.php'</script>";
                     exit();
                 } 
                 catch(PDOException $e)
@@ -52,13 +52,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Cadastrar Livro</title>
 </head>
 <body>
-    <?php 
-            include('menu.php');
-    ?>
+        <?php 
+            include('../menu.php');
+        ?>
     <div class="conteudo">
         <div class="card">
             <h2>Cadastro de Novo Livro</h2>

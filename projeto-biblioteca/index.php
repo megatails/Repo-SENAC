@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    $loginChk = $_SESSION['nome'] ?? '';
+if (!$loginChk)
+    { 
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -31,3 +38,10 @@
 
 </body>
 </html>
+
+<?php } else 
+    {
+        header("Location: login.php");
+    }
+
+?>

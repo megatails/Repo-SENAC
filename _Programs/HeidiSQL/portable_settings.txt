@@ -1,4 +1,4 @@
-LastSessions<|||>1<|||>dbInicio
+LastSessions<|||>1<|||>
 LastActiveSession<|||>1<|||>dbInicio
 SessionManager_WindowLeft<|||>3<|||>731
 SessionManager_WindowTop<|||>3<|||>209
@@ -11,8 +11,8 @@ sqloutheight<|||>3<|||>134
 MainWinOnMonitor<|||>3<|||>0
 MainWinLeft<|||>3<|||>953
 MainWinTop<|||>3<|||>0
-MainWinWidth<|||>3<|||>974
-MainWinHeight<|||>3<|||>1039
+MainWinWidth<|||>3<|||>881
+MainWinHeight<|||>3<|||>467
 ColWidths_MainForm.ListDatabases<|||>1<|||>150,80,50,50,50,50,50,50,50,50,120
 ColsVisible_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
 ColPositions_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
