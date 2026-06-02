@@ -1,5 +1,5 @@
 <?php
-require '../conexao.php';
+require '../DB/conexao.php';
 
 if(!isset($_GET['id']) || empty(($_GET['id'])))
     {
@@ -11,21 +11,21 @@ $id = intval($_GET['id']);
 
 try{
     $sql = "SELECT imagem FROM livros WHERE id = :id LIMIT 1";
-    $stmt = $PDO->prepare($sql);
+    $stmt = $pdo->prepare($sql);
     $stmt->execute([':id'=>$id]);
     $livros = $stmt->fetch(PDO::FETCH_ASSOC);
-    if($livros && !empty($livro['imagem']))
+    if($livros && !empty($livros['imagem']))
     {
-        $caminhoImagem = '../Imagens/' . $livro['imagem'];
+        $caminhoImagem = '../Imagens/' . $livros['imagem'];
         if(file_exists($caminhoImagem))
         {
-            unlink($caminhoImagen);
+            unlink($caminhoImagem);
         }
     }
     $sql = "DELETE FROM livros WHERE id = :id";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([':id' => $id]);
-    $header("Location: listar.php");
+    header("Location: listar.php");
     exit();
 }
 catch(PDOException $e){

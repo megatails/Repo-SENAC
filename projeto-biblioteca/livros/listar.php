@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Lista de Livros</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../styles/style.css">
  
  
 </head>
@@ -21,8 +21,6 @@
  
 <div class="tbl-conteudo">
     <h1>Lista de Livros</h1>
-    <a class="btn" href="../index.php">Voltar para o Painel</a>
- 
     <table >
         <thead>
             <tr>

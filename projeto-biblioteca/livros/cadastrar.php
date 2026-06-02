@@ -30,7 +30,7 @@
                     ':imagem'=>$imagem
                 ]);
                 echo "<script> alert('Livro cadastrado com sucesso!');
-                window.location.href = '../index.php';</script>";
+                window.location.href = '../painel.php';</script>";
                 exit;
             } catch(PDOException $e){
                 echo"<script>alert('Erro: ".$e->getMessage()."');</script>";
@@ -48,7 +48,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Cadastrar Livro</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
     <?php 
@@ -62,10 +62,10 @@
         <input type="text" name="titulo" placeholder="Título" required>
         <input type="text" name="autor" placeholder="Autor" required>
  
-        <label>
-            <input type="checkbox" name="disponivel" checked>
-            Disponível
-        </label>
+        <div class="checkbox-group">
+            <input type="checkbox" name="disponivel" id="disponivel" checked>
+            <label for="disponivel">Disponível</label>
+        </div>
  
         <input type="file" name="imagem" accept="image/*">
  

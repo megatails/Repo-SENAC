@@ -30,20 +30,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Cadastrar Usuario</title>
 </head>
 <body>
     <?php 
         include('../menu.php');
     ?>
- 
-<style>
-    body {
-        position: relative;
-        right:150px;
-    }
-</style>
+    <style>
+        body 
+        {
+            position: relative;
+            right:150px;
+        }
+    </style>
+    
     <div class="conteudo">
         <form method="POST">
             <label for="nome">Digite o nome:</label>
