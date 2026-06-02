@@ -11,14 +11,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Lista de Usuários</title>
-<link rel="stylesheet" href="../styles/exp.css">
+<link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <div class="lista-container">
+    <?php 
+        include('../menu.php');
+    ?>
+
+    <div class="tbl-conteudo">
         <h1>Lista de Usuários</h1>
-        <a class="btn-voltar" href="../index.php">Voltar para o Painel</a>
-    
-        <table class="tabela-usuarios">
+        <table>
             <thead>
                 <tr>
                     <th>ID</th>
@@ -28,7 +30,7 @@
                     <th>Ações</th>
                 </tr>
             </thead>
-    
+
             <tbody>
                 <?php foreach ($usuarios as $u): ?>
                 <tr>
