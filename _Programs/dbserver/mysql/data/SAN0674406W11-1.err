@@ -1118,3 +1118,35 @@ InnoDB: buffer...
 260528 19:28:38 [Note] Event Scheduler: Loaded 0 events
 260528 19:28:38 [Note] C:\Users\rodrigo.lcassilhas\Documents\usbwebserver\root\_Programs\dbserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
 Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+260601 19:13:27 [Note] Plugin 'FEDERATED' is disabled.
+260601 19:13:27 InnoDB: The InnoDB memory heap is disabled
+260601 19:13:27 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+260601 19:13:27 InnoDB: Compressed tables use zlib 1.2.3
+260601 19:13:27 InnoDB: Initializing buffer pool, size = 128.0M
+260601 19:13:27 InnoDB: Completed initialization of buffer pool
+260601 19:13:28 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+260601 19:13:28  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+260601 19:13:28  InnoDB: Waiting for the background threads to start
+260601 19:13:29 InnoDB: 1.1.8 started; log sequence number 1861922
+260601 20:16:18 [Note] Plugin 'FEDERATED' is disabled.
+260601 20:16:18 InnoDB: The InnoDB memory heap is disabled
+260601 20:16:18 InnoDB: Mutexes and rw_locks use Windows interlocked functions
+260601 20:16:18 InnoDB: Compressed tables use zlib 1.2.3
+260601 20:16:18 InnoDB: Initializing buffer pool, size = 128.0M
+260601 20:16:18 InnoDB: Completed initialization of buffer pool
+260601 20:16:18 InnoDB: highest supported file format is Barracuda.
+InnoDB: The log sequence number in ibdata files does not match
+InnoDB: the log sequence number in the ib_logfiles!
+260601 20:16:18  InnoDB: Database was not shut down normally!
+InnoDB: Starting crash recovery.
+InnoDB: Reading tablespace information from the .ibd files...
+InnoDB: Restoring possible half-written data pages from the doublewrite
+InnoDB: buffer...
+260601 20:16:18  InnoDB: Waiting for the background threads to start
+260601 20:16:19 InnoDB: 1.1.8 started; log sequence number 1871341

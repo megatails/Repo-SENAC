@@ -34,6 +34,10 @@
     <title>Cadastrar Usuario</title>
 </head>
 <body>
+    <?php 
+        include('../menu.php');
+    ?>
+ 
 <style>
     body {
         position: relative;

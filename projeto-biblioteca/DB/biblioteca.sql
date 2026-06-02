@@ -35,3 +35,6 @@ VALUES ('senac@gmail.com', '123456');
 
 INSERT INTO usuarios (nome, email, senha)
 VALUES ('Usuário Senac', 'senac@gmail.com', '123456');
+
+ALTER TABLE livros 
+ADD categoria VARCHAR(100);

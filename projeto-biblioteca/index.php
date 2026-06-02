@@ -1,47 +1,53 @@
-<?php
+<?php 
+    require 'DB/conexao.php';
     session_start();
-    $loginChk = $_SESSION['nome'] ?? '';
-if (!$loginChk)
-    { 
+    $mensagem ="";
+    
+    if($_SERVER['REQUEST_METHOD']==='POST'){
+        $email = trim($_POST['email']);
+        $senha = trim($_POST['senha']);
+
+        $sql ="SELECT * FROM usuarios WHERE email = :email";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([':email' => $email]);
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if($usuario && $senha==$usuario['senha']){
+            $_SESSION['usuario'] = $usuario['nome'];
+            $_SESSION['tipo'] = $usuario['tipo'];
+            header("Location: painel.php"); //painel.php
+            exit;
+        }
+        else {
+            $mensagem="<p class='erro'>Email ou senha Inválidos!</p>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <style>html {color-scheme: dark;}</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <title>Biblioteca Digital Municipal</title>
+    <title>Login - Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <?php 
-            include('menu.php');
-        ?>
-    
-    <div class="conteudo"><br><br><br>
-        <div class="card">
-            <h1>Biblioteca Digital Municipal</h1>
-            <p>A biblioteca Digital Municipal tem como missão promover o acesso ao conhecimento, à
-                cultura e à educação por meio de um acervo digital acessível a toda comunidade.</p>
-                <br>
-                <p>Nosso sistema permite consultar obras literárias, acessar livros digitais e incentivar
-                    a leitura através da tecnologia.
-                    Este Ambiente foi desenvolvido para facilitar o gerenciamento do acervo bibliografico 
-                    e aproximar leitores do universo literário
-                </p>
-            </div>
-        <div class="media-card">
-            <img style="border-radius: 12px" width="100%" src="https://www.institutefordigitaltransformation.org/wp-content/uploads/Digital-Library-scaled.jpeg" alt="uma mão alimentando livres à um tablet">
-        </div>
-        
+    <style>
+        body {
+            position: relative;
+            right:150px;
+        }
+    </style>
+    <div class="conteudo">
+        <h1>Login</h1>
+        <?php echo $mensagem;?>
+        <form method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
     </div>
-
 </body>
 </html>
-
-<?php } else 
-    {
-        header("Location: login.php");
-    }
-
-?>
