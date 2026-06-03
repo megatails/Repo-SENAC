@@ -25,6 +25,15 @@
                 <a href="/projeto-biblioteca/users/listar.php">&nbsp;&nbsp;Listar Usuários</a>
             </div>
         </div>
+
+        <div class="msg-dropdown">
+            <a class="msg" href="#">&nbsp;&nbsp;Alugueis</a>
+            <div class="msg-submenu">
+                <a href="/projeto-biblioteca/alugueis/cadastrar.php">Alugar Livro</a>
+                <a href="/projeto-biblioteca/alugueis/listar.php">Listar Aluguéis</a>
+            </div>
+
+        </div>
         
         <a class='msg msg-fixed' style="cursor: default;">&nbsp;&nbsp;Bem vindo!<br>&nbsp; <?php echo $loginChk ?> </a>
 </div>
