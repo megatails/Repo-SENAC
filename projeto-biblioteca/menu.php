@@ -3,7 +3,7 @@
     $loginChk = $_SESSION['usuario'];
 ?>
 
-<link rel="stylesheet" href="styles/style.css">
+<link rel="stylesheet" href="styles/light.css">
 <style>html {color-scheme: dark;}</style>
 <div class="lateral"> 
     <div class="lateral-texto"></div>
