@@ -36,7 +36,7 @@ body{
     color: var(--text);
 }
 
-a.msg {
+.msg {
     display: block;
     width: 220px;
     padding: 15px;
@@ -47,7 +47,7 @@ a.msg {
     transition: 0.2s;
 }
 
-a.msg:hover {
+.msg:hover {
     background: var(--hover);
     color: #ffffff;
     border-left-color: var(--border);
@@ -253,6 +253,15 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: 0.2s;
+}
+
+button.tema {
+    margin-top: 4px;
+    padding: 0px;
+    background: none;
+    border: none; 
+    text-align: center;
+    font-size: 24px;
 }
 
 button:hover {

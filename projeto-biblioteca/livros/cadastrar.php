@@ -48,7 +48,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Cadastrar Livro</title>
-<link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
     <?php 

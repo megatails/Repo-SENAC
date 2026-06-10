@@ -7,12 +7,12 @@
 
 :root {
     --transition: all 0.3s ease;
-    --dark: #313338;
-    --card: #2b2d31;
+    --dark: #313338; /* Background */
+    --card: #2b2d31; /* menu e titulos */
     --hover: #3a3d42;
     --text: #b5bac1;
     --border: #5865F2;
-    --darker: #1e1f22;
+    --darker: #1e1f22; /* dropdown background */
     --borderAlt: #2b2d31;
 }
 
@@ -253,6 +253,15 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: 0.2s;
+}
+
+button.tema {
+    margin-top: 4px;
+    padding: 0px;
+    background: none;
+    border: none; 
+    text-align: center;
+    font-size: 24px;
 }
 
 button:hover {
