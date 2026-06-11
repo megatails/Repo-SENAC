@@ -15,7 +15,7 @@
     <div class="lateral-texto"></div>
     <div style="display: flex; align-items: center; justify-content: space-between;">
         <h2>&nbsp;&nbsp;Biblioteca</h2>
-        <button class="tema" type="button" id="btnMudaEstilo"><i class="fa fa-sun-o"></i></button>
+        <button class="tema" type="button" id="btnMudaEstilo"><i id="icoEstilo" class="fa fa-moon-o"></i></button>
     </div>
         
         <a class='msg' href="/projeto-biblioteca/painel.php">&nbsp;&nbsp;Início</a>
@@ -49,21 +49,23 @@
 </div>
 
 <script>
+    document.getElementById("btnMudaEstilo").style.color = "var(--text)";
+    var mode = document.getElementById("mode");
     document.getElementById("btnMudaEstilo").addEventListener("click", function()
     {
-        var mode = document.getElementById("mode");
-
         if(mode.value == "1")
         {
-            document.documentElement.style.colorScheme = 'dark';
-            document.getElementById("btnMudaEstilo").style.color = "var(--text)";
-            document.getElementById("linkCSS").setAttribute("href", '/projeto-biblioteca/styles/dark.css');
-            mode.value = "0";
+            mudarTema("dark", "sun", "0");
         }
         else {
-            document.documentElement.style.colorScheme = 'light';
-            document.getElementById("linkCSS").setAttribute("href", '/projeto-biblioteca/styles/light.css');
-            mode.value = "1";
+            mudarTema("light", "moon", "1");
         }
-    });    
+    });
+
+    function mudarTema(tema, icone, modo){
+        document.documentElement.style.colorScheme = tema;
+        document.getElementById("linkCSS").setAttribute("href", `/projeto-biblioteca/styles/${tema}.css`);
+        document.getElementById("icoEstilo").setAttribute("class", `fa fa-${icone}-o`);
+        mode.value = modo;
+    }
 </script>

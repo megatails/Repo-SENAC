@@ -34,10 +34,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Alugar Livro</title>
-    <link rel="stylesheet" href="../styles/exp.css">
 </head>
 <body>
-    <div class="container">
+    <?php 
+        include('../menu.php');
+    ?>
+    <div class="conteudo">
         <h1>Alugar Livro</h1>
 
         <?= $mensagem ?? '' ?>
@@ -50,7 +52,7 @@
                         <?= $u['nome'] ?>
                     </option>
                 <?php endforeach; ?>
-            </select>
+            </select><br><br>
             <select name="livro" required>
                 <option value="">Selecione o Livro</option>
                 <?php foreach($livros as $l): ?>
@@ -60,7 +62,6 @@
                 <?php endforeach; ?>
             </select>
             <button type="submit">Alugar Livro</button>
-            <a href="../painel.php" class="btn-voltar">Voltar</a>
         </form>
     </div>
 </body>

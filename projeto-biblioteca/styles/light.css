@@ -9,10 +9,11 @@
     --transition: all 0.3s ease;
     --dark: rgb(202, 214, 241); /* Background */
     --card: #ebf0f8; /* menu e titulos */
-    --hover: #aab2c0;
+    --hover: #313338;
     --text: #2e2f31;
     --border: #5865F2;
-    --darker: #cbd1e4; /* dropdown background */
+    --darker: rgb(226, 233, 255); /* dropdown background */
+    --inputBg: #ebf0f8;
     --borderAlt: #bcc4d4;
 }
 
@@ -189,7 +190,7 @@ input[type="file"] {
 }
 
 form select {
-    background-color: var(--darker);
+    background-color: var(--inputBg);
     color: var(--text);
     border-radius: 5px;
     width: 100%;
@@ -234,7 +235,7 @@ input {
     margin-top: 5px;
     border: none;
     border-radius: 5px;
-    background: var(--darker);
+    background: var(--inputBg);
     color: white;
 }
 
@@ -254,14 +255,17 @@ button {
     cursor: pointer;
     transition: 0.2s;
 }
-
 button.tema {
     margin-top: 4px;
     padding: 0px;
-    background: none;
+    background: transparent;
     border: none; 
     text-align: center;
     font-size: 24px;
+}
+
+button.tema:hover{
+    background: transparent;
 }
 
 button:hover {
@@ -325,7 +329,7 @@ a.menu:hover {
 .btn {
     display: inline-block;
     margin-top: 10px;
-    background-color: #4752c4;
+    background-color: var(--border);
     color: aliceblue;
     padding: 10px;
     border-radius: 6px;

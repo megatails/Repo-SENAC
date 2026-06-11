@@ -53,24 +53,25 @@
     <?php 
         include('../menu.php');
     ?>
- 
-<div class="conteudo">
-    <h1>Cadastrar Livro</h1>
- 
-    <form method="POST" enctype="multipart/form-data">
-        <input type="text" name="titulo" placeholder="Título" required>
-        <input type="text" name="autor" placeholder="Autor" required>
- 
-        <div class="checkbox-group">
-            <input type="checkbox" name="disponivel" id="disponivel" checked>
-            <label for="disponivel">Disponível</label>
-        </div>
- 
-        <input type="file" name="imagem" accept="image/*">
- 
-        <button type="submit">Cadastrar</button>
-    </form>
-</div>
+    <div class="conteudo">
+        <h1>Cadastrar Livro</h1>
+
+        <?= $mensagem ?? '' ?>
+    
+        <form method="POST" enctype="multipart/form-data">
+            <input type="text" name="titulo" id="titulo" size="20" placeholder="Título" required>
+            <input type="text" name="autor" id="autor" placeholder="Autor" required>
+    
+            <div class="checkbox-group">
+                <input type="checkbox" name="disponivel" id="disponivel" checked>
+                <label for="disponivel">Disponível</label>
+            </div>
+    
+            <input type="file" name="imagem" accept="image/*">
+    
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
  
 </body>
 </html>

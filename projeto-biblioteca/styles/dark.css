@@ -258,14 +258,18 @@ button {
 button.tema {
     margin-top: 4px;
     padding: 0px;
-    background: none;
+    background: transparent;
     border: none; 
     text-align: center;
     font-size: 24px;
 }
 
+button.tema:hover{
+    background: transparent;
+}
+
 button:hover {
-    background: #4752c4;
+    background: var(--border);
 }
 
 a.menu {
@@ -325,7 +329,7 @@ a.menu:hover {
 .btn {
     display: inline-block;
     margin-top: 10px;
-    background-color: #4752c4;
+    background-color: var(--border);
     color: aliceblue;
     padding: 10px;
     border-radius: 6px;

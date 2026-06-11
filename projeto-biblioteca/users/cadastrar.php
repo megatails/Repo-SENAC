@@ -37,28 +37,22 @@
     <?php 
         include('../menu.php');
     ?>
-    <style>
-        body 
-        {
-            position: relative;
-            right:150px;
-        }
-    </style>
-    
     <div class="conteudo">
+        <h1>Cadastrar Usuário</h1>
+
+        <?= $mensagem ?? '' ?>
+
         <form method="POST">
-            <label for="nome">Digite o nome:</label>
-            <input type="text" name="nome" id="nome" size="20">
-            <label for="email">Digite o email:</label>
-            <input type="email" name="email" id="email" size="20">
-            <label for="senha">Digite a senha:</label>
-            <input type="password" name="senha" id="senha" size="20">
-            <label for="tipo">Escolha o tipo de usuario:</label>
+            <input type="text" name="nome" id="nome" size="54" placeholder="Nome" required><br>
+            <input type="email" name="email" id="email" placeholder="Email" required><br><br>
+            <input type="password" name="senha" id="senha" placeholder="Senha" required><br><br>
+
             <select name="tipo" id="tipo" >
-                <option >Selecione...</option>
+                <option >Selecione o tipo de usuário...</option>
                 <option value="1">Aluno</option>
                 <option value="2">Admin</option>
             </select>
+
             <button type="submit">Cadastrar</button>
         </form>
     </div>
