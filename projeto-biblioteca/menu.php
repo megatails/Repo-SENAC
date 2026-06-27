@@ -1,9 +1,15 @@
 <?php 
     session_start();
     $loginChk = $_SESSION['usuario'];
-    $mode = "1";
-    // $tema = $mode == true  ? "light" : "dark";
-
+    // $mode = $_COOKIE['mode.value'];
+    if (isset($_COOKIE['modo'])) 
+    {
+        $modo = $_COOKIE['modo'];
+    } 
+    else 
+    {
+        $modo = 1; // Valor padrão caso o cookie não exista
+    }
 ?>
 
 <link rel="stylesheet" href="/projeto-biblioteca/styles/light.css" id="linkCSS">
@@ -15,7 +21,7 @@
     <div class="lateral-texto"></div>
     <div style="display: flex; align-items: center; justify-content: space-between;">
         <h2>&nbsp;&nbsp;Biblioteca</h2>
-        <button class="tema" type="button" id="btnMudaEstilo"><i id="icoEstilo" class="fa fa-moon-o"></i></button>
+        <button class="tema" type="button" id="btnMudaEstilo"><i  style="font-size: 22px; " id="icoEstilo" class="fa fa-moon-o" title="Trocar de tema"></i></button>
     </div>
         
         <a class='msg' href="/projeto-biblioteca/painel.php">&nbsp;&nbsp;Início</a>
@@ -67,5 +73,7 @@
         document.getElementById("linkCSS").setAttribute("href", `/projeto-biblioteca/styles/${tema}.css`);
         document.getElementById("icoEstilo").setAttribute("class", `fa fa-${icone}-o`);
         mode.value = modo;
+        document.cookie = `modo=${modo}; path=/; max-age=31536000`; // Expira em 1 ano
+
     }
 </script>

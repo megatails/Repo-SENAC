@@ -1,6 +1,7 @@
 <?php
 
 namespace Megatails\JucaPizzas\Models;
+use Exception;
 
 use PDO;
 class Pizza
@@ -89,6 +90,34 @@ class Pizza
      
         return false;
     }
- 
+
+    public function getValor() {
+        return $this->valor;
+    }
+    
+    public function setValor(float $valor): void {
+        if ($valor <= 0) {
+            throw new Exception("Valor inválido. É necessário um valor maior que zero.");
+        }
+        $this->valor = $valor;
+    }
+
+    public function getName (): string
+    {
+        return $this->nome;
+    }
+
+        public function setName (string $nome): void
+    {
+        if (trim($nome) == '') 
+        {
+            throw new Exception("Valor Inválido. É necessário preencher o nome");
+        } 
+        else if (strlen($nome) < 3)
+        {
+            throw new Exception("Valor Inválido. O nome deve ter no mínimo 3 caracteres.");
+        }
+        $this->nome = $nome;
+    }
 }
 
