@@ -1,6 +1,6 @@
 @font-face{
     font-family: 'MyFont';
-    src: url('/Fonts/DTM-Mono.otf') format('opentype');
+    src: url('Fonts/DTM-Mono.otf') format('opentype');
 }
 
 body{

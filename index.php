@@ -1,5 +1,6 @@
 
 <?php
+$file = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $file = $_POST['doc'];
     if (!empty($file)) {
@@ -27,7 +28,7 @@ $pastas = listarPastas("./", $exclusao);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portal!</title>
-        <link rel="stylesheet" href="/Styles/style2.css">
+        <link rel="stylesheet" href="Styles/style2.css">
     </head>
 
     <header>
@@ -39,11 +40,11 @@ $pastas = listarPastas("./", $exclusao);
                 <select title="doc" name="doc" id="doc">
                 <option value="">Selecione...</option>
                     <?php foreach ($pastas as $pasta): ?>
-                        <option value="/<?= $pasta ?>"><?= $pasta ?></option>
+                        <option value="<?= $pasta ?>"><?= $pasta ?></option>
                     <?php endforeach; ?>
                 </select>
 
-            <?php if ($$file == true) {?>
+            <?php if ($file == true) {?>
                 <input class="botao" type="submit" value="Ir para documento">
             <?php } else { ?>
                 <input class="botao" type="submit" value="Ir para documento" >
