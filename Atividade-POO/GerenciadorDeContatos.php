@@ -22,13 +22,26 @@ class GerenciadorDeContatos {
 
     }
 
-    public function recuperaContato($indice)
+    public function atualizarContato($nome, $email, $telefone, $indice) 
     {
-        return $_SESSION['contatos'][$indice]; 
+        if (isset($_SESSION['contatos'][$indice])) {
+            $_SESSION['contatos'][$indice] = new Contato($nome, $email, $telefone);
+        }
     }
 
-    public function editarContato($nome, $email, $telefone) 
+    public function buscarContato($nome)
     {
-        
+        $resultado = [];
+        foreach ($_SESSION['contatos'] as $indice => $contato) {
+            if (stripos($contato->getNome(), $nome) !== false) {
+                $resultado[$indice] = $contato;
+            }
+        }
+        return $resultado;
+    }
+
+    public function contarContatos() 
+    {
+        return count($_SESSION['contatos']);
     }
 }
